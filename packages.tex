@@ -19,7 +19,7 @@
 \usepackage{amssymb}
 \usepackage{upref}
 \usepackage{mathtools}
-\usepackage[noss]{hepnicenames} % loads bm, before unicode-math
+\usepackage[italic]{hepnicenames} % loads bm, before unicode-math
 \usepackage[no-math]{fontspec} % after amssymb
 \usepackage[math-style=ISO,bold-style=ISO,sans-style=italic,nabla=upright,partial=upright,vargreek-shape=unicode,warnings-off={mathtools-colon}]{unicode-math}
 \usepackage[retainorgcmds]{IEEEtrantools}
@@ -69,20 +69,20 @@
             \pgfdecoratedinputsegmentlength / int(\pgfdecoratedinputsegmentlength/\pgfdecorationsegmentlength)}
             \setlength{\pgfdecorationsegmentlength}{\matchinglength pt}
         }] {}
-    \state{upsine}[width=0.5\pgfdecorationsegmentlength,next state=downsine]{
-        \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
-        \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+    \state{upsine}[width=\pgfdecorationsegmentlength,next state=downsine]{
+        \pgfpathsine{\pgfpoint{0.50\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.50\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
     }
-    \state{downsine}[width=0.5\pgfdecorationsegmentlength,next state=upsine]{
-        \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
-        \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+    \state{downsine}[width=\pgfdecorationsegmentlength,next state=upsine]{
+        \pgfpathsine{\pgfpoint{0.50\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.50\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
 }
     \state{final}{}
 }
 
 \tikzset{
 	% >=stealth', %%  Uncomment for more conventional arrows
-    vector/.style={decorate, decoration={complete sines}, draw},
+    vector/.style={decorate, decoration={complete sines,segment length=6}, draw},
 	  provector/.style={decorate, decoration={snake,amplitude=2.5pt}, draw},
 	  antivector/.style={decorate, decoration={snake,amplitude=-2.5pt}, draw},
     fermion/.style={draw=black, postaction={decorate},

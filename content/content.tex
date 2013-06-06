@@ -3,41 +3,76 @@
 
 \section{Standardmodell der Teilchenphysik}
 
+Das Standardmodell der Teilchenphysik ist ein Theorie, die die bislang bekannten Elementarteilchen und ihre Interaktion\textemdash über starke, schwache und elektromagnetische Wechselwirkung\textemdash beschreibt.
+
 \subsection{Flavor-Sektor im Standardmodell}
 
 % 6 Quark-Flavors
-% Ladung: 2/3, -1/3
+
+\begin{eqn}
+  \begin{pmatrix}
+    \Pqu & \Pqc & \Pqt \\
+    \Pqd & \Pqs & \Pqb \\
+  \end{pmatrix}
+\end{eqn}
+
 % Entdeckt: Deep Inelastic Scattering (SLAC)
-% starke Wechselwirkung
-% Elektromagnetismus
+% elektromagnetische Wechselwirkung: Ladung: 2/3, -1/3
+% starke Wechselwirkung: Farbladung
 % schwache Wechselwirkung: CKM-Matrix und Quark-Mixing
 
 \subsection{CP-Verletzung im Standardmodell}
 
 % Was ist CP?
 % Komplexe Phase in der CKM-Matrix -> CP-Verletzung
+% CP-Dreieck
+% sin(2β)
 
 \subsection{$\PB$-$\PaB$-Oszillation}
 
 \begin{figure}
-  \begin{center}
-  \begin{tikzpicture}[line width=1.2 pt, scale=1.5]
-    \draw[fermion] (-1,2.3) -- node [above] {$d$} (0,2);
-    \draw[fermion] (0,2) -- node [above] {$u,s,t$} (2, 2);
-    \draw[fermion] (2,2) -- node [above] {$b$} (3,2.3);
+  \begin{tikzpicture}[line width=1.2 pt, scale=1.1]
+    \draw[fermion] (-1,2.3) node [left] {\Pqd} -- (0,2);
+    \draw[fermion] (0,2) -- node [above] {$\Pqu,\Pqc,\Pqt$} (2, 2);
+    \draw[fermion] (2,2) -- (3,2.3) node [right] {\Pqb};
      
-    \draw[fermionbar] (-1,-.3) -- node [above] {$\bar{b}$} (0,0);
-    \draw[fermionbar] (0,0) -- node [above] {$\bar{u},\bar{s},\bar{t}$} (2,0);
-    \draw[fermionbar] (2,0) -- node [above] {$\bar{d}$} (3,-.3);
+    \draw[fermionbar] (-1,-.3) node [left] {\Pqb} -- (0,0);
+    \draw[fermionbar] (0,0) -- node [above] {$\Pqu,\Pqc,\Pqt$} (2,0);
+    \draw[fermionbar] (2,0) -- (3,-.3) node [right] {\Pqd};
     
-    \draw[vector] (0,2) -- node [left] {$W^\pm$} (0,0);
-    \draw[vector] (2,2) -- node [right] {$W^\mp$} (2,0);
+    \draw[vector] (0,2) -- node [left] {\PW} (0,0);
+    \draw[vector] (2,2) -- node [right] {\PW} (2,0);
   \end{tikzpicture}
-  \end{center}
+  \hspace{1cm}
+  \begin{tikzpicture}[line width=1.2 pt, scale=1.1]
+    \draw[fermion] (-1,2.3) node [left] {\Pqd} -- (0,2);
+    \draw[vector] (0,2) -- node [above] {\PWm} (2, 2);
+    \draw[fermion] (2,2) -- (3,2.3) node [right] {$b$};
+     
+    \draw[fermionbar] (-1,-.3) node [left] {\Pqb} -- (0,0);
+    \draw[vector] (0,0) -- node [above] {\PWp} (2,0);
+    \draw[fermionbar] (2,0) -- (3,-.3) node [right] {\Pqd};
+    
+    \draw[fermion] (0,2) -- node [left] {$\Pqu,\Pqc,\Pqt$} (0,0);
+    \draw[fermionbar] (2,2) -- node [right] {$\Pqu,\Pqc,\Pqt$} (2,0);
+  \end{tikzpicture}
 
   \label{B_oscillation}
   \caption{bla}
 \end{figure}
+
+%\begin{tikzpicture}[line width=1.2 pt, scale=1]
+%  \draw[fermion] (-1,2.3) -- (0,2);
+%  \draw[vector] (0,2) arc (160:0:1.025);
+%  \draw[fermion] (2,2) -- (3,2.3);
+%  %
+%  \draw[fermion] (0,2) -- (1,1);
+%  \draw[fermion] (1,1) -- (2,2);
+%  %
+%  \draw[vector] (1,1) -- (1,-.5);
+%  \draw[fermion] (3,-1) -- (1,-.5);
+%  \draw[fermion] (1,-.5) -- (-1,-1);
+%\end{tikzpicture}
 
 \section{Experimentelle Grundlagen}
 
