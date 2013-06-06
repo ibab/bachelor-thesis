@@ -3,7 +3,11 @@
 
 \section{Standardmodell der Teilchenphysik}
 
-Das Standardmodell der Teilchenphysik ist ein Theorie, die die bislang bekannten Elementarteilchen und ihre Interaktion\textemdash über starke, schwache und elektromagnetische Wechselwirkung\textemdash beschreibt.
+Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
+
+Trotz der Erfolge des Standardmodells kann es sich dabei nicht um eine endgültige Theorie aller physikalischer Effekte handeln.
+So gibt es noch keine allgemein akzeptierte Methode, um Gravitation in das Standardmodell mit einzubeziehen.
+Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Standardmodell erklären lassen, wie zum Beispiel das Vorhandensein und die Natur von dunkler Materie und dunkler Energie, die unerklärt hohe Materie-Antimaterie-Asymmetrie im Universum, sowie das Verhalten des Standardmodells bei sehr hohen Energien.
 
 \subsection{Flavor-Sektor im Standardmodell}
 
@@ -21,9 +25,80 @@ Das Standardmodell der Teilchenphysik ist ein Theorie, die die bislang bekannten
 % starke Wechselwirkung: Farbladung
 % schwache Wechselwirkung: CKM-Matrix und Quark-Mixing
 
+\begin{eqn}
+  \begin{pmatrix}
+    \Pqd' \\
+    \Pqs' \\
+    \Pqb' \\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    V_{\Pqu\Pqd} & V_{\Pqu\Pqs} & V_{\Pqu\Pqb} \\
+    V_{\Pqc\Pqd} & V_{\Pqc\Pqs} & V_{\Pqc\Pqb} \\
+    V_{\Pqt\Pqd} & V_{\Pqt\Pqs} & V_{\Pqt\Pqb} \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \Pqd \\
+    \Pqs \\
+    \Pqb \\
+  \end{pmatrix}
+\end{eqn}
+
+\newcommand{\Vud}{V_{\Pqu\Pqs}}
+\newcommand{\Vus}{V_{\Pqu\Pqs}}
+\newcommand{\Vub}{V_{\Pqu\Pqb}}
+\newcommand{\Vcd}{V_{\Pqc\Pqd}}
+\newcommand{\Vcs}{V_{\Pqc\Pqs}}
+\newcommand{\Vcb}{V_{\Pqc\Pqb}}
+\newcommand{\Vtd}{V_{\Pqt\Pqd}}
+\newcommand{\Vts}{V_{\Pqt\Pqs}}
+\newcommand{\Vtb}{V_{\Pqt\Pqb}}
+
+% bestes dreieck
+\begin{eqn}
+  \Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0
+\end{eqn}
+
+% oben links
+\begin{eqn}
+  \abs{\frac{\Vud \Vub^*}{\Vcd \Vcb^*}}
+\end{eqn}
+
+% oben rechts
+\begin{eqn}
+  \abs{\frac{\Vtd \Vtb^*}{\Vcd \Vcb^*}}
+\end{eqn}
+
+\begin{center}
+  \begin{tikzpicture}[scale=10]
+    \coordinate (A) at (0.25,0.70);
+    \coordinate (B) at (1,0);
+    \coordinate (C) at (0,0);
+    \draw (A)--(B)--(C)--cycle;
+    
+    \tkzLabelSegment[above left=0.15](A,C){$\abs{\frac{\Vud \Vub^*}{\Vcd \Vcb^*}}$}
+    \tkzLabelSegment[above right=0.15](B,A){$\abs{\frac{\Vtd \Vtb^*}{\Vcd \Vcb^*}}$}
+    
+    \tkzMarkAngle[size=0.35](C,A,B)
+    \tkzLabelAngle[pos = 0.2](C,A,B){$\alpha$}
+    
+    \tkzMarkAngle[size=0.35](A,B,C)
+    \tkzLabelAngle[pos = 0.2](A,B,C){$\beta$}
+
+    \tkzMarkAngle[size=0.35](B,C,A)
+    \tkzLabelAngle[pos = 0.2](B,C,A){$\gamma$}
+  \end{tikzpicture}
+\end{center}
+
+% 2008: Nobelpreis für Kobayashi und Maskawa
+% Unitaritätsdreiecke
+% interessant: CP-Verletzung
+
 \subsection{CP-Verletzung im Standardmodell}
 
+
 % Was ist CP?
+% Momentane Menge reicht nicht, um Materie-Antimaterie-Asymmetrie zu erklären
 % Komplexe Phase in der CKM-Matrix -> CP-Verletzung
 % CP-Dreieck
 % sin(2β)

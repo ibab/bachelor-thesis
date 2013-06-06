@@ -19,8 +19,8 @@
 \usepackage{amssymb}
 \usepackage{upref}
 \usepackage{mathtools}
-\usepackage[italic]{hepnicenames} % loads bm, before unicode-math
 \usepackage[no-math]{fontspec} % after amssymb
+\usepackage[italic,noss]{hepnicenames} % loads bm, before unicode-math
 \usepackage[math-style=ISO,bold-style=ISO,sans-style=italic,nabla=upright,partial=upright,vargreek-shape=unicode,warnings-off={mathtools-colon}]{unicode-math}
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage{tensor}
@@ -50,6 +50,8 @@
 % Tikz %%%%%%%%%
 
 \usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes.geometric}
@@ -59,6 +61,13 @@
 \usetikzlibrary{calc,through}
 \usetikzlibrary{decorations.pathmorphing}	% For Feynman Diagrams
 \usetikzlibrary{decorations.markings}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\tkz@MarkAngle{\node[lbstyle,shift={(\tkz@ax,\tkz@ay)}] at (\labelangle:\tkz@dist ){\tkz@mklabel};}
+                       {\node[lbstyle] at ([shift={(\tkz@ax,\tkz@ay)}]\labelangle:\tkz@dist ){\tkz@mklabel};}% or \path[shift=…] node[lbstyle] at …;
+                       {}{}
+\makeatother
 
 \pgfdeclaredecoration{complete sines}{initial}
 {
