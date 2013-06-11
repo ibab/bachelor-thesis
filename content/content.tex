@@ -101,6 +101,8 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \subsection{CP-Verletzung im Standardmodell}
 
+% Wann entdeckt?
+
 \cite{wu}
 \cite{cp-lee-yang}
 \cite{kaons-cronin-fitch}
@@ -112,6 +114,8 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 % sin(2β)
 
 \subsection{$\PB$-$\PaB$-Oszillation}
+
+% Warum interessant? -> sin(2β) lässt sich bestimmen, Test des Standardmodells
 
 \begin{figure}
   \begin{tikzpicture}[line width=1.2 pt, scale=1.1]
@@ -159,22 +163,46 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \section{Experimentelle Grundlagen}
 
+% blabla
+
 \subsection{Der LHCb-Detektor}
+
+% Bild des Detektors
+% 1, 2 Sätze zu den wichtigsten Komponenten
 
 \subsection{Flavor-Tagging}
 
+Zur Bestimmung der Oszillationfrequenz $\Delta m_{\Pqd}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
+
+Der Endzustand kann aus den Zerfallsprodukten des Mesons bestimmt werden.
+
+Die Bestimmung des Anfangszustandes, die man als \emph{Flavor-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
+Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung anderer Beobachtungen während des Events eine möglichst gute Abschätzung für den Typ des \PB-Mesons zu liefern.
+
+Diese Einschätzung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $\omega$.
+Für die Bestimmung von $\Delta m_{\Pqd}$ ist es ausgesprochen wichtig neben der Tag-Entscheidung ($\PB$ oder $\PaB$) die Mistag-Wahrscheinlichkeit zu kennen, da sich diese über $(1 - 2\omega)$ in der Amplitude der Mixing-Wahrscheinlichkeit bemerkbar macht.
+% -> Zeigen
+% Warum wichtig? Nicht genug Statistik um sie mitzubestimmen?
+
+% OST, SST erklären (mit Bildern)
+
+
+
 % Warum Flavor-Tagging? -> Man will an Produktions-Flavor des b kommen
-% Keine triviale Lösung
+% Keine triviale Lösung, neuronale Netze werden verwendet
 % Interessant: Kanäle mit self-tagging final state
 %  z.B. B0 -> Dpi, B0 -> JpsiKst
 % Definition OST und SST (pion, kaon)
-% Mistag-Wahrscheinlichkeit ω, Tagging-Dilution D = 1 - 2ω
+% Mistag-Wahrscheinlichkeit ω, Tagging-Dilution D = 1 - 2ω, Tagging power ε_eff = ε_tag D^2
 % Tagger geben Mistag-Schätzung η heraus, muss kalibriert werden, dazu Kanäle mit self-tagging final state
 % ε_eff, ε_tag
 
 \subsection{Das SPlot-Verfahren?}
 
 \section{Datensatz}
+
+% Bd -> J/psi Kst 2012
+% BDT
 
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
@@ -230,6 +258,8 @@ Mittels der Koeffizienten $p_i$ aus dem n Fit lässt sich eine Kalibrierung des 
 \subsubsection{Implementierung des Wahrscheinlichkeitsmodells mittels des \texttt{RooFit}-Frameworks}
 % wie genau mit RooFit implementiert?
 % Startwerte nachlesbar hier und da
+
+% RooGaussian, RooExponential, RooDecay, RooBMixDecay, RooSimPdfBuilder
 
 \subsubsection{Durchführung der Optimierung}
 
