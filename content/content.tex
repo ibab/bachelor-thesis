@@ -6,9 +6,9 @@
 Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
 Es basiert auf der Symmetrie
 \begin{eqn}
-  SU(3)_c \prod SU(2)_L \prod U(1)_Y\:,
+  SU(3)_c \otimes SU(2)_L \otimes U(1)_Y\:,
 \end{eqn}
-wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L \prod U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
+wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L \otimes U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
 
 Trotz der Erfolge des Standardmodells kann es sich dabei nicht um eine endgültige Theorie aller physikalischer Effekte handeln.
 So gibt es noch keine allgemein akzeptierte Methode, um Gravitation in das Standardmodell mit einzubeziehen.
@@ -75,7 +75,7 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 \end{eqn}
 
 \begin{center}
-  \begin{tikzpicture}[scale=10]
+  \begin{tikzpicture}[scale=6]
     \coordinate (A) at (0.25,0.70);
     \coordinate (B) at (1,0);
     \coordinate (C) at (0,0);
@@ -176,7 +176,17 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \section{Datensatz}
 
-\section{\texorpdfstring{Kalibration von $\PBzero \to \PJpsi \PKst$}{Kalibration von B0 -> JpsiKst}}
+\section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
+
+Zur Kalibration wird der Datensatz je nach Größe des Mistag-Wertes $\eta$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
+Da hierbei möglichst nur Mistag-Werte des Signals verwendet werden sollten, wird vorher eine Trennung der Signalkomponente mittels des SPlot-Verfahrens durchgeführt.
+
+Daraufhin wird ein simultaner Maximum-Likelihood-Fit aller Kategorien durchgeführt, wobei die Anzahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $\omega$ pro Kategorie einzeln gefittet wird.
+Verwendet werden dabei die Massen- und Zerfallszeit-Verteilungen des Datensatzes, sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Anfangszustandes erlaubt.
+Anschließend werden die 5 $(\eta, \omega)$-Wertepaare sowohl linear als auch quadratisch gefittet.
+
+An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $\eta(\omega)$ (linear, quadratisch) vorzuziehen ist.
+Mittels der Koeffizienten $p_i$ aus dem n Fit lässt sich eine Kalibrierung des Datensatzes durchführen, indem die $η$-Werte des neuronalen Netzes in kalibrierte Mistag-Werte $η_C$ mittels der Parametrisierung umgerechnet werden.
 
 % Der Plan:
 % Datensatz je nach η in 5 Kategorien aufteilen (Strategie überlegen, noch selbst implementieren?)
@@ -189,16 +199,46 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \subsection{Parametrisierung der Likelihood-Funktion}
 
+% Signal - Masse
+\begin{eqns}
+  P_\t{sig}(m; \mu, \sigma_1, \sigma_2, \sigma_3) & = & f^{12}_{m;\t{sig}} G(m; \mu, \sigma_1) + \\
+  && (1 - f^{12}_{m;\t{sig}}) f^{23}_{m;\t{sig}} G(m;\mu,\sigma_2) + \\
+  &&(1 - (1 - f^{12}_{m;\t{sig}}) f^{23}_{m;\t{sig}}) G(m; \mu, \sigma_3)
+\end{eqns}
+
+% Signal - Zeit
+\begin{eqns}
+  P_\t{sig}(t,q;\tau,\Delta m_{\Pqd}, \omega, s_\t{sig} = M(t, q; \tau, \Delta m_{\Pqd}, \omega) \otimes R(t;s_\t{sig})
+\end{eqns}
+
 % m-t Fit in 5 Kategorien:
 % Signal-pdf und zwei kombinatorische backgrounds
 % jeweils Massen-pdf
 % jeweils Zeit-pdf
-% wie genau mit RooFit implementiert?
 
 % m-Fit für SPlot
 % es werden die Massen-pdfs von oben verwendet
 
+\begin{eqn}
+  M_\t{sig}(t) = \frac{N_\t{unmixed}(t) - N_\t{mixed}(t)}{N_\t{unmixed}(t) + N_\t{mixed}(t)} = \cos(\Delta m_{\Pqd} t)
+\end{eqn}
+
+\url{git@github.com:ibab/thesis}
+
+\subsection{Implementierung und Durchführung des Fits}
+
+\subsubsection{Implementierung des Wahrscheinlichkeitsmodells mittels des \texttt{RooFit}-Frameworks}
+% wie genau mit RooFit implementiert?
+% Startwerte nachlesbar hier und da
+
+\subsubsection{Durchführung der Optimierung}
+
 \subsection{Fitresultate}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
+  \caption{Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen Mistag-Wahrscheinlichkeiten $\omega$ und der vom neuronalen Netz geschätzten Mistag-Wahrscheinlichkeiten $\eta$}
+\end{figure}
 
 % Alle Parameter (5 Kategorien) als Tabelle (Fehler mit Minos)
 % Alle Parameter (Massen-Fit) als Tabelle (Fehler mit Minos)
@@ -206,9 +246,11 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \subsection{Ermittlung der Kalibrationsparameter}
 
+% wie gefittet?
 % Tabelle der ermittelten ω, η
 % Plot mit linearem Fit
-% Im Text nochmal p1, p2, (p3) auflisten 
+% Entkorrelierung: Nullpunkt wird zum Schwerpunkt verschoben
+% Tabelle mit p1, p2, (p3) + Korrelationsmatrix
 
 \section{Schlussfolgerungen}
 

@@ -8,3 +8,5 @@ build/main.blg: build/main.bcf
 build/main.bcf: main.tex
 	TEXINPUTS=./header: lualatex --shell-escape --output-directory=build $^
 
+quick: 
+	TEXINPUTS=./header: lualatex --shell-escape --output-directory=build main
