@@ -101,17 +101,20 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \subsection{CP-Verletzung im Standardmodell}
 
-% Wann entdeckt?
-
+% Entdeckung
 \cite{wu}
 \cite{cp-lee-yang}
+
+% Kaon system
 \cite{kaons-cronin-fitch}
 
 % Was ist CP?
 % Momentane Menge reicht nicht, um Materie-Antimaterie-Asymmetrie zu erklären
 % Komplexe Phase in der CKM-Matrix -> CP-Verletzung
 % CP-Dreieck
-% sin(2β)
+% sin(2β) -> ermittelt über Amplitude der Mixing-Funktion
+% CP-Verletzung senkt Amplitude ab, ebenso wie andere Effekte: Akzeptanz, Mistag-Wahrscheinlichkeit
+% daher: Extrem wichtig die Effekte zu bestimmen
 
 \subsection{$\PB$-$\PaB$-Oszillation}
 
@@ -177,22 +180,22 @@ Zur Bestimmung der Oszillationfrequenz $\Delta m_{\Pqd}$ der produzierten $\PB$-
 Der Endzustand kann aus den Zerfallsprodukten des Mesons bestimmt werden.
 
 Die Bestimmung des Anfangszustandes, die man als \emph{Flavor-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
-Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung anderer Beobachtungen während des Events eine möglichst gute Abschätzung für den Typ des \PB-Mesons zu liefern.
+Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer während des Events erfolgter Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern. % DaVinci erwähnen
 
 Diese Einschätzung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $\omega$.
-Für die Bestimmung von $\Delta m_{\Pqd}$ ist es ausgesprochen wichtig neben der Tag-Entscheidung ($\PB$ oder $\PaB$) die Mistag-Wahrscheinlichkeit zu kennen, da sich diese über $(1 - 2\omega)$ in der Amplitude der Mixing-Wahrscheinlichkeit bemerkbar macht.
+Für die Bestimmung von $\Delta m_{\Pqd}$ ist es ausgesprochen wichtig neben der Tag-Entscheidung ($\PB$ oder $\PaB$) die Mistag-Wahrscheinlichkeit zu kennen, da sich diese als $D = (1 - 2\omega)$ in der Amplitude der Mixing-Wahrscheinlichkeit bemerkbar macht. Den Faktor $D$ bezeichnet man als \emph{Tagging-Dilution}.
 % -> Zeigen
 % Warum wichtig? Nicht genug Statistik um sie mitzubestimmen?
 
 % OST, SST erklären (mit Bildern)
 
-
-
-% Warum Flavor-Tagging? -> Man will an Produktions-Flavor des b kommen
-% Keine triviale Lösung, neuronale Netze werden verwendet
+Interessant sind Zerfallskanäle, die es durch ihre Beschaffenheit ermöglichen, den Anfangszustand aus den Zerfallsprodukten zu bestimmen, die also über einen sogenannten self-tagging Endzustand verfügen.
+Zu diesen Kanälen gehören $\PBz \to \PDp\Pgpm$ und $\PBz \to \PJpsi \PKs$.
 % Interessant: Kanäle mit self-tagging final state
 %  z.B. B0 -> Dpi, B0 -> JpsiKst
-% Definition OST und SST (pion, kaon)
+
+Die T
+
 % Mistag-Wahrscheinlichkeit ω, Tagging-Dilution D = 1 - 2ω, Tagging power ε_eff = ε_tag D^2
 % Tagger geben Mistag-Schätzung η heraus, muss kalibriert werden, dazu Kanäle mit self-tagging final state
 % ε_eff, ε_tag
@@ -207,14 +210,17 @@ Für die Bestimmung von $\Delta m_{\Pqd}$ ist es ausgesprochen wichtig neben der
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
 Zur Kalibration wird der Datensatz je nach Größe des Mistag-Wertes $\eta$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
-Da hierbei möglichst nur Mistag-Werte des Signals verwendet werden sollten, wird vorher eine Trennung der Signalkomponente mittels des SPlot-Verfahrens durchgeführt.
+Das mittlere $η$ wird pro Kategorie berechnet.
+Da hierbei möglichst nur Mistag-Werte des Signals verwendet werden sollen, wird vorher eine Trennung der Signalkomponente mittels des SPlot-Verfahrens durchgeführt.
 
-Daraufhin wird ein simultaner Maximum-Likelihood-Fit aller Kategorien durchgeführt, wobei die Anzahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $\omega$ pro Kategorie einzeln gefittet wird.
+Daraufhin wird ein simultaner Maximum-Likelihood-Fit mit Events aller Kategorien durchgeführt, wobei die Anzahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $\omega$ pro Kategorie einzeln gefittet werden.
 Verwendet werden dabei die Massen- und Zerfallszeit-Verteilungen des Datensatzes, sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Anfangszustandes erlaubt.
 Anschließend werden die 5 $(\eta, \omega)$-Wertepaare sowohl linear als auch quadratisch gefittet.
 
 An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $\eta(\omega)$ (linear, quadratisch) vorzuziehen ist.
-Mittels der Koeffizienten $p_i$ aus dem n Fit lässt sich eine Kalibrierung des Datensatzes durchführen, indem die $η$-Werte des neuronalen Netzes in kalibrierte Mistag-Werte $η_C$ mittels der Parametrisierung umgerechnet werden.
+Mittels der Koeffizienten $p_i$ aus dem Fit lässt sich eine Kalibrierung des Datensatzes durchführen, indem die $η$-Werte des neuronalen Netzes in kalibrierte Mistag-Werte $η_C$ mittels der Parametrisierung umgerechnet werden.
+
+Besonders interessant ist es, herauszufinden, ob die Kalibrations-Parametrisierung eines Kanals angewendet auf einen anderen Kanal wiederum eine sinnvolle Kalibration ergibt. Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf Kanälen verwenden könnte, die nicht über einen self-tagging Endzustand verfügen und daher auf eine korrekte Kenntnis der Mistag-Wahrscheinlichkeit angewiesen sind.
 
 % Der Plan:
 % Datensatz je nach η in 5 Kategorien aufteilen (Strategie überlegen, noch selbst implementieren?)
