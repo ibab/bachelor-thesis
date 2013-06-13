@@ -120,6 +120,10 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 % Warum interessant? -> sin(2β) lässt sich bestimmen, Test des Standardmodells
 
+% Aufstellen der Zerfallszustände
+% Rechnung, die zeigt dass Übergangsamplitude wie 1 \pm cos(Δm_d) geht
+% Berechnung der Mixing-Asymmetrie: (A - B) / (A + B)
+
 \begin{figure}
   \begin{tikzpicture}[line width=1.2 pt, scale=1.1]
     \draw[fermion] (-1,2.3) node [left] {\Pqd} -- (0,2);
@@ -151,6 +155,31 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
   \caption{bla}
 \end{figure}
 
+
+% B⁰ → J/ψ K*
+\begin{tikzpicture}[line width=1.2 pt, scale=2]
+  \draw[fermion] (0, 0.5) node [left] {\Pqd} -- (2, 0.5) node [right] {\Pqd};
+  \draw[fermionbar] (0, 0) node [left] {\Pqb} -- (0.75, 0);
+  \draw[fermionbar] (1.25, 0) -- (2, 0) node [right] {\Pqs};
+  \draw[vector] (0.75, 0) -- node [above] {\PW} (1.25, 0);
+  \draw[fermion] (1.25, 0) -- (2, -0.5) node [below] {\Pqc};
+  \draw[fermionbar] (0.75, 0) -- (1.500, -0.5) node [below] {\Pqc};
+\end{tikzpicture}
+
+% wrong attempt at B⁰ → D- π+
+%\begin{tikzpicture}[line width=1.2 pt, scale=2.0]
+%  \node (create) at (1.25, 0) {};
+%
+%  \draw[fermion]  (0, 0.5) node [left] {\Pqd} -- (1, 0.5);
+%  \draw[fermion]  (1, 0.5) -- (2, 1) node [right] {\Pqu};
+%  \draw[fermionbar] (0, -0.5) node [left] {\Pqb} -- (1, -0.5);
+%  \draw[fermionbar] (1, -0.5) -- (2, -1) node [right] {\Pqc};
+%  \draw[vector]     (0.8, 0.5) -- node [left] {\PW} (0.8, -0.5);
+%  \draw[fermionbar]    (create.center) -- (2, 0.375) node [right] {\Pqd};
+%  \draw[fermion]       (create.center) -- (2, -0.375) node [right] {\Pqd};
+%  \draw[gluon] (1, 0.5) -- (create.center);
+%\end{tikzpicture}
+
 %\begin{tikzpicture}[line width=1.2 pt, scale=1]
 %  \draw[fermion] (-1,2.3) -- (0,2);
 %  \draw[vector] (0,2) arc (160:0:1.025);
@@ -175,22 +204,33 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \subsection{Flavor-Tagging}
 
-Zur Bestimmung der Oszillationfrequenz $\Delta m_{\Pqd}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
+Zur Bestimmung der Oszillationsfrequenz $\Delta m_{\Pqd}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
 
-Der Endzustand kann aus den Zerfallsprodukten des Mesons bestimmt werden.
+Der Endzustand kann aus den Zerfallsprodukten der \PBz und \PaBz Mesonen bestimmt werden, wenn man einen Kanal mit self-tagging Endzustand wählt.
 
 Die Bestimmung des Anfangszustandes, die man als \emph{Flavor-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
 Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer während des Events erfolgter Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern. % DaVinci erwähnen
 
-Diese Einschätzung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $\omega$.
-Für die Bestimmung von $\Delta m_{\Pqd}$ ist es ausgesprochen wichtig neben der Tag-Entscheidung ($\PB$ oder $\PaB$) die Mistag-Wahrscheinlichkeit zu kennen, da sich diese als $D = (1 - 2\omega)$ in der Amplitude der Mixing-Wahrscheinlichkeit bemerkbar macht. Den Faktor $D$ bezeichnet man als \emph{Tagging-Dilution}.
+Die verwendeten Tagger lassen sich in zwei Typen unterteilen: Opposite-Side-Tagger (OST) und Same-Side-Tagger(SST).
+
+Die Opposite-Side-Tagger basieren darauf, dass \Pqb-Quarks fast ausschließlich in einem \Pqb\Paqb-Paar entstehen. Bildet dann z.B. das \Pqb-Quark ein \PaB-Meson, so könnte das ebenfalls entstandene \Paqb ein \PBp bilden, dessen Zerfallsprodukte einen Rückschluss auf seine Ladung und damit indirekt auf den Quarkinhalt des \PaB-Mesons ermöglichen.
+So kann das geladene \PB-Meson z.B. semileptonisch ($\Pqb \to \Pqc \Plepton \Pnulepton$) Zerfallen. Die Ladung des Leptons entspricht dann (bei Vernachlässigung von Prozessen höherer Ordnung) der gesuchten Mesonladung.\cite{ost}
+
+Die Same-Side-Tagger basieren auf der Betrachung von Hadronisierungsprozessen bei der Entstehung des \PB-Mesons.
+Ein entstandenes \Pqb-Quark benötigt zur Bildung eines \APB ein \APqd-Quark.
+Dieses ist mit sehr hoher Wahrscheinlichkeit zusammen mit einem \Pqd entstanden, welches wiederum ein Hadron bildet, z.B. ein Pion oder Kaon.
+Ist dieses geladen, so lässt sich aus der Ladung des Pions oder Kaons auf den Typ des \Pqd-Quarks im \PB-Meson schließen und damit sein Produktionszustand bestimmen.
+
+Die so ermittelte Tag-Entscheidung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $\omega$.
+
+%Für die Bestimmung von $\Delta m_{\Pqd}$ ist es ausgesprochen wichtig neben der Tag-Entscheidung ($\PB$ oder $\PaB$) die Mistag-Wahrscheinlichkeit zu kennen, da sich diese als $D = (1 - 2\omega)$ in der Amplitude der Mixing-Wahrscheinlichkeit bemerkbar macht. Den Faktor $D$ bezeichnet man als \emph{Tagging-Dilution}.
 % -> Zeigen
 % Warum wichtig? Nicht genug Statistik um sie mitzubestimmen?
 
 % OST, SST erklären (mit Bildern)
 
 Interessant sind Zerfallskanäle, die es durch ihre Beschaffenheit ermöglichen, den Anfangszustand aus den Zerfallsprodukten zu bestimmen, die also über einen sogenannten self-tagging Endzustand verfügen.
-Zu diesen Kanälen gehören $\PBz \to \PDp\Pgpm$ und $\PBz \to \PJpsi \PKs$.
+Zu diesen Kanälen gehören $\PBz \to \PDm \Pgpp$ und $\PBz \to \PJpsi \PKst$.
 % Interessant: Kanäle mit self-tagging final state
 %  z.B. B0 -> Dpi, B0 -> JpsiKst
 
@@ -209,18 +249,19 @@ Die T
 
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
-Zur Kalibration wird der Datensatz je nach Größe des Mistag-Wertes $\eta$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
-Das mittlere $η$ wird pro Kategorie berechnet.
-Da hierbei möglichst nur Mistag-Werte des Signals verwendet werden sollen, wird vorher eine Trennung der Signalkomponente mittels des SPlot-Verfahrens durchgeführt.
+Zur Kalibration wird der Datensatz je nach Größe der Mistag-Vorhersage $\eta$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
+Das mittlere $η$ wird jeweils für alle Signalereignisse pro Kategorie ermittelt. Die Trennung von Signal und Untergrund erfolgt hierbei über das SPlot-Verfahren.
 
-Daraufhin wird ein simultaner Maximum-Likelihood-Fit mit Events aller Kategorien durchgeführt, wobei die Anzahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $\omega$ pro Kategorie einzeln gefittet werden.
-Verwendet werden dabei die Massen- und Zerfallszeit-Verteilungen des Datensatzes, sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Anfangszustandes erlaubt.
-Anschließend werden die 5 $(\eta, \omega)$-Wertepaare sowohl linear als auch quadratisch gefittet.
+Daraufhin wird ein simultaner Extended-Maximum-Likelihood-Fit mit Events aller Kategorien durchgeführt, wobei die Anzahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $\omega$ pro Kategorie einzeln gefittet werden.
+Verwendet werden dabei die Massen- und Zerfallszeit-Verteilungen des Datensatzes, die Tag-Entscheidung des neuronalen Netzes sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Endzustandes erlaubt (\emph{self-tagging final state}).
+Aus der Tag-Entscheidung und dem Endzustand lässt sich bestimmen, ob (bei korrektem Tag) ein Wechsel des \Pqb-Flavors stattgefunden hat.
+Anschließend werden die 5 ermittelten $(\eta, \omega)$-Wertepaare sowohl linear als auch quadratisch gefittet.
 
 An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $\eta(\omega)$ (linear, quadratisch) vorzuziehen ist.
 Mittels der Koeffizienten $p_i$ aus dem Fit lässt sich eine Kalibrierung des Datensatzes durchführen, indem die $η$-Werte des neuronalen Netzes in kalibrierte Mistag-Werte $η_C$ mittels der Parametrisierung umgerechnet werden.
 
-Besonders interessant ist es, herauszufinden, ob die Kalibrations-Parametrisierung eines Kanals angewendet auf einen anderen Kanal wiederum eine sinnvolle Kalibration ergibt. Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf Kanälen verwenden könnte, die nicht über einen self-tagging Endzustand verfügen und daher auf eine korrekte Kenntnis der Mistag-Wahrscheinlichkeit angewiesen sind.
+Interessant ist es, herauszufinden ob die Kalibrations-Parametrisierung eines Kanals angewendet auf einen anderen Kanal wiederum eine sinnvolle Kalibration ergeben.
+Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf Zerfallskanäle anwenden könnte, bei denen ein Fit der Mistag-Wahrscheinlichkeit nicht möglich ist, zum Beispiel bei Kanälen, die CP-Verletzung zeigen. ($\PBz \to \PJpsi\PKst$)
 
 % Der Plan:
 % Datensatz je nach η in 5 Kategorien aufteilen (Strategie überlegen, noch selbst implementieren?)
@@ -276,8 +317,11 @@ Besonders interessant ist es, herauszufinden, ob die Kalibrations-Parametrisieru
   \caption{Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen Mistag-Wahrscheinlichkeiten $\omega$ und der vom neuronalen Netz geschätzten Mistag-Wahrscheinlichkeiten $\eta$}
 \end{figure}
 
+% oder auch nicht {
 % Alle Parameter (5 Kategorien) als Tabelle (Fehler mit Minos)
 % Alle Parameter (Massen-Fit) als Tabelle (Fehler mit Minos)
+% }
+
 % nach Background-Trennung mit SPlot: Mittelwerte von η bestimmt
 
 \subsection{Ermittlung der Kalibrationsparameter}
