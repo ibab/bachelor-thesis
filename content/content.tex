@@ -101,6 +101,8 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \subsection{CP-Verletzung im Standardmodell}
 
+% was ist direkte/indirekte CP-Verletzung?
+
 % Entdeckung
 \cite{wu}
 \cite{cp-lee-yang}
@@ -204,9 +206,10 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 \subsection{Flavor-Tagging}
 
-Zur Bestimmung der Oszillationsfrequenz $\Delta m_{\Pqd}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
+Zur Bestimmung der Oszillationsfrequenz $Δ m_{\Pqd}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
 
 Der Endzustand kann aus den Zerfallsprodukten der \PBz und \PaBz Mesonen bestimmt werden, wenn man einen Kanal mit self-tagging Endzustand wählt.
+Zu diesen Kanälen gehören $\PBz \to \PDm \Pgpp$ und $\PBz \to \PJpsi \PKst$ (und die entsprechenden ladungskonjugierten Kanäle).
 
 Die Bestimmung des Anfangszustandes, die man als \emph{Flavor-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
 Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer während des Events erfolgter Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern. % DaVinci erwähnen
@@ -214,31 +217,22 @@ Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werde
 Die verwendeten Tagger lassen sich in zwei Typen unterteilen: Opposite-Side-Tagger (OST) und Same-Side-Tagger(SST).
 
 Die Opposite-Side-Tagger basieren darauf, dass \Pqb-Quarks fast ausschließlich in einem \Pqb\Paqb-Paar entstehen. Bildet dann z.B. das \Pqb-Quark ein \PaB-Meson, so könnte das ebenfalls entstandene \Paqb ein \PBp bilden, dessen Zerfallsprodukte einen Rückschluss auf seine Ladung und damit indirekt auf den Quarkinhalt des \PaB-Mesons ermöglichen.
-So kann das geladene \PB-Meson z.B. semileptonisch ($\Pqb \to \Pqc \Plepton \Pnulepton$) Zerfallen. Die Ladung des Leptons entspricht dann (bei Vernachlässigung von Prozessen höherer Ordnung) der gesuchten Mesonladung.\cite{ost}
+So kann das geladene \PB-Meson z.B. semileptonisch ($\Pqb \to \Pqc \Plepton \Pnulepton$) zerfallen. Die Ladung des Leptons entspricht dann (bei Vernachlässigung von Prozessen höherer Ordnung) der gesuchten Mesonladung, die eine Bestimmung des \PB-Flavors erlaubt.\cite{ost}
 
 Die Same-Side-Tagger basieren auf der Betrachung von Hadronisierungsprozessen bei der Entstehung des \PB-Mesons.
 Ein entstandenes \Pqb-Quark benötigt zur Bildung eines \APB ein \APqd-Quark.
 Dieses ist mit sehr hoher Wahrscheinlichkeit zusammen mit einem \Pqd entstanden, welches wiederum ein Hadron bildet, z.B. ein Pion oder Kaon.
 Ist dieses geladen, so lässt sich aus der Ladung des Pions oder Kaons auf den Typ des \Pqd-Quarks im \PB-Meson schließen und damit sein Produktionszustand bestimmen.
 
-Die so ermittelte Tag-Entscheidung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $\omega$.
+Die so ermittelte Tag-Entscheidung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $ω$.
+Für die Berechnung von $Δ m_{\Pqd}$ ist es in erster Linie nicht wichtig, ω zu bestimmen.
+Ein Fit der $\PB$-Oszillation, deren Frequenz $Δ m_{\Pqd}$ entspricht, ermöglicht aber eine Bestimmung von $ω$ über die Amplitude der Schwingung.
+%Demonstrieren
+Wichtig ist eine genaue Kenntnis von $ω$ beispielsweise
 
-%Für die Bestimmung von $\Delta m_{\Pqd}$ ist es ausgesprochen wichtig neben der Tag-Entscheidung ($\PB$ oder $\PaB$) die Mistag-Wahrscheinlichkeit zu kennen, da sich diese als $D = (1 - 2\omega)$ in der Amplitude der Mixing-Wahrscheinlichkeit bemerkbar macht. Den Faktor $D$ bezeichnet man als \emph{Tagging-Dilution}.
-% -> Zeigen
-% Warum wichtig? Nicht genug Statistik um sie mitzubestimmen?
 
-% OST, SST erklären (mit Bildern)
-
-Interessant sind Zerfallskanäle, die es durch ihre Beschaffenheit ermöglichen, den Anfangszustand aus den Zerfallsprodukten zu bestimmen, die also über einen sogenannten self-tagging Endzustand verfügen.
-Zu diesen Kanälen gehören $\PBz \to \PDm \Pgpp$ und $\PBz \to \PJpsi \PKst$.
-% Interessant: Kanäle mit self-tagging final state
-%  z.B. B0 -> Dpi, B0 -> JpsiKst
-
-Die T
-
-% Mistag-Wahrscheinlichkeit ω, Tagging-Dilution D = 1 - 2ω, Tagging power ε_eff = ε_tag D^2
-% Tagger geben Mistag-Schätzung η heraus, muss kalibriert werden, dazu Kanäle mit self-tagging final state
-% ε_eff, ε_tag
+% Etwas zu Effizienzen sagen
+% Kalibrierung von η
 
 \subsection{Das SPlot-Verfahren?}
 
@@ -249,42 +243,38 @@ Die T
 
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
-Zur Kalibration wird der Datensatz je nach Größe der Mistag-Vorhersage $\eta$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
-Das mittlere $η$ wird jeweils für alle Signalereignisse pro Kategorie ermittelt. Die Trennung von Signal und Untergrund erfolgt hierbei über das SPlot-Verfahren.
+Zur Kalibration wird der Datensatz je nach Größe der Mistag-Vorhersage $η$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
+Das mittlere $η$ wird jeweils für alle Signalereignisse pro Kategorie ermittelt.
+Die Trennung von Signal und Untergrund erfolgt hierbei über das SPlot-Verfahren, wobei ausschließlich die Massenverteilung zur Unterscheidung von Signal und Untergrund verwendet wird.
 
-Daraufhin wird ein simultaner Extended-Maximum-Likelihood-Fit mit Events aller Kategorien durchgeführt, wobei die Anzahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $\omega$ pro Kategorie einzeln gefittet werden.
-Verwendet werden dabei die Massen- und Zerfallszeit-Verteilungen des Datensatzes, die Tag-Entscheidung des neuronalen Netzes sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Endzustandes erlaubt (\emph{self-tagging final state}).
-Aus der Tag-Entscheidung und dem Endzustand lässt sich bestimmen, ob (bei korrektem Tag) ein Wechsel des \Pqb-Flavors stattgefunden hat.
-Anschließend werden die 5 ermittelten $(\eta, \omega)$-Wertepaare sowohl linear als auch quadratisch gefittet.
+Aus dem Datensatz bekannt sind die Massen- und Zerfallszeit-Verteilungen der rekonstruierten \PB-Mesonen, die Tag-Entscheidung des neuronalen Netzes sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Endzustandes erlaubt (\emph{self-tagging final state}).
+Aus der Tag-Entscheidung und dem Endzustand lässt sich bestimmen, ob (bei korrektem Tag) ein Wechsel (Mixing) des \Pqb-Flavors stattgefunden hat.
+Mit der Kenntnis des Mixings lässt sich ein Histogramm der Asymmetrie-Verteilung $M(t)$ aufstellen, welche in einem zweidimensionalen, simultanen Extended-Maximum-Likelihood-Fit über Daten aller fünf Kategorien gefittet wird, wobei die Zahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $ω$ individuell pro Kategorie gefittet werden.
 
-An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $\eta(\omega)$ (linear, quadratisch) vorzuziehen ist.
+Anschließend werden die 5 ermittelten $(η, ω)$-Wertepaare sowohl linear als auch quadratisch gefittet.
+
+An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $η(ω)$ (linear, quadratisch) vorzuziehen ist.
 Mittels der Koeffizienten $p_i$ aus dem Fit lässt sich eine Kalibrierung des Datensatzes durchführen, indem die $η$-Werte des neuronalen Netzes in kalibrierte Mistag-Werte $η_C$ mittels der Parametrisierung umgerechnet werden.
 
-Interessant ist es, herauszufinden ob die Kalibrations-Parametrisierung eines Kanals angewendet auf einen anderen Kanal wiederum eine sinnvolle Kalibration ergeben.
-Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf Zerfallskanäle anwenden könnte, bei denen ein Fit der Mistag-Wahrscheinlichkeit nicht möglich ist, zum Beispiel bei Kanälen, die CP-Verletzung zeigen. ($\PBz \to \PJpsi\PKst$)
+Interessant ist es, herauszufinden ob die Kalibrations-Parametrisierung eines Kanals angewendet auf einen anderen Kanal wiederum eine sinnvolle Kalibration ergibt.
+Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf Zerfallskanäle anwenden könnte, bei denen ein Fit der Mistag-Wahrscheinlichkeit nicht möglich ist, zum Beispiel bei Kanälen, die CP-Verletzung zeigen. Ein wichtiges Beispiel ist $\PBz \to \PJpsi\PKshort$.
 
-% Der Plan:
-% Datensatz je nach η in 5 Kategorien aufteilen (Strategie überlegen, noch selbst implementieren?)
-% Simultanfit des geteilten Datensatzes (yields und ωs individuell, vielleicht auch Akzeptanzparameter)
-% Auf dem gesamten Datensatz Background-Trennung per SPlot und Berechnung des mittleren η in jeder Kategorie
-% Anschließend linearer (quadratischer) Fit der 5 η-ω-Punkte, Parameter p1, p2, (p3) ermitteln
-% Entscheidung: Was passt besser? (quadratisch auf SSπ, sonst linear)
-% Erzeugung eines neuen, kalibrierten Datensatzes
-% Wiederholung der Prozedur: Jetzt sollte ω ≈ η rauskommen
+Eine Kalibration des $\PBz \to \PJpsi\PKstz$-Datensatzes mit auf $\PBz \to \PDm \Pgpp$ ermittelten Parametern wird durchgeführt.
+Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 
 \subsection{Parametrisierung der Likelihood-Funktion}
 
 % Signal - Masse
 \begin{eqns}
-  P_\t{sig}(m; \mu, \sigma_1, \sigma_2, \sigma_3) & = & f^{12}_{m;\t{sig}} G(m; \mu, \sigma_1) + \\
-  && (1 - f^{12}_{m;\t{sig}}) f^{23}_{m;\t{sig}} G(m;\mu,\sigma_2) + \\
-  &&(1 - (1 - f^{12}_{m;\t{sig}}) f^{23}_{m;\t{sig}}) G(m; \mu, \sigma_3)
+  P_\t{sig}(m; μ, σ_1, σ_2, σ_3) & = & f^{12}_{m;\t{sig}} G(m; μ, σ_1) + \\
+  && (1 - f^{12}_{m;\t{sig}}) f^{23}_{m;\t{sig}} G(m;μ,σ_2) + \\
+  &&(1 - (1 - f^{12}_{m;\t{sig}}) f^{23}_{m;\t{sig}}) G(m; μ, σ_3)
 \end{eqns}
 
 % Signal - Zeit
-\begin{eqns}
-  P_\t{sig}(t,q;\tau,\Delta m_{\Pqd}, \omega, s_\t{sig} = M(t, q; \tau, \Delta m_{\Pqd}, \omega) \otimes R(t;s_\t{sig})
-\end{eqns}
+\begin{eqn}
+  P_\t{sig}(t,q;τ,Δ m_{\Pqd}, ω, s_\t{sig} = M(t, q; τ, \Delta m_{\Pqd}, ω) \otimes R(t;s_\t{sig})
+\end{eqn}
 
 % m-t Fit in 5 Kategorien:
 % Signal-pdf und zwei kombinatorische backgrounds
@@ -295,7 +285,7 @@ Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf
 % es werden die Massen-pdfs von oben verwendet
 
 \begin{eqn}
-  M_\t{sig}(t) = \frac{N_\t{unmixed}(t) - N_\t{mixed}(t)}{N_\t{unmixed}(t) + N_\t{mixed}(t)} = \cos(\Delta m_{\Pqd} t)
+  M_\t{sig}(t) = \frac{N_\t{unmixed}(t) - N_\t{mixed}(t)}{N_\t{unmixed}(t) + N_\t{mixed}(t)} = \cos(Δ m_{\Pqd} t)
 \end{eqn}
 
 \url{git@github.com:ibab/thesis}
@@ -314,7 +304,7 @@ Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf
 
 \begin{figure}
   \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
-  \caption{Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen Mistag-Wahrscheinlichkeiten $\omega$ und der vom neuronalen Netz geschätzten Mistag-Wahrscheinlichkeiten $\eta$}
+  \caption{Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen Mistag-Wahrscheinlichkeiten $ω$ und der vom neuronalen Netz geschätzten Mistag-Wahrscheinlichkeiten $η$}
 \end{figure}
 
 % oder auch nicht {
