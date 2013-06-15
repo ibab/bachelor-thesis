@@ -121,10 +121,11 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 
 % Warum interessant? -> sin(2β) lässt sich bestimmen, Test des Standardmodells
 
-% Zeigen: es gibt Oszillation zwischen neutralen B-Mesonen (siehe Diagramme)
+% entdeckt: Argus
+
+% zeigen: es gibt Oszillation zwischen neutralen B-Mesonen (siehe Diagramme)
 % Nehmen wir eine beliebige Überlagerung
 % Hamiltonian sieht so aus:
-Hamilton-Matrix
 \begin{eqn}
   \begin{pmatrix}
     M_{11}-\frac{\I}{2} Γ_{11} & M_{12}-\frac{\I}{2} Γ_{12} \\
@@ -135,6 +136,12 @@ Hamilton-Matrix
 
 % Rechnung, die zeigt dass Übergangsamplitude wie 1 \pm cos(Δm_d) geht
 % Berechnung der Mixing-Asymmetrie: (A - B) / (A + B)
+% Mixing: q
+
+\begin{eqn}
+  M_\t{sig}(t) = \frac{N_{q=1}(t) - N_{q=-1}(t)}{N_{q=1}(t) + N_\t{q=-1}(t)} = \cos(\difference{m_{\Pqd}} t)
+  \label{mixing}
+\end{eqn}
 
 \cite{babar-book}
 
@@ -180,33 +187,6 @@ Hamilton-Matrix
   \draw[fermionbar] (0.75, 0) -- (1.500, -0.5) node [below] {\Pqc};
 \end{tikzpicture}
 
-% wrong attempt at B⁰ → D- π+
-%\begin{tikzpicture}[line width=1.2 pt, scale=2.0]
-%  \node (create) at (1.25, 0) {};
-%
-%  \draw[fermion]  (0, 0.5) node [left] {\Pqd} -- (1, 0.5);
-%  \draw[fermion]  (1, 0.5) -- (2, 1) node [right] {\Pqu};
-%  \draw[fermionbar] (0, -0.5) node [left] {\Pqb} -- (1, -0.5);
-%  \draw[fermionbar] (1, -0.5) -- (2, -1) node [right] {\Pqc};
-%  \draw[vector]     (0.8, 0.5) -- node [left] {\PW} (0.8, -0.5);
-%  \draw[fermionbar]    (create.center) -- (2, 0.375) node [right] {\Pqd};
-%  \draw[fermion]       (create.center) -- (2, -0.375) node [right] {\Pqd};
-%  \draw[gluon] (1, 0.5) -- (create.center);
-%\end{tikzpicture}
-
-%\begin{tikzpicture}[line width=1.2 pt, scale=1]
-%  \draw[fermion] (-1,2.3) -- (0,2);
-%  \draw[vector] (0,2) arc (160:0:1.025);
-%  \draw[fermion] (2,2) -- (3,2.3);
-%  %
-%  \draw[fermion] (0,2) -- (1,1);
-%  \draw[fermion] (1,1) -- (2,2);
-%  %
-%  \draw[vector] (1,1) -- (1,-.5);
-%  \draw[fermion] (3,-1) -- (1,-.5);
-%  \draw[fermion] (1,-.5) -- (-1,-1);
-%\end{tikzpicture}
-
 \section{Experimentelle Grundlagen}
 
 % blabla
@@ -218,7 +198,7 @@ Hamilton-Matrix
 
 \subsection{Flavor-Tagging}
 
-Zur Bestimmung der Oszillationsfrequenz $Δ m_{\Pqd}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
+Zur Bestimmung der Oszillationsfrequenz $\difference{m_{\Pqd}}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
 
 Der Endzustand kann aus den Zerfallsprodukten der \PBz und \PaBz Mesonen bestimmt werden, wenn man einen Kanal mit self-tagging Endzustand wählt.
 Zu diesen Kanälen gehören $\PBz \to \PDm \Pgpp$ und $\PBz \to \PJpsi \PKst$ (und die entsprechenden ladungskonjugierten Kanäle).
@@ -228,7 +208,7 @@ Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werde
 
 Die verwendeten Tagger lassen sich in zwei Typen unterteilen: Opposite-Side-Tagger (OST) und Same-Side-Tagger(SST).
 
-Die Opposite-Side-Tagger basieren darauf, dass \Pqb-Quarks fast ausschließlich in einem \Pqb\Paqb-Paar entstehen. Bildet dann z.B. das \Pqb-Quark ein \PaB-Meson, so könnte das ebenfalls entstandene \Paqb ein geladenes Meson, nämlich ein \PBp bilden, dessen Zerfallsprodukte einen Rückschluss auf seine Ladung und damit indirekt auf den Quarkinhalt des \PaB-Mesons ermöglichen.
+Die Opposite-Side-Tagger basieren auf der Tatsache, dass \Pqb-Quarks fast ausschließlich in einem \Pqb\Paqb-Paar entstehen. Bildet dann z.B. das \Pqb-Quark ein \PaB-Meson, so könnte das ebenfalls entstandene \Paqb ein geladenes Meson, nämlich ein \PBp bilden, dessen Zerfallsprodukte einen Rückschluss auf seine Ladung und damit indirekt auf den Quarkinhalt des \PaB-Mesons ermöglichen.
 So kann das geladene \PB-Meson z.B. semileptonisch ($\Pqb \to \Pqc \Plepton \Pnulepton$) zerfallen. Die Ladung des Leptons entspricht dann (bei Vernachlässigung von Prozessen höherer Ordnung) der gesuchten Mesonladung, die eine Bestimmung des \PB-Flavors erlaubt.\cite{ost}
 
 Die Same-Side-Tagger basieren auf der Betrachung von Hadronisierungsprozessen bei der Entstehung des \PB-Mesons.
@@ -237,26 +217,43 @@ Dieses ist mit sehr hoher Wahrscheinlichkeit zusammen mit einem \Pqd entstanden,
 Ist dieses geladen, so lässt sich aus der Ladung des Pions oder Kaons auf den Typ des \Pqd-Quarks im \PB-Meson schließen und damit sein Produktionszustand bestimmen.
 
 Die so ermittelte Tag-Entscheidung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $ω$.
-Für die Berechnung von $Δ m_{\Pqd}$ ist es in erster Linie nicht wichtig, $ω$ zu bestimmen.
-Ein Fit der \PB-Oszillation ermöglicht aber nebenbei eine Bestimmung von $ω$ über die Amplitude der Schwingung.
-%Demonstrieren
-% D = 1 - 2ω
+Sie kann zwischen $0$ (immer korrekt) und $0.5$ (zufällige Entscheidung) liegen.
+Werte zwischen $0.5$ und $1$ sind auch zulässig, man könnte die Mistag-Wahrscheinlichkeit dann aber durch Umdrehen aller Tag-Entscheidungen wieder in das erste Intervall umklappen.
+
+Die Mistag-Wahrscheinlichkeit taucht bei einer Bestimmung von $\difference{m_{\Pqd}}$ als Parameter auf, da sie die Amplitude der Mixing-Verteilung \eqref{mixing} verringert.
+Dies lässt sich wie folgt verstehen:
+Wird den zerfallenen Mesonen mit der Wahrscheinlichkeit $ω$ der falsche Tag  zugeordnet, so setzen sich die gemessenen Anzahlen von gemischten und ungemischten Ereignissen pro Zeitintervall über
+\begin{eqns}
+  N_{q=1,\t{measured}} &=& (1-ω) N_{q=1} + ω N_{q=-1} \\
+  N_{q=-1,\t{measured}} &=& (1-ω) N_{q=-1} + ω N_{q=1}
+\end{eqns}
+zusammen.
+
+Nach Einsetzen in \eqref{mixing} ergibt sich also
+\begin{eqns}
+  M_\t{sig} &=& \frac{(1-ω) N_{q=1} + ω N_{q=-1} - (1-ω) N_{q=-1} - ω N_{q=1}}
+                     {(1-ω) N_{q=1} + ω N_{q=-1} + (1-ω) N_{q=-1} + ω N_{q=1}} \\
+            &=& (1-2ω) \frac{N_{q=1} - N_{q=-1}}{N_{q=1} + N_{q=-1}} \\
+            &=& (1-2ω) \cos(\difference{m_{\Pqd}} t)
+  \label{mixing}
+\end{eqns}
+Den Faktor $D = 1 - 2ω$ bezeichnet man als \emph{Dilution}.
 
 Zur Bewertung des Taggings lässt sich die Tagging-Effizienz $ε_\t{tag}$ einführen.
-Diese ist einfach das Verhältnis zwischen der Anzahl getaggter und ungetaggter Signalereignisse.
+Diese ist einfach das Verhältnis zwischen der Anzahl der getaggten und aller Signalereignisse.
 Darüber lässt sich eine effektive Effizienz oder Tagging-Power als $ε_\t{eff} = ε_\t{tag} D^2$ definieren.
 Diese macht eine Aussage über die statistische Genauigkeit des Tagging-Samples.
 
 Wichtig ist eine genaue Kenntnis von $ω$ beispielsweise bei einer Messung der zeitabhängigen CP-Verletzung in der Oszillation neutraler \PB-Mesonen.
-Hier misst man auf einem Kanal, der zwar nicht über einen self-tagging Endzustand verfügt, bei dem aber die Wahrscheinlichkeit, dass ein entstandenes Meson im Zustand \PBz oder \APBz zerfällt eine in der Zeit oszillierende Asymmetrie aufweist.
+Hier misst man auf einem Kanal, der zwar nicht über einen self-tagging Endzustand verfügt, bei dem aber die Wahrscheinlichkeit, dass ein entstandenes Meson im Zustand \PBz oder \PaBz zerfällt eine in der Zeit oszillierende Asymmetrie aufweist.
 Die CP-Verletzung ist hier also für die Amplitude der beobachteten Schwingung verantwortlich.
 Von kritischer Bedeutung für die Messung ist es daher, alle Faktoren, die die gemessene Amplitude beeinflussen, möglichst präzise zu bestimmen.
 Dazu gehört neben der Zeitauflösung in erster Linie die Mistag-Wahrscheinlichkeit.
 
 Da ein direkter Fit der Mistag-Wahrscheinlichkeit, anders als bei einem Kanal mit self-tagging Endzustand, hier nicht möglich ist, muss ein anderer Weg gefunden werden, um eine möglichst präzise Abschätzung von $ω$ zu erhalten.
 Die verwendeten neuronalen Netze geben hierzu für jedes getaggte Event einen Mistag-Wert $η$ aus.
-Dieser muss aber zuerst nicht $ω$ entsprechen.
-Durch einen $\difference{m_{\Pqd}}$-Fit lässt sich aber eine direkte Gegenüberstellung des tatsächlichen (gefitteten) $ω$ und der Abschätzung $η$ erzeugen, die das Erstellen einer Parametrisierung erlaubt mit deren Hilfe man zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umrechnen kann.
+Dieser entspricht in der Regel aber nicht $ω$, sondern ist lediglich stark mit $ω$ korreliert.
+Durch einen $\difference{m_{\Pqd}}$-Fit lässt sich eine direkte Gegenüberstellung des tatsächlichen (gefitteten) $ω$ und der Abschätzung $η$ erzeugen, die das Erstellen einer Parametrisierung erlaubt, mit deren Hilfe man zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umrechnen kann.
 Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
 
 \subsection{Das sPlot-Verfahren?}
@@ -264,34 +261,41 @@ Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
 \section{Datensatz}
 \label{datensatz}
 
-% Bd -> J/psi Kst 2012
-% BDT
+% B0 -> J/psi Kst
+% LHCb Datensatz 2012
+% BDT: warum und wie
 
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
-Das erste Ziel der vorliegenden Analyse ist es, eine Kalibration des Same-Side-Pion-Taggers auf dem in \ref{datensatz} beschriebenen Datensatz durchzuführen.
+Das erste Ziel der vorliegenden Analyse ist es, eine Kalibration des Same-Side-Pion-Taggers auf dem in Kapitel \ref{datensatz} beschriebenen Datensatz durchzuführen.
 Das zweite Ziel ist ein Wiederholen der Analyse auf einer Version des beschriebenen Datensatzes, die mittels einer auf $\PBz \to \PDm\Pgpp$ gewonnenen Kalibrationsparametrisierung kalibriert wurde.
 
 Zur Kalibration wird der Datensatz je nach Größe der Mistag-Vorhersage $η$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
 Das mittlere $η$ wird jeweils für alle Signalereignisse pro Kategorie ermittelt.
-Die Trennung von Signal und Untergrund erfolgt hierbei über das sPlot-Verfahren\cite{splot}, wobei ausschließlich die Massenverteilung zur Unterscheidung von Signal und Untergrund verwendet wird.
+Die Trennung von Signal und Untergrund erfolgt hierbei über das $_S$Plot-Verfahren\cite{splot}, wobei ausschließlich die Massenverteilung zur Unterscheidung von Signal und Untergrund verwendet wird.
 
 Aus dem Datensatz bekannt sind die Massen- und Zerfallszeit-Verteilungen der rekonstruierten \PB-Mesonen, die Tag-Entscheidung des neuronalen Netzes sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Endzustandes erlaubt (\emph{self-tagging final state}).
 Aus der Tag-Entscheidung und dem Endzustand lässt sich bestimmen, ob (bei korrektem Tag) ein Wechsel (Mixing) des \Pqb-Flavors stattgefunden hat.
-Mit der Kenntnis des Mixings lässt sich ein Histogramm der Asymmetrie-Verteilung $M(t)$ aufstellen, welche in einem zweidimensionalen, simultanen Extended-Maximum-Likelihood-Fit über Daten aller fünf Kategorien gefittet wird, wobei die Zahl der Signal- und Untergrundereignisse sowie die Mistag-Wahrscheinlichkeit $ω$ individuell pro Kategorie gefittet werden.
+Mittels dieser Informationen kann ein zweidimensionaler, simultaner Extended-Maximum-Likelihood-Fit über Daten aller fünf Kategorien durchgeführt werden, wobei die Anzahl von Signal- und Untergrundereignissen sowie die Mistag-Wahrscheinlichkeit pro Kategorie individuell gefittet werden.
+Das dafür verwendete Wahrscheinlichkeitsmodell wird in Kapitel \ref{likelihood} erläutert.
 
-Anschließend werden die 5 ermittelten $(η, ω)$-Wertepaare sowohl linear als auch quadratisch gefittet.
+Interessante Parameter, die sich aus dem Fit bestimmen lassen, sind $\difference{m_{\Pqd}}$, die Mistag-Wahrscheinlichkeiten $ω_i$ und die Signal-Yields $N_{\t{sig},i}$.
+Der ermittelte, geblindete Wert für $\difference{m_{\Pqd}}$ wird für die weitere Analyse nicht benötigt.
 
-An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $η(ω)$ (linear, quadratisch) vorzuziehen ist.
+Aus den $ω_i$ und $N_{\t{sig},i}$ lassen sich die Dilution, die Tagging-Effizienz und damit die Tagging-Power berechnen.
+
+Die 5 ermittelten $(η_i, ω_i)$-Wertepaare werden nun sowohl linear als auch quadratisch gefittet.
+An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $ω(η)$ (linear, quadratisch) vorzuziehen ist.
 Mittels der Koeffizienten $p_i$ aus dem Fit lässt sich eine Kalibrierung des Datensatzes durchführen, indem die $η$-Werte des neuronalen Netzes in kalibrierte Mistag-Werte $η_C$ mittels der Parametrisierung umgerechnet werden.
 
 Interessant ist es, herauszufinden ob die Kalibrations-Parametrisierung eines Kanals angewendet auf einen anderen Kanal wiederum eine sinnvolle Kalibration ergibt.
 Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf Zerfallskanäle anwenden könnte, bei denen ein Fit der Mistag-Wahrscheinlichkeit nicht möglich ist, zum Beispiel bei Kanälen, die CP-Verletzung zeigen. Ein wichtiges Beispiel ist $\PBz \to \PJpsi\PKshort$.
 
-Ein mit auf $\PBz \to \PDm \Pgpp$ ermittelten Parametern kalibrierter $\PBz \to \PJpsi\PKsz$-Datensatz wurde bereitgestellt.
+Ein mit auf $\PBz \to \PDm \Pgpp$ ermittelten Parametern kalibrierter $\PBz \to \PJpsi\PKst$-Datensatz wurde bereitgestellt.
 Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 
 \subsection{Parametrisierung der Likelihood-Funktion}
+\label{likelihood}
 
 % Signal - Masse
 \begin{eqns}
@@ -302,7 +306,7 @@ Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 
 % Signal - Zeit
 \begin{eqn}
-  P_\t{sig}(t,q;τ,Δ m_{\Pqd}, ω, s_\t{sig} = M(t, q; τ, \Delta m_{\Pqd}, ω) \otimes R(t;s_\t{sig})
+  P_\t{sig}(t,q;τ,\difference{m_{\Pqd}}, ω, s_\t{sig} = M(t, q; τ, \Delta m_{\Pqd}, ω) \otimes R(t;s_\t{sig})
 \end{eqn}
 
 % m-t Fit in 5 Kategorien:
@@ -313,28 +317,18 @@ Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 % m-Fit für SPlot
 % es werden die Massen-pdfs von oben verwendet
 
-\begin{eqn}
-  M_\t{sig}(t) = \frac{N_\t{unmixed}(t) - N_\t{mixed}(t)}{N_\t{unmixed}(t) + N_\t{mixed}(t)} = \cos(\difference{m_{\Pqd}} t)
-\end{eqn}
+% Akzeptanz erwähnen
+% Blinding erwähnen
 
-\url{git@github.com:ibab/thesis}
+\subsection{Implementierung und Durchführung des Fits mittels des \texttt{RooFit}-Frameworks}
 
-\subsection{Implementierung und Durchführung des Fits}
-
-\subsubsection{Implementierung des Wahrscheinlichkeitsmodells mittels des \texttt{RooFit}-Frameworks}
 % wie genau mit RooFit implementiert?
+% Blinding
 % Startwerte nachlesbar hier und da
 
 % RooGaussian, RooExponential, RooDecay, RooBMixDecay, RooSimPdfBuilder
 
-\subsubsection{Durchführung der Optimierung}
-
 \subsection{Fitresultate}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
-  \caption{Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen Mistag-Wahrscheinlichkeiten $ω$ und der vom neuronalen Netz geschätzten Mistag-Wahrscheinlichkeiten $η$}
-\end{figure}
 
 % oder auch nicht {
 % Alle Parameter (5 Kategorien) als Tabelle (Fehler mit Minos)
@@ -343,13 +337,42 @@ Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 
 % nach Background-Trennung mit SPlot: Mittelwerte von η bestimmt
 
+\begin{table}
+  \begin{tabular}{S[table-format=0.3] S[table-format=0.4] S[table-format=0.4]}
+    \toprule
+$η$ & $ω$ & $σ_ω$ \\
+    \midrule
+% eta, eta_err, omega, omega_err
+0.421  & 0.4574 & 0.0048 \\
+0.378  & 0.4292 & 0.0055 \\
+0.328  & 0.3738 & 0.0081 \\
+0.279  & 0.306 & 0.013 \\
+0.230  & 0.234 & 0.025 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \subsection{Ermittlung der Kalibrationsparameter}
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
+  \caption{Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen Mistag-Wahrscheinlichkeiten $ω$ und der vom neuronalen Netz geschätzten Mistag-Wahrscheinlichkeiten $η$}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp-calibrated/plot.pdf}
+\end{figure}
+
 % wie gefittet?
-% Tabelle der ermittelten ω, η
+
 % Plot mit linearem Fit
 % Entkorrelierung: Nullpunkt wird zum Schwerpunkt verschoben
 % Tabelle mit p1, p2, (p3) + Korrelationsmatrix
+
+\begin{figure}
+  \includegraphics[width=0.49\textwidth]{analysis/JpsiKst-SSp/linear-correlation.pdf}
+  \includegraphics[width=0.49\textwidth]{analysis/JpsiKst-SSp/quadratic-correlation.pdf}
+\end{figure}
 
 \section{Schlussfolgerungen}
 
