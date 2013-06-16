@@ -4,20 +4,20 @@
 
 \section{Standardmodell der Teilchenphysik}
 
-Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
-Es basiert auf der Symmetrie
-\begin{eqn}
-  SU(3)_c \otimes SU(2)_L \otimes U(1)_Y\:,
-\end{eqn}
-wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L \otimes U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
+%Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
+%Es basiert auf der Symmetrie
+%\begin{eqn}
+%  SU(3)_c \otimes SU(2)_L \otimes U(1)_Y\:,
+%\end{eqn}
+%wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L \otimes U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
+%
+%Trotz der Erfolge des Standardmodells kann es sich dabei nicht um eine endgültige Theorie aller physikalischer Effekte handeln.
+%So gibt es noch keine allgemein akzeptierte Methode, um Gravitation in das Standardmodell mit einzubeziehen.
+%Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Standardmodell erklären lassen, wie zum Beispiel das Vorhandensein und die Natur von dunkler Materie und dunkler Energie, die unerklärt hohe Materie-Antimaterie-Asymmetrie im Universum, die Neutrinomassen, sowie das Verhalten des Standardmodells bei sehr hohen Energien (das Hierarchieproblem).
 
-Trotz der Erfolge des Standardmodells kann es sich dabei nicht um eine endgültige Theorie aller physikalischer Effekte handeln.
-So gibt es noch keine allgemein akzeptierte Methode, um Gravitation in das Standardmodell mit einzubeziehen.
-Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Standardmodell erklären lassen, wie zum Beispiel das Vorhandensein und die Natur von dunkler Materie und dunkler Energie, die unerklärt hohe Materie-Antimaterie-Asymmetrie im Universum, die Neutrinomassen, sowie das Verhalten des Standardmodells bei sehr hohen Energien (das Hierarchieproblem).
+\subsection{Flavour-Sektor im Standardmodell}
 
-\subsection{Flavor-Sektor im Standardmodell}
-
-% 6 Quark-Flavors
+% 6 Quark-Flavours
 
 \begin{eqn}
   \begin{pmatrix}
@@ -132,7 +132,7 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
     M^*_{12}-\frac{\I}{2} Γ^*_{12} & M_{22}-\frac{\I}{2} Γ_{22} \\
   \end{pmatrix}
 \end{eqn}
-% Flavor-Eigenzustände sind nicht gleich den Massen-Zuständen: M_L, M_H
+% Flavour-Eigenzustände sind nicht gleich den Massen-Zuständen: M_L, M_H
 
 % Rechnung, die zeigt dass Übergangsamplitude wie 1 \pm cos(Δm_d) geht
 % Berechnung der Mixing-Asymmetrie: (A - B) / (A + B)
@@ -196,24 +196,24 @@ Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Stand
 % Bild des Detektors
 % 1, 2 Sätze zu den wichtigsten Komponenten
 
-\subsection{Flavor-Tagging}
+\subsection{Flavour-Tagging}
 
 Zur Bestimmung der Oszillationsfrequenz $\difference{m_{\Pqd}}$ der produzierten $\PB$- und $\PaB$-Mesonen muss neben den Lebensdauern der einzelnen beobachteten Mesonen sowohl deren End-, als auch deren Anfangszustand bekannt sein.
 
 Der Endzustand kann aus den Zerfallsprodukten der \PBz und \PaBz Mesonen bestimmt werden, wenn man einen Kanal mit self-tagging Endzustand wählt.
 Zu diesen Kanälen gehören $\PBz \to \PDm \Pgpp$ und $\PBz \to \PJpsi \PKst$ (und die entsprechenden ladungskonjugierten Kanäle).
 
-Die Bestimmung des Anfangszustandes, die man als \emph{Flavor-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
-Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer während des Events erfolgter Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern. % DaVinci erwähnen
+Die Bestimmung des Anfangszustandes, die man als \emph{Flavour-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
+Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer, während des Events erfolgter, Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern. % DaVinci erwähnen
 
 Die verwendeten Tagger lassen sich in zwei Typen unterteilen: Opposite-Side-Tagger (OST) und Same-Side-Tagger(SST).
 
-Die Opposite-Side-Tagger basieren auf der Tatsache, dass \Pqb-Quarks fast ausschließlich in einem \Pqb\Paqb-Paar entstehen. Bildet dann z.B. das \Pqb-Quark ein \PaB-Meson, so könnte das ebenfalls entstandene \Paqb ein geladenes Meson, nämlich ein \PBp bilden, dessen Zerfallsprodukte einen Rückschluss auf seine Ladung und damit indirekt auf den Quarkinhalt des \PaB-Mesons ermöglichen.
-So kann das geladene \PB-Meson z.B. semileptonisch ($\Pqb \to \Pqc \Plepton \Pnulepton$) zerfallen. Die Ladung des Leptons entspricht dann (bei Vernachlässigung von Prozessen höherer Ordnung) der gesuchten Mesonladung, die eine Bestimmung des \PB-Flavors erlaubt.\cite{ost}
+Die Opposite-Side-Tagger basieren auf der Tatsache, dass \Pqb-Quarks fast ausschließlich als \Pqb\Paqb-Paar entstehen. Bildet dann z.B. das \Pqb-Quark ein \PaB-Meson, so könnte das ebenfalls entstandene \Paqb ein geladenes Meson, nämlich ein \PBp bilden, dessen Zerfallsprodukte einen Rückschluss auf seine Ladung und damit indirekt auf den Quarkinhalt des \PaB-Mesons ermöglichen.
+So kann das geladene \PB-Meson z.B. semileptonisch ($\Pqb \to \Pqc \Plepton \APnulepton$) zerfallen. Die Ladung des Leptons entspricht dann (bei Vernachlässigung der selteneren Zerfallsreihe $\Pqb \to \Pqc \to \Pqs \APlepton \Pnulepton$) der gesuchten Mesonladung, die eine Bestimmung des \PB-Flavours erlaubt.\cite{ost}
 
 Die Same-Side-Tagger basieren auf der Betrachung von Hadronisierungsprozessen bei der Entstehung des \PB-Mesons.
 Ein entstandenes \Pqb-Quark benötigt zur Bildung eines \APB ein \APqd-Quark.
-Dieses ist mit sehr hoher Wahrscheinlichkeit zusammen mit einem \Pqd entstanden, welches wiederum ein Hadron bildet, z.B. ein Pion oder Kaon.
+Dieses ist zusammen mit einem \Pqd entstanden, welches wiederum ein Hadron bildet, z.B. ein Pion oder Kaon.
 Ist dieses geladen, so lässt sich aus der Ladung des Pions oder Kaons auf den Typ des \Pqd-Quarks im \PB-Meson schließen und damit sein Produktionszustand bestimmen.
 
 Die so ermittelte Tag-Entscheidung ist nicht immer richtig; die Wahrscheinlichkeit, dass sie falsch ist bezeichnet man als Mistag-Wahrscheinlichkeit $ω$.
@@ -246,15 +246,19 @@ Diese macht eine Aussage über die statistische Genauigkeit des Tagging-Samples.
 
 Wichtig ist eine genaue Kenntnis von $ω$ beispielsweise bei einer Messung der zeitabhängigen CP-Verletzung in der Oszillation neutraler \PB-Mesonen.
 Hier misst man auf einem Kanal, der zwar nicht über einen self-tagging Endzustand verfügt, bei dem aber die Wahrscheinlichkeit, dass ein entstandenes Meson im Zustand \PBz oder \PaBz zerfällt eine in der Zeit oszillierende Asymmetrie aufweist.
-Die CP-Verletzung ist hier also für die Amplitude der beobachteten Schwingung verantwortlich.
+Die CP-Verletzung ist hier also für die Amplitude der beobachteten Oszillation verantwortlich.
 Von kritischer Bedeutung für die Messung ist es daher, alle Faktoren, die die gemessene Amplitude beeinflussen, möglichst präzise zu bestimmen.
 Dazu gehört neben der Zeitauflösung in erster Linie die Mistag-Wahrscheinlichkeit.
 
 Da ein direkter Fit der Mistag-Wahrscheinlichkeit, anders als bei einem Kanal mit self-tagging Endzustand, hier nicht möglich ist, muss ein anderer Weg gefunden werden, um eine möglichst präzise Abschätzung von $ω$ zu erhalten.
 Die verwendeten neuronalen Netze geben hierzu für jedes getaggte Event einen Mistag-Wert $η$ aus.
 Dieser entspricht in der Regel aber nicht $ω$, sondern ist lediglich stark mit $ω$ korreliert.
-Durch einen $\difference{m_{\Pqd}}$-Fit lässt sich eine direkte Gegenüberstellung des tatsächlichen (gefitteten) $ω$ und der Abschätzung $η$ erzeugen, die das Erstellen einer Parametrisierung erlaubt, mit deren Hilfe man zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umrechnen kann.
+Durch einen $\difference{m_{\Pqd}}$-Fit lässt sich eine direkte Gegenüberstellung des tatsächlichen (gefitteten) $ω$ und der Abschätzung $η$ erzeugen. Dieser Zusammenhang kann z.B. durch einen linearen Fit effektiv parametrisiert werden. Das so gewonnene $ω(η)$ erlaubt es, zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umzurechnen.
 Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
+
+\Comment{Abbildung OST/SST fehlt}
+
+\Comment{Verweise auf Literatur fehlen}
 
 \section{Datensatz}
 \label{datensatz}
@@ -266,23 +270,25 @@ Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
 Das erste Ziel der vorliegenden Analyse ist es, eine Kalibration des Same-Side-Pion-Taggers auf dem in Kapitel \ref{datensatz} beschriebenen Datensatz durchzuführen.
-Das zweite Ziel ist ein Wiederholen der Analyse auf einer Version des beschriebenen Datensatzes, die mittels einer auf $\PBz \to \PDm\Pgpp$ gewonnenen Kalibrationsparametrisierung kalibriert wurde.
+Das zweite Ziel ist ein Wiederholen der Analyse auf einer Version des beschriebenen Datensatzes, die mittels einer aus $\PBz \to \PDm\Pgpp$-Zerfällen gewonnenen Kalibrationsparametrisierung kalibriert wurde.
 
 Zur Kalibration wird der Datensatz je nach Größe der Mistag-Vorhersage $η$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
 Das mittlere $η$ wird jeweils für alle Signalereignisse pro Kategorie ermittelt.
-Die Trennung von Signal und Untergrund erfolgt hierbei über das $_S$Plot-Verfahren\cite{splot}, wobei ausschließlich die Massenverteilung zur Unterscheidung von Signal und Untergrund verwendet wird.
+Die Trennung von Signal und Untergrund erfolgt hierbei über das sPlot-Verfahren\cite{splot}, wobei ausschließlich die Massenverteilung zur Unterscheidung von Signal und Untergrund verwendet wird.
 
 Aus dem Datensatz bekannt sind die Massen- und Zerfallszeit-Verteilungen der rekonstruierten \PB-Mesonen, die Tag-Entscheidung des neuronalen Netzes sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Endzustandes erlaubt (\emph{self-tagging final state}).
-Aus der Tag-Entscheidung und dem Endzustand lässt sich bestimmen, ob (bei korrektem Tag) ein Wechsel (Mixing) des \Pqb-Flavors stattgefunden hat.
+% Zeigen: Was ist denn der Endzustand?
+Aus der Tag-Entscheidung und dem Endzustand lässt sich bestimmen, ob (bei korrektem Tag) ein Wechsel des \Pqb-Flavours stattgefunden hat.
 Mittels dieser Informationen kann ein zweidimensionaler, simultaner Extended-Maximum-Likelihood-Fit über Daten aller fünf Kategorien durchgeführt werden, wobei die Anzahl von Signal- und Untergrundereignissen sowie die Mistag-Wahrscheinlichkeit pro Kategorie individuell gefittet werden.
 Das dafür verwendete Wahrscheinlichkeitsmodell wird in Kapitel \ref{likelihood} erläutert.
 
 Interessante Parameter, die sich aus dem Fit bestimmen lassen, sind $\difference{m_{\Pqd}}$, die Mistag-Wahrscheinlichkeiten $ω_i$ und die Signal-Yields $N_{\t{sig},i}$.
 Der ermittelte geblindete Wert von $\difference{m_{\Pqd}}$ wird für die weitere Analyse nicht benötigt.
+% Erklärung: Was ist blinding, warum blindet man hier?
 
 Aus den $ω_i$ und $N_{\t{sig},i}$ lassen sich die Dilution, die Tagging-Effizienz und damit die Tagging-Power berechnen.
 
-Die 5 ermittelten $(η_i, ω_i)$-Wertepaare werden nun sowohl linear als auch quadratisch gefittet.
+Die 5 ermittelten $(η_i, ω_i)$-Wertepaare werden nun sowohl mit einer linearen, als auch mit einer quadratischen Funktion gefittet.
 An dieser Stelle wird entschieden, welche der beiden Parametrisierungen für $ω(η)$ (linear, quadratisch) vorzuziehen ist.
 Mittels der Koeffizienten $p_i$ aus dem Fit lässt sich eine Kalibrierung des Datensatzes durchführen, indem die $η$-Werte des neuronalen Netzes in kalibrierte Mistag-Werte $η_C$ mittels der Parametrisierung umgerechnet werden.
 
@@ -291,6 +297,8 @@ Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf
 
 Ein mit auf $\PBz \to \PDm \Pgpp$ ermittelten Parametern kalibrierter $\PBz \to \PJpsi\PKst$-Datensatz wurde bereitgestellt.
 Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
+
+\Comment{Verweise auf Literatur fehlen}
 
 \subsection{Parametrisierung der Likelihood-Funktion}
 \label{likelihood}
@@ -304,20 +312,38 @@ Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 
 % Signal - Zeit
 \begin{eqn}
-  P_\t{sig}(t,q;τ,\difference{m_{\Pqd}}, ω, s_\t{sig} = M(t, q; τ, \Delta m_{\Pqd}, ω) \otimes R(t;s_\t{sig})
+  P_\t{sig}(t,q;τ,\difference{m_{\Pqd}}, ω, s_\t{sig} = M(t, q; τ, \Delta m_{\Pqd}, ω) \otimes R(t;s)
 \end{eqn}
 % Akzeptanz erwähnen: atan(t * exp(t * p1 + p2))/π
-% Blinding string: 5isdown-3islong
 
 % Background - Masse
+\begin{eqn}
+  P_\t{bkg/lbg}(m;λ_t\{bkg/lbg}) = \exp(m; λ_\t{bkg/lbg})
+\end{eqn}
 
 % Background - Zeit
+\begin{eqns}
+  P_\t{bkg}(t;τ_1,s) &=& \exp(t; -\frac{1}{τ_1}) \otimes R(t; s) \\
+  P_\t{bkg}(t,q;τ_2,ω_\t{lbg}) &=& M(t,q; τ_2, 0, ω_\t{lbg}) \otimes R(t; s)
+\end{eqns}
 
-% m-t Fit in 5 Kategorien:
-% Signal-pdf und zwei kombinatorische backgrounds
+Damit ergibt sich für die gesamte Parametrisierung
+\begin{eqns}
+  P(t,q,m,; p_i) &=& N_\t{sig} P_\t{sig}(t,q) \cdot ε(t) \cdot P_\t{sig}(m) + \\
+                 && N_\t{bkg} P_\t{bkg}(t) \cdot P_\t{bkg}(m) + \\
+                 && N_\t{lbg} P_\t{lbg}(t,q) \cdot P_\t{lbg}(m)\:.
+\end{eqns}
+Hierbei ist $ε(t)$ eine Akzeptanzfunktion der Form $ε(t) = \frac{1}{π} \operatorname{atan}\left(\exp( p_1 t + p_2) t\right)$.
 
-% m-Fit für SPlot
-% es werden die Massen-pdfs von oben verwendet
+Beim für das sPlot-Verfahren benötigten Fit wird nur der Massenanteil der Wahrscheinlichkeitsdichte verwendet:
+\begin{eqn}
+  P_\t{sPlot} = N_\t{sig} P_\t{sig}(m; μ, σ_1, σ_2, σ_3) + N_\t{bkg} P_\t{bkg}(m; λ_\t{bkg})
+\end{eqn}
+Es wird außerdem nur eine der beiden Untergrundkomponenten einbezogen, da die beiden Komponenten in ihrer Massenverteilung identisch sind und deswegen bei einem reinen Massenfit stark korreliert wären.
+
+\Comment{Erklärung der einzelnen Komponenten}
+
+\Comment{Verweis auf Paper mit Begründungen}
 
 \subsection{Implementierung und Durchführung des Fits mittels des \texttt{RooFit}-Frameworks}
 
@@ -331,9 +357,9 @@ Das Einlesen von Startparametern und das Ausschreiben der gefitteten Parameter i
 
 \texttt{RooFit} wird in C++ konfiguriert und stellt vorgefertigte Wahrscheinlichkeitsfunktionen in einer Klassenhierarchie bereit.
 So kann eine Gauss-Verteilung mittels der \texttt{RooGaussian}-Klasse eingebunden werden, eine Exponentialfunktion über \texttt{RooExponential}, eine Exponentialfunktion mit Auflösungsmodell über \texttt{RooDecay}, usw.
-Besonders interessant ist die Klasse \textt{RooBMixDecay}, die ein direktes Einbinden eines \PB-Meson-Zerfalls mit den Parametern $\difference{m_{\Pqd}}$ und $ω$ erlaubt.
+Besonders interessant ist die Klasse \texttt{RooBMixDecay}, die ein direktes Einbinden eines \PB-Meson-Zerfalls mit den Parametern $\difference{m_{\Pqd}}$ und $ω$ erlaubt.
 
-\texttt{RooFit} erlaubt auch das Blinden von Parametern, wie es in diesem Fall für $\difference{m_\Pqd}$ durchgeführt wurde.
+\texttt{RooFit} erlaubt auch das Blinden von Parametern, wie es in diesem Fall für $\difference{m_{\Pqd}}$ durchgeführt wurde.
 Als Blinding-String wurde hierzu \texttt{"5isdown-3islong"} gewählt.
 
 Nützlich war auch die Klasse \texttt{RooSimPdfBuilder}, die mittels der gegebenen Wahrscheinlichkeitsfunktion ein Modell erzeugen kann, welches einzelne Parameter auf Teilen eines Datensatzes getrennt fittet, während die restlichen Parameter global über den gesamten Datensatz gefittet werden.
@@ -344,54 +370,129 @@ Das bedeutet, dass eine Steuerung über die Skriptsprache Python möglich ist, d
 Von dieser Option wurde in der vorliegenden Analyse intensiv Gebrauch gemacht, da Python im Vergleich zu C++ in der Regel eine höhere Flexibilität bietet und eine kürzere, und damit übersichtlichere Implementierung ermöglicht.
 
 Als besonders nützlich hat es sich erwiesen, die Definition des Wahrscheinlichkeitsmodells in eine externe Textdatei auszulagern, in der das Modell in einer \texttt{RooFit}-eigenen Syntax ausgedrückt wird.
-Der Inhalt der Datei kann dann Zeilenweise von einem \texttt{RooWorkspace}-Objekt eingelesen und verarbeitet werden.
+Der Inhalt der Datei kann dann zeilenweise von einem \texttt{RooWorkspace}-Objekt eingelesen und verarbeitet werden.
 So kann die Wahrscheinlichkeitsdichte wegen der spezifischen Syntax kürzer (und damit weniger fehleranfällig) implementiert und leicht durch Auswahl einer anderen Datei ausgetauscht werden.
+
+Das sPlot-Verfahren ist in der Bibliothek \texttt{RooStats} bereits implementiert und kann direkt angewendet werden.
 
 \subsection{Fitresultate}
 
-% oder auch nicht {
-% Alle Parameter (5 Kategorien) als Tabelle (Fehler mit Minos)
-% Alle Parameter (Massen-Fit) als Tabelle (Fehler mit Minos)
-% }
+Aus einem Fit der Massendistribution und Anwenden des sPlot-Verfahrens lässt sich ein sweighted-Datensatz generieren, der ein Berechnen der $η$-Mittelwerte der  Signalereignisse  erlaubt.
 
-% nach Background-Trennung mit SPlot: Mittelwerte von η bestimmt
+Aus einem Fit der gesamten Wahrscheinlichkeitsdichte (Massen- und Zeitkomponente) lassen sich die tatsächlichen mittleren Mistag-Wahrscheinlichkeiten $ω$ pro Kategorie ermitteln.
+
+Beide Größen sind in Tabelle \ref{fitresults1} für den unkalibrierten Datensatz und in \ref{fitresults2} für den kalibrierten dargestellt.
+Außerdem dargestellt ist die Anzahl an getaggten Signalereignissen pro Kategorie, welche aus dem Fit der gesamten Wahrscheinlichkeitsdichte gewonnen werden kann.
+
+Die Gesamtanzahl an Signalereignissen im Datensatz lässt sich nach Erzeugen des sweigted-Datensatzes gewinnen:
+\begin{eqns}
+  N_\t{sig,uncalib.} &=& 287900 \pm 600 \\
+  N_\t{sig,calib.}   &=& ... 
+\end{eqns}
+
+Aus den ermittelten Größen lässt sich nun die Tagging-Power berechnen.
+Dazu müssen zuerst die Dilution $D=(1-2ω)$ und die Tagging-Effizienz $ε_\t{tag} = \frac{N_{\t{sig,tagged}}}{N_\t{sig}}$ berechnet werden.
+Der Fehler von $ε_\t{tag}$ ergibt sich hierbei nicht direkt nach Gauß'scher Fehlerfortpflanzung, sondern über $\sqrt{\frac{ε_\t{tag} (1 - ε_\t{tag})}{N_\t{sig}}}$, da $N_\t{sig,tagged}$ und $N_\t{sig}$ miteinander korreliert sind.
+  Die Ergebnisse sind für die beiden Datensätze in den Tabellen \ref{efficiency1} und \ref{efficiency2} aufgetragen.
 
 \begin{table}
-  \begin{tabular}{S[table-format=0.3] S[table-format=0.4] S[table-format=0.4]}
+  \caption{Fitresultate für den unkalibrierten Datensatz:
+    Die pro Kategorie ermittelten Mistag-Mittelwerte $η$, die gefitteten mittleren Mistag-Wahrscheinlichkeiten $ω$ mit Fehler $σ_ω$ und die Anzahl der Signalereignisse $N_\t{sig}$ mit Fehler.
+Die Fehler von $η$ liegen in der Größenordnung $10^{-5}$ und werden vernachlässigt.
+  }
+  \begin{tabular}{l S[table-format=0.3] S[table-format=0.4] S[table-format=0.4] S[table-format=5.0] S[table-format=3.0]}
     \toprule
-$η$ & $ω$ & $σ_ω$ \\
+    Kategorie & $η$ & $ω$ & $σ_ω$ & $N_\t{sig,tagged}$ & $σ_{N_\t{sig,tagged}}$ \\
     \midrule
-% eta, eta_err, omega, omega_err
-0.421  & 0.4574 & 0.0048 \\
-0.378  & 0.4292 & 0.0055 \\
-0.328  & 0.3738 & 0.0081 \\
-0.279  & 0.306 & 0.013 \\
-0.230  & 0.234 & 0.025 \\
+% Kategorie, eta, omega, omega_err, N_sig, N_sig_err
+1 & 0.421 & 0.4574 & 0.0048 & 25470 & 410 \\
+2 & 0.378 & 0.4292 & 0.0055 & 17530 & 280 \\
+3 & 0.329 & 0.3738 & 0.0081 & 7950 & 140 \\
+4 & 0.28 & 0.306 & 0.013 & 2736 & 68 \\
+5 & 0.23 & 0.234 & 0.025 & 611 & 26 \\
     \bottomrule
   \end{tabular}
+  \label{fitresults1}
+\end{table}
+
+\begin{table}
+  \caption{Aus den Fitresultaten abgeleitete Größen:
+    Die Dilution $D$ mit Fehler, die Tagging-Effizienz $ε_\t{tag}$ mit Fehler und die Tagging-Power $ε_\t{eff}$ mit Fehler.
+  }
+  \begin{tabular}{l S[table-format=0.4] S[table-format=0.4] S[table-format=1.4] S[table-format=0.4] S[table-format=0.3] S[table-format=0.3]}
+    \toprule
+    Kategorie & {$D$} & {$σ_D$} & $ε_\t{tag}\:/\:\si{\percent}$ & $σ_{ε_\t{tag}}\:/\:\si{\percent}$ & $ε_\t{eff}\:/\:\si{\percent}$ & $σ_{ε_\t{eff}}\:/\:\si{\percent}$ \\
+    \midrule
+% Kategorie, D, D_err, eps_tag, eps_tag_err, eps_eff_err
+1 & 0.0852 & 0.0095 & 8.847 & 0.053 & 0.064 & 0.014 \\
+2 & 0.142 & 0.011 & 6.091 & 0.045 & 0.122 & 0.019 \\
+3 & 0.252 & 0.016 & 2.761 & 0.031 & 0.176 & 0.023 \\
+4 & 0.387 & 0.027 & 0.950 & 0.018 & 0.143 & 0.020 \\
+5 & 0.532 & 0.05 & 0.2122 & 0.0086 & 0.060 & 0.012 \\
+    \bottomrule
+Insgesamt &&&&& 0.57 & 0.04 \\
+    \bottomrule
+  \end{tabular}
+  \label{efficiency1}
+\end{table}
+
+\begin{table}
+  \begin{tabular}{l S[table-format=0.3] S[table-format=0.4] S[table-format=0.4] S[table-format=5.0] S[table-format=3.0]}
+    \toprule
+    Kategorie & $η$ & $ω$ & $σ_ω$ & $N_\t{sig,tagged}$ & $σ_{N_\t{sig,tagged}}$ \\
+    \midrule
+% Kategorie, eta, omega, omega_err, N_sig, N_sig_err
+1 & 0.442 & 0.4442 & 0.0041 & 40480 & 340 \\
+2 & 0.390 & 0.413 & 0.010 & 5000 & 86 \\
+3 & 0.371 & 0.394 & 0.012 & 3743 & 73 \\
+4 & 0.351 & 0.378 & 0.014 & 2703 & 60 \\
+5 & 0.292 & 0.3322 & 0.0082 & 6129 & 84 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Fitresultate für den kalibrierten Datensatz: Die pro Kategorie ermittelten Mistag-Mittelwerte $η$ und die gefitteten mittleren Mistag-Wahrscheinlichkeiten $ω$ mit Fehler $σ_ω$. Die Fehler von $η$ liegen in der Größenordnung $10^{-5}$ und werden vernachlässigt.}
+  \label{fitresults2}
+\end{table}
+
+\begin{table}
+  \caption{Aus den Fitresultaten abgeleitete Größen:
+    Die Dilution $D$ mit Fehler, die Tagging-Effizienz $ε_\t{tag}$ mit Fehler und die Tagging-Power $ε_\t{eff}$ mit Fehler.
+  }
+  \begin{tabular}{l S[table-format=0.4] S[table-format=0.4] S[table-format=1.4] S[table-format=0.4] S[table-format=0.3] S[table-format=0.3]}
+    \toprule
+    Kategorie & {$D$} & {$σ_D$} & $ε_\t{tag}\:/\:\si{\percent}$ & $σ_{ε_\t{tag}}\:/\:\si{\percent}$ & $ε_\t{eff}\:/\:\si{\percent}$ & $σ_{ε_\t{eff}}\:/\:\si{\percent}$ \\
+    \midrule
+% Kategorie, D, D_err, eps_tag, eps_tag_err, eps_eff_err
+1 & 0.1117 & 0.0081 & 40.48 & 0.16 & 0.505 & 0.073 \\
+2 & 0.175 & 0.020 & 5.000 & 0.069 & 0.153 & 0.036 \\
+3 & 0.212 & 0.023 & 3.743 & 0.060 & 0.169 & 0.037 \\
+4 & 0.243 & 0.027 & 2.703 & 0.051 & 0.160 & 0.036 \\
+5 & 0.336 & 0.016 & 6.129 & 0.076 & 0.690 & 0.068 \\
+    \bottomrule
+Insgesamt &&&&& 1.678 & 0.001 \\
+    \bottomrule
+  \end{tabular}
+  \label{efficiency2}
 \end{table}
 
 \subsection{Ermittlung der Kalibrationsparameter}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
-  \caption{Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen Mistag-Wahrscheinlichkeiten $ω$ und der vom neuronalen Netz geschätzten Mistag-Wahrscheinlichkeiten $η$}
+  \caption{Unkalibrierter Datensatz: Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen mittleren Mistag-Wahrscheinlichkeiten $ω$ und den Mittelwerten der vom neuronalen Netz geschätzten Mistag-Werten $η$. Die Daten sind aus Tabelle \ref{fitresults1} entnommen. Eingezeichnet sind ein linearer Fit (blau) und ein quadratischer (rot) jeweils mit einem $1σ$-Konfidenzband, welches sich über Gauß'scher Fehlerfortpflanzung aus den Fehlern der gefitteten Parameter ergibt. Um die Korrelation zwischen den Parametern zu verringern wurde die Parametrisierung um den Mittelpunkt der Daten aufgestellt.}
+  \label{final-plot1}
 \end{figure}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp-calibrated/plot.pdf}
-\end{figure}
-
-% wie gefittet?
-
-% Plot mit linearem Fit
-% Entkorrelierung: Nullpunkt wird zum Schwerpunkt verschoben
-% Tabelle mit p1, p2, (p3) + Korrelationsmatrix
 
 \begin{figure}
   \includegraphics[width=0.49\textwidth]{analysis/JpsiKst-SSp/linear-correlation.pdf}
   \includegraphics[width=0.49\textwidth]{analysis/JpsiKst-SSp/quadratic-correlation.pdf}
+  \caption{Unkalibrierter Datensatz: Korrelationmatrizen für den linearen Fit (links) und den quadratischen (rechts).}
 \end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp-calibrated/plot.pdf}
+  \caption{Parametrisierung für den kalibrierten Datensatz. Siehe Abb. \ref{final-plot1} zur Erläuterung.}
+\end{figure}
+
 
 \section{Schlussfolgerungen}
 
