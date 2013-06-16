@@ -4,33 +4,48 @@
 
 \section{Standardmodell der Teilchenphysik}
 
-%Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
-%Es basiert auf der Symmetrie
-%\begin{eqn}
-%  SU(3)_c \otimes SU(2)_L \otimes U(1)_Y\:,
-%\end{eqn}
-%wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L \otimes U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
-%
-%Trotz der Erfolge des Standardmodells kann es sich dabei nicht um eine endgültige Theorie aller physikalischer Effekte handeln.
-%So gibt es noch keine allgemein akzeptierte Methode, um Gravitation in das Standardmodell mit einzubeziehen.
-%Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Standardmodell erklären lassen, wie zum Beispiel das Vorhandensein und die Natur von dunkler Materie und dunkler Energie, die unerklärt hohe Materie-Antimaterie-Asymmetrie im Universum, die Neutrinomassen, sowie das Verhalten des Standardmodells bei sehr hohen Energien (das Hierarchieproblem).
+Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
+Es basiert auf der Symmetrie
+\begin{eqn}
+  SU(3)_c \otimes SU(2)_L \otimes U(1)_Y\:,
+\end{eqn}
+wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L \otimes U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
 
-\subsection{Flavour-Sektor im Standardmodell}
+\Comment{Erfolge des Standardmodells erklären}
 
-% 6 Quark-Flavours
+Trotz der Erfolge des Standardmodells kann es sich dabei nicht um eine endgültige Theorie aller physikalischer Effekte handeln.
+So gibt es noch keine allgemein akzeptierte Methode, um Gravitation in das Standardmodell mit einzubeziehen.
+Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Standardmodell erklären lassen, wie zum Beispiel das Vorhandensein und die Natur von dunkler Materie und dunkler Energie, die unerklärt hohe Materie-Antimaterie-Asymmetrie im Universum, die Neutrinomassen, sowie das Verhalten des Standardmodells bei sehr hohen Energien (das Hierarchieproblem).
 
+\subsection{Quark-Sektor im Standardmodell}
+
+Das Standardmodell beinhaltet 6 verschiedene Arten von Quarks: up, down, charm, strange, top und bottom.
+Diese werden als \Pqu, \Pqd, \Pqc, \Pqs, \Pqt und \Pqb abgekürzt und häufig auf folgende Art in drei Familien unterteilt:
 \begin{eqn}
   \begin{pmatrix}
     \Pqu & \Pqc & \Pqt \\
     \Pqd & \Pqs & \Pqb \\
   \end{pmatrix}
+  \eqlabel{quarks}
 \end{eqn}
+Alle 6 sogenannten Quark-Flavour besitzen unterschiedliche Massen.
 
-% Entdeckt: Deep Inelastic Scattering (SLAC)
-% elektromagnetische Wechselwirkung: Ladung: 2/3, -1/3
-% starke Wechselwirkung: Farbladung
-% schwache Wechselwirkung: CKM-Matrix und Quark-Mixing
+Die Tatsache, dass Protonen keine Elementarteilchen sind, sondern aus Quarks bestehen, wurde erstmals 1969 am Stanford Linear Accelerator (SLAC) durch Elektron-Streuexperimente (Deep Inelastic Scattering) an Protonen entdeckt.\cite{slac-quarks}
 
+Quarks besitzen eine Ladung, wechselwirken also elektromagnetisch.
+Up-artige Quarks (die obere Reihe in \eqref{quarks}) besitzen eine Ladung von $⅔$ der Elementarladung $e$, down-artige Quarks (die untere Reihe) besitzen eine Ladung von $-⅓e$.
+Neben jedem der Quarks existiert ein Antiquark mit gleicher Masse aber umgekehrter Ladung.
+
+Quarks sind die einzigen bekannten Elementarteilchen, die an die starke Wechselwirkung koppeln.
+Jedes Quark besitzt dazu eine sogenannte Farbladung.
+Beobachtet werden können nur gebundene Quark-Zustände, deren Farbladungen sich zu Null addieren.
+
+Quarks nehmen zusätzlich noch an der schwachen Wechselwirkung teil.
+Im Gegensatz zur elektromagnetischen und starken Wechselwirkung erhält diese nicht den Quark-Flavour.
+So kann ein Quark unter Abgabe eines \PW-Bosons seine Zeile in \eqref{quarks} ändern.
+Dabei bleibt es mit hoher Wahrscheinlichkeit in derselben Spalte.
+Ein Wechsel der Spalte ist allerdings nicht ausgeschlossen.
+Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-Matrix) wie folgt ausdrücken.
 \begin{eqn}
   \begin{pmatrix}
     \Pqd' \\
@@ -65,36 +80,29 @@
   \Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0
 \end{eqn}
 
-% oben links
-\begin{eqn}
-  \abs{\frac{\Vud \Vub^*}{\Vcd \Vcb^*}}
-\end{eqn}
-
-% oben rechts
-\begin{eqn}
-  \abs{\frac{\Vtd \Vtb^*}{\Vcd \Vcb^*}}
-\end{eqn}
-
-\begin{center}
+\begin{figure}
+  \centering
   \begin{tikzpicture}[scale=6]
-    \coordinate (A) at (0.25,0.70);
+    \coordinate (A) at (0.17,0.40);
     \coordinate (B) at (1,0);
     \coordinate (C) at (0,0);
-    \draw (A)--(B)--(C)--cycle;
-    
-    \tkzLabelSegment[above left=0.15](A,C){$\abs{\frac{\Vud \Vub^*}{\Vcd \Vcb^*}}$}
-    \tkzLabelSegment[above right=0.15](B,A){$\abs{\frac{\Vtd \Vtb^*}{\Vcd \Vcb^*}}$}
-    
-    \tkzMarkAngle[size=0.35](C,A,B)
-    \tkzLabelAngle[pos = 0.2](C,A,B){$\alpha$}
-    
-    \tkzMarkAngle[size=0.35](A,B,C)
-    \tkzLabelAngle[pos = 0.2](A,B,C){$\beta$}
 
-    \tkzMarkAngle[size=0.35](B,C,A)
-    \tkzLabelAngle[pos = 0.2](B,C,A){$\gamma$}
+    \draw (A) -- node[above right] {$\abs{\frac{\Vtd \Vtb^*}{\Vcd \Vcb^*}}$} (B) -- node[below] {$1$} (C) -- node[above left] {$\abs{\frac{\Vud \Vub^*}{\Vcd \Vcb^*}}$} (A);
+
+    \begin{scope}
+      \path[clip] (A) -- (B) -- (C) -- cycle;
+      \draw (A) circle (0.17);
+      \draw (B) circle (0.3);
+      \draw (C) circle (0.18);
+    \end{scope}
+
+    \node at (0.195,0.30) {$α$};
+    \node at (0.77,0.045) {$β$};
+    \node at (0.10,0.06) {$γ$};
+
   \end{tikzpicture}
-\end{center}
+  \caption{Das Unitaritätsdreieck $\Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0$ mit Seitenlängen normiert auf $\Vcd\Vcb^*$. Das transformierte Dreieck lässt ist vollständig durch die Lage der Dreiecks-Spitze festgelegt.}
+\end{figure}
 
 % 2008: Nobelpreis für Kobayashi und Maskawa
 % Unitaritätsdreiecke
@@ -314,11 +322,10 @@ Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 \begin{eqn}
   P_\t{sig}(t,q;τ,\difference{m_{\Pqd}}, ω, s_\t{sig} = M(t, q; τ, \Delta m_{\Pqd}, ω) \otimes R(t;s)
 \end{eqn}
-% Akzeptanz erwähnen: atan(t * exp(t * p1 + p2))/π
 
 % Background - Masse
 \begin{eqn}
-  P_\t{bkg/lbg}(m;λ_t\{bkg/lbg}) = \exp(m; λ_\t{bkg/lbg})
+  P_\t{bkg/lbg}(m;λ_\t{bkg/lbg}) = \exp(m; λ_\t{bkg/lbg})
 \end{eqn}
 
 % Background - Zeit

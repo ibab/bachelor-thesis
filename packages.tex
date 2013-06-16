@@ -50,8 +50,6 @@
 % Tikz %%%%%%%%%
 
 \usepackage{tikz}
-\usepackage{tkz-euclide}
-\usetkzobj{all}
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes.geometric}
@@ -61,13 +59,6 @@
 \usetikzlibrary{calc,through}
 \usetikzlibrary{decorations.pathmorphing}	% For Feynman Diagrams
 \usetikzlibrary{decorations.markings}
-
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\tkz@MarkAngle{\node[lbstyle,shift={(\tkz@ax,\tkz@ay)}] at (\labelangle:\tkz@dist ){\tkz@mklabel};}
-                       {\node[lbstyle] at ([shift={(\tkz@ax,\tkz@ay)}]\labelangle:\tkz@dist ){\tkz@mklabel};}% or \path[shift=…] node[lbstyle] at …;
-                       {}{}
-\makeatother
 
 \pgfdeclaredecoration{complete sines}{initial}
 {
