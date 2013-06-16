@@ -256,8 +256,6 @@ Dieser entspricht in der Regel aber nicht $ω$, sondern ist lediglich stark mit 
 Durch einen $\difference{m_{\Pqd}}$-Fit lässt sich eine direkte Gegenüberstellung des tatsächlichen (gefitteten) $ω$ und der Abschätzung $η$ erzeugen, die das Erstellen einer Parametrisierung erlaubt, mit deren Hilfe man zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umrechnen kann.
 Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
 
-\subsection{Das sPlot-Verfahren?}
-
 \section{Datensatz}
 \label{datensatz}
 
@@ -280,7 +278,7 @@ Mittels dieser Informationen kann ein zweidimensionaler, simultaner Extended-Max
 Das dafür verwendete Wahrscheinlichkeitsmodell wird in Kapitel \ref{likelihood} erläutert.
 
 Interessante Parameter, die sich aus dem Fit bestimmen lassen, sind $\difference{m_{\Pqd}}$, die Mistag-Wahrscheinlichkeiten $ω_i$ und die Signal-Yields $N_{\t{sig},i}$.
-Der ermittelte, geblindete Wert für $\difference{m_{\Pqd}}$ wird für die weitere Analyse nicht benötigt.
+Der ermittelte geblindete Wert von $\difference{m_{\Pqd}}$ wird für die weitere Analyse nicht benötigt.
 
 Aus den $ω_i$ und $N_{\t{sig},i}$ lassen sich die Dilution, die Tagging-Effizienz und damit die Tagging-Power berechnen.
 
@@ -308,25 +306,46 @@ Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 \begin{eqn}
   P_\t{sig}(t,q;τ,\difference{m_{\Pqd}}, ω, s_\t{sig} = M(t, q; τ, \Delta m_{\Pqd}, ω) \otimes R(t;s_\t{sig})
 \end{eqn}
+% Akzeptanz erwähnen: atan(t * exp(t * p1 + p2))/π
+% Blinding string: 5isdown-3islong
+
+% Background - Masse
+
+% Background - Zeit
 
 % m-t Fit in 5 Kategorien:
 % Signal-pdf und zwei kombinatorische backgrounds
-% jeweils Massen-pdf
-% jeweils Zeit-pdf
 
 % m-Fit für SPlot
 % es werden die Massen-pdfs von oben verwendet
 
-% Akzeptanz erwähnen
-% Blinding erwähnen
-
 \subsection{Implementierung und Durchführung des Fits mittels des \texttt{RooFit}-Frameworks}
 
-% wie genau mit RooFit implementiert?
-% Blinding
-% Startwerte nachlesbar hier und da
+Zur Minimierung der negativen Log-Likelihood-Funktion soll ein robuster Minimierer verwendet werden.
+Hierzu bietet sich \texttt{MINUIT}, ein innerhalb der Hochenergiephysik ausgesprochen beliebter Minimierer, an.
 
-% RooGaussian, RooExponential, RooDecay, RooBMixDecay, RooSimPdfBuilder
+Die zusätzliche Verwendung eines Data-Modeling-Frameworks wie \texttt{RooFit} bietet einige Vorteile gegenüber einer manuellen Steuerung von \texttt{MINUIT}:
+Das Wahrscheinlichkeitsmodell lässt sich leichter implementieren, da benötigte Funktionen bereits definiert sind.
+Plots der verwendeten Daten und der Wahrscheinlichkeitsdichte lassen sich leicht erstellen und müssen nicht manuell implementiert werden.
+Das Einlesen von Startparametern und das Ausschreiben der gefitteten Parameter ist deutlich vereinfacht.
+
+\texttt{RooFit} wird in C++ konfiguriert und stellt vorgefertigte Wahrscheinlichkeitsfunktionen in einer Klassenhierarchie bereit.
+So kann eine Gauss-Verteilung mittels der \texttt{RooGaussian}-Klasse eingebunden werden, eine Exponentialfunktion über \texttt{RooExponential}, eine Exponentialfunktion mit Auflösungsmodell über \texttt{RooDecay}, usw.
+Besonders interessant ist die Klasse \textt{RooBMixDecay}, die ein direktes Einbinden eines \PB-Meson-Zerfalls mit den Parametern $\difference{m_{\Pqd}}$ und $ω$ erlaubt.
+
+\texttt{RooFit} erlaubt auch das Blinden von Parametern, wie es in diesem Fall für $\difference{m_\Pqd}$ durchgeführt wurde.
+Als Blinding-String wurde hierzu \texttt{"5isdown-3islong"} gewählt.
+
+Nützlich war auch die Klasse \texttt{RooSimPdfBuilder}, die mittels der gegebenen Wahrscheinlichkeitsfunktion ein Modell erzeugen kann, welches einzelne Parameter auf Teilen eines Datensatzes getrennt fittet, während die restlichen Parameter global über den gesamten Datensatz gefittet werden.
+Dies ist für den hier durchgeführten Fit nötig, da eine mittlere Mistag-Wahrscheinlichkeit für jede Kategorie bestimmt werden soll, während andere Parameter auf allen Teilen des Datensatzes den selben tatsächlichen Wert aufweisen sollten und deshalb global gefittet werden.
+
+\texttt{RooFit} ist in das \texttt{ROOT}-Framework eingebettet.
+Das bedeutet, dass eine Steuerung über die Skriptsprache Python möglich ist, da alle Objekte innerhalb der \texttt{ROOT}-Klassenhierarchie über ein Python-Interface verfügbar sind.
+Von dieser Option wurde in der vorliegenden Analyse intensiv Gebrauch gemacht, da Python im Vergleich zu C++ in der Regel eine höhere Flexibilität bietet und eine kürzere, und damit übersichtlichere Implementierung ermöglicht.
+
+Als besonders nützlich hat es sich erwiesen, die Definition des Wahrscheinlichkeitsmodells in eine externe Textdatei auszulagern, in der das Modell in einer \texttt{RooFit}-eigenen Syntax ausgedrückt wird.
+Der Inhalt der Datei kann dann Zeilenweise von einem \texttt{RooWorkspace}-Objekt eingelesen und verarbeitet werden.
+So kann die Wahrscheinlichkeitsdichte wegen der spezifischen Syntax kürzer (und damit weniger fehleranfällig) implementiert und leicht durch Auswahl einer anderen Datei ausgetauscht werden.
 
 \subsection{Fitresultate}
 
