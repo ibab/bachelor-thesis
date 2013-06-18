@@ -7,9 +7,9 @@
 Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
 Es basiert auf der Symmetrie
 \begin{eqn}
-  SU(3)_c \otimes SU(2)_L \otimes U(1)_Y\:,
+  SU(3)_c ⊗ SU(2)_L ⊗ U(1)_Y\:,
 \end{eqn}
-wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L \otimes U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
+wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L ⊗ U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
 
 \Comment{Erfolge des Standardmodells erklären}
 
@@ -48,9 +48,9 @@ Ein Wechsel der Spalte ist allerdings nicht ausgeschlossen.
 Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-Matrix) wie folgt ausdrücken.
 \begin{eqn}
   \begin{pmatrix}
-    \Pqd' \\
-    \Pqs' \\
-    \Pqb' \\
+    $\Pqd'$ \\
+    $\Pqs'$ \\
+    $\Pqb'$ \\
   \end{pmatrix}
   =
   \begin{pmatrix}
@@ -64,6 +64,45 @@ Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-M
     \Pqb \\
   \end{pmatrix}
 \end{eqn}
+Sie übersetzt die Flavor-Eigenzustände 
+\begin{eqn}
+  \begin{pmatrix}
+    \Pqu \\  
+    \Pqd \\  
+  \end{pmatrix}
+  ,
+  \begin{pmatrix}
+    \Pqc \\ 
+    \Pqs \\ 
+  \end{pmatrix}
+  ,
+  \begin{pmatrix}
+    \Pqt \\ 
+    \Pqb \\ 
+  \end{pmatrix}
+\end{eqn}
+in Eigenzustände der schwachen Wechselwirkung
+\begin{eqn}
+  \begin{pmatrix}
+    \Pqu \\  
+    $\Pqd'$ \\  
+  \end{pmatrix}
+  ,
+  \begin{pmatrix}
+    \Pqc \\ 
+    $\Pqs'$ \\ 
+  \end{pmatrix}
+  ,
+  \begin{pmatrix}
+    \Pqt \\ 
+    $\Pqb'$ \\
+  \end{pmatrix}\:.
+\end{eqn}
+
+% wichtig: CKM-Matrix muss unitär sein, damit Theorie funktioniert
+% interessant: CP-Verletzung
+
+\subsection{CP-Verletzung im Standardmodell}
 
 \newcommand{\Vud}{V_{\Pqu\Pqs}}
 \newcommand{\Vus}{V_{\Pqu\Pqs}}
@@ -75,15 +114,37 @@ Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-M
 \newcommand{\Vts}{V_{\Pqt\Pqs}}
 \newcommand{\Vtb}{V_{\Pqt\Pqb}}
 
-% bestes dreieck
+Drei Diskrete Symmetrieoperatoren sind im Standardmodell von Interesse:
+Der Ladungskonjugations-Operator $C$, der die Ladungen von Teilchen umkehrt und damit Teilchen in Antiteilchen transformiert und umgekehrt.
+Der Paritätsoperator $P$, der das System in allen drei Raumachsen spiegelt.
+Der Zeitumkehroperator $T$, der den Zeitfluss des Systems umkehrt.
+
+Lange Zeit dachte man, dass die Physik unter Anwendung von $P$ invariant bliebe.
+Ein 1956 von Lee und Yang postuliertes \cite{cp-lee-yang} und von Wu durchgeführtes \cite{wu} Experiment zeigt aber, dass dies nicht der Fall ist.
+
+Daraufhin nahm man an, dass die Kombination aus Ladungskonjugation und Paritätsumkehr, $CP$, eine universelle Symmetrie darstellen würde.
+Doch auch das konnte anhand des neutralen Kaon-Systems von Cronin und Fitch 1964 widerlegt werden\cite{kaons-cronin-fitch}.
+Die $CP$-Verletzung tritt ausschließlich in hadronischen Systemen auf.
+
+Sie ist im Standardmodell als komplexe Phase in der CKM-Matrix verwirklicht.
+Die Tatsache, dass dieser Mechanismus nur bei Existenz von mindestens drei Quarkfamilien funktioniert, inspirierte Kobayashi und Maskawa 1973 dazu, die Existenz der damals noch nicht entdeckte dritte Quarkfamilie (top und bottom) zu postulieren.
+Dafür erhielten beide 2008 einen Nobelpreis.
+
+Eine nützliche Art die in der CKM-Matrix kodierte $CP$-Verletzung zu visualisieren sind die sogenannten Unitaritätsdreiecke.
+Hierzu bildet man einzeln die Produkte der Spalten der CKM-Matrix, sowie die der Zeilen.
+Da die CKM-Matrix zwingend unitär sein muss, folgt für 6 der Produkte, dass sie $0$ ergeben müssen.
+
+Die Produkte bestehen jeweils aus drei komplexen Termen:
 \begin{eqn}
   \Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0
 \end{eqn}
+Die 3 Terme können als Linien in der komplexen Ebene interpretiert werden, die sich zu einem Dreieck schließen.
+Nützlich ist es, jede der Seiten auf $\Vcd\Vcb^*$ zu normieren; der einzige freie Parameter ist dann die Lage der Spitze des Dreiecks (siehe Abb. \ref{unitarity-triangle}).
 
 \begin{figure}
   \centering
   \begin{tikzpicture}[scale=6]
-    \coordinate (A) at (0.17,0.40);
+    \coordinate (A) at (0.225,0.345);
     \coordinate (B) at (1,0);
     \coordinate (C) at (0,0);
 
@@ -93,45 +154,40 @@ Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-M
       \path[clip] (A) -- (B) -- (C) -- cycle;
       \draw (A) circle (0.17);
       \draw (B) circle (0.3);
-      \draw (C) circle (0.18);
+      \draw (C) circle (0.19);
     \end{scope}
 
-    \node at (0.195,0.30) {$α$};
+    \node at (0.240,0.260) {$α$};
     \node at (0.77,0.045) {$β$};
     \node at (0.10,0.06) {$γ$};
 
   \end{tikzpicture}
   \caption{Das Unitaritätsdreieck $\Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0$ mit Seitenlängen normiert auf $\Vcd\Vcb^*$. Das transformierte Dreieck lässt ist vollständig durch die Lage der Dreiecks-Spitze festgelegt.}
+  \label{unitarity-triangle}
 \end{figure}
 
-% 2008: Nobelpreis für Kobayashi und Maskawa
-% Unitaritätsdreiecke
-% interessant: CP-Verletzung
+Interessant ist, dass die somit vom Standardmodell vorhergesagte CP-Verletzung sich mit jedem bisherigen Experiment gedeckt hat, obwohl die vorhergesagte Menge nicht dazu in der Lage ist die im Universum beobachtete Materie-Antimaterie Asymmetrie zu erklären.
 
-\subsection{CP-Verletzung im Standardmodell}
+Eine Möglichkeit den CKM-Mechanismus auf seine Gültigkeit zu überprüfen, ist durch Durchführen mehrerer Experimente Grenzen für die Lage der Spitze des Unitäritätsdreiecks aus Abb. \ref{unitarity-triangle} zu bestimmen, sie sogar regelrecht überzubestimmen.
+Widersprüchen oder Abweichungen von der Theorie würden dann z.B. darauf hindeuten, dass es weitere Elementarteilchen geben könnte, die im CKM-Mechanismus nicht beachtet wurden, oder sogar insgesamt seine Gültigkeit in Frage stellen.
+
+In diesem Zusammenhang wurden zahlreiche Experimente durchgeführt.
+Ein äußerst aussagekräftiges Experiment ermöglicht die Bestimmung des Winkels $β$ durch Nutzung der Oszillation neutraler \PB-Mesonen.
 
 % was ist direkte/indirekte CP-Verletzung?
-
-% Entdeckung
-\cite{wu}
-\cite{cp-lee-yang}
-
-% Kaon system
-\cite{kaons-cronin-fitch}
-
-% Was ist CP?
-% Momentane Menge reicht nicht, um Materie-Antimaterie-Asymmetrie zu erklären
-% Komplexe Phase in der CKM-Matrix -> CP-Verletzung
-% CP-Dreieck (nicht rescaled, und rescaled)
+% 3 Arten von CP-Verletzung?
 % sin(2β) -> ermittelt über Amplitude der Mixing-Funktion
 
 \subsection{$\PB$-$\PaB$-Oszillation}
 
-% Warum interessant? -> sin(2β) lässt sich bestimmen, Test des Standardmodells
+Als \PB-\PaB-Oszillation bezeichnet man die Tatsache, dass neutrale \PB-Besonen bei freier Propagation je nach Lebensdauer eine bestimmte Wahrscheinlichkeit haben als ihr Antiteilchen zu Zerfallen.
+Die Oszillation neutraler Mesonen war bereits von Cronin und Fitch im Kaon-System verwendet worden, um $CP$-Verletzung zu demonstrieren\cite{kaons-cronin-fitch}.
+Dass auch neutrale $B$-Mesonen eine Oszillation zeigen, wurde 1987 von der Argus-Kollaboration am DESY gezeigt\cite{argus-bbar}.
 
-% entdeckt: Argus
+Dass eine Amplitude für den Übergang eines $\PBz$ zu seinem Antiteilchen und umgekehrt existiert, lässt sich anhand der beiden Feynman-Diagramme in Abb. \ref{bbar-oscillation} verstehen.
 
-% zeigen: es gibt Oszillation zwischen neutralen B-Mesonen (siehe Diagramme)
+Die folgende Herleitung der 
+
 % Nehmen wir eine beliebige Überlagerung
 % Hamiltonian sieht so aus:
 \begin{eqn}
@@ -152,6 +208,7 @@ Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-M
 \end{eqn}
 
 \cite{babar-book}
+\cite{pdg}
 
 \begin{figure}
   \begin{tikzpicture}[line width=1.2 pt, scale=1.1]
@@ -180,10 +237,9 @@ Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-M
     \draw[fermionbar] (2,2) -- node [right] {$\Pqu,\Pqc,\Pqt$} (2,0);
   \end{tikzpicture}
 
-  \label{B_oscillation}
+  \label{bbar-oscillation}
   \caption{bla}
 \end{figure}
-
 
 % B⁰ → J/ψ K*
 \begin{tikzpicture}[line width=1.2 pt, scale=2]
@@ -197,12 +253,22 @@ Dieser Mechanismus lässt sich über die Cabibbo-Kobayashi-Maskawa-Matrix (CKM-M
 
 \section{Experimentelle Grundlagen}
 
-% blabla
-
 \subsection{Der LHCb-Detektor}
 
+% Wann gebaut?
+% Was zeichnet ihn aus? Nicht 4π, einseitig, geringere Luminosität, für hochpräzise Rekonstruktion ausgelegt
 % Bild des Detektors
-% 1, 2 Sätze zu den wichtigsten Komponenten
+
+% Beampipe
+% Vertex Locator
+% RICH-Detektor
+% Muon-Kammern
+
+% Trigger
+
+\begin{figure}
+  %\includegraphics[width=\textwidth]{figures/lhcb.pdf}
+\end{figure}
 
 \subsection{Flavour-Tagging}
 
@@ -212,7 +278,7 @@ Der Endzustand kann aus den Zerfallsprodukten der \PBz und \PaBz Mesonen bestimm
 Zu diesen Kanälen gehören $\PBz \to \PDm \Pgpp$ und $\PBz \to \PJpsi \PKst$ (und die entsprechenden ladungskonjugierten Kanäle).
 
 Die Bestimmung des Anfangszustandes, die man als \emph{Flavour-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
-Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer, während des Events erfolgter, Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern. % DaVinci erwähnen
+Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer, während des Events erfolgter, Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern.
 
 Die verwendeten Tagger lassen sich in zwei Typen unterteilen: Opposite-Side-Tagger (OST) und Same-Side-Tagger(SST).
 
@@ -260,8 +326,10 @@ Dazu gehört neben der Zeitauflösung in erster Linie die Mistag-Wahrscheinlichk
 
 Da ein direkter Fit der Mistag-Wahrscheinlichkeit, anders als bei einem Kanal mit self-tagging Endzustand, hier nicht möglich ist, muss ein anderer Weg gefunden werden, um eine möglichst präzise Abschätzung von $ω$ zu erhalten.
 Die verwendeten neuronalen Netze geben hierzu für jedes getaggte Event einen Mistag-Wert $η$ aus.
-Dieser entspricht in der Regel aber nicht $ω$, sondern ist lediglich stark mit $ω$ korreliert.
-Durch einen $\difference{m_{\Pqd}}$-Fit lässt sich eine direkte Gegenüberstellung des tatsächlichen (gefitteten) $ω$ und der Abschätzung $η$ erzeugen. Dieser Zusammenhang kann z.B. durch einen linearen Fit effektiv parametrisiert werden. Das so gewonnene $ω(η)$ erlaubt es, zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umzurechnen.
+Dieser entspricht in der Regel aber nicht $ω$, sondern muss in der Regel auf den betrachteten Zerfallstyp angepasst werden.
+Durch einen $\difference{m_{\Pqd}}$-Fit lässt sich eine direkte Gegenüberstellung des tatsächlichen (gefitteten) $ω$ und der Abschätzung $η$ erzeugen.
+Dieser Zusammenhang kann z.B. durch einen linearen Fit effektiv parametrisiert werden.
+Das so gewonnene $ω(η)$ erlaubt es, zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umzurechnen.
 Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
 
 \Comment{Abbildung OST/SST fehlt}
@@ -271,9 +339,11 @@ Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
 \section{Datensatz}
 \label{datensatz}
 
-% B0 -> J/psi Kst
-% LHCb Datensatz 2012
-% BDT: warum und wie
+Der verwendete Datensatz beinhaltet $\PBzero \to \PJpsi\PKst$-Ereignisse, im Zeitraum 2012 aufgenommen wurden.
+% Wie viele Events?
+% Welche Luminosität?
+Es wurde eine auf Boosted Decision Trees (BDT) basierte Selektion durchgeführt.
+% Wo lässt sich genaueres nachlesen?
 
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
@@ -421,6 +491,38 @@ Die Fehler von $η$ liegen in der Größenordnung $10^{-5}$ und werden vernachl�
   \end{tabular}
   \label{fitresults1}
 \end{table}
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat1.pdf}
+                \caption{Kategorie 1}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat2.pdf}
+                \caption{Kategorie 2}
+        \end{subfigure}
+
+        \begin{subfigure}[b]{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat3.pdf}
+                \caption{Kategorie 3}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat4.pdf}
+                \caption{Kategorie 4}
+        \end{subfigure}
+
+        \begin{subfigure}[b]{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat5.pdf}
+                \caption{Kategorie 5}
+        \end{subfigure}
+        \caption{Plots der Asymmetrie-Verteilungen nach Fit des unkalibrierten Datensatzes. Unterhalb der Plots ist jeweils die Pull-Verteilung (Abweichung von der Fit-Kurve normiert auf den Fehler des Bins) dargestellt.}
+\end{figure}
 
 \begin{table}
   \caption{Aus den Fitresultaten abgeleitete Größen:
