@@ -2,36 +2,42 @@
 
 \section{Einleitung}
 
-Die Vorhersagen des Standardmodells der Teilchenphysik decken sich mit allen bisher durchgeführten Experimenten der Hochenergiephysik.
-Trotzdem gibt es Phänomene, die sich nicht mithilfe des Standardmodells erklären lassen.
-Die Notwendigkeit einer neuen Theorie, die das Standardmodell ablöst, scheint unvermeidlich.
-
-Das LHCb-Experiment beschäftigt sich mit Präzisionsmessungen zur Überprüfung des Standardmodells.
+Das LHCb-Experiment beschäftigt sich zur Überprüfung des Standardmodells mit Präzisionsmessungen an Zerfällen von \PB-Mesonen.
 
 Eine der am LHCb-Detektor durchgeführten Messungen ist die Bestimmung der zeitabhängigen $CP$-Verletzung in den Zerfällen neutraler \PB-Mesonen.
 Wichtig ist dabei die Bestimmung der Produktionzustände der erzeugten \PB-Mesonen, die als \emph{Flavour-Tagging} bezeichnet wird.
 In diesem Zusammenhang muss die Fehlerrate der Tagging-Entscheidungen, auch Mistag-Wahrscheinlichkeit genannt, möglichst genau bekannt sein.
 
 Diese Bachelorarbeit beschäftigt sich mit der \emph{Flavour-Tagging-Kalibration}, die das Ziel hat eine möglichst genaue Abschätzung der Mistag-Wahrscheinlichkeit zu liefern.
-Sie basiert auch Daten des Zerfalls $\PBz \to \PJpsi\PKst$, die im Zeitraum 2012 aufgenommen wurden.
+Sie basiert auf Daten des Zerfalls $\PBz \to \PJpsi\PKst$, die im Jahr 2012 aufgenommen wurden und konzentriert sich auf eine Kalibration des Same-Side-Pion-Taggers (SS$π$).
+In früheren Analysen hat sich gezeigt, dass dieser ca. ein Viertel der statistischen Signifikanz aller kombinierten Tagger ausmacht.
+Im Gegensatz zu anderen Taggern erlaubt er keine Kalibration mittels Zerfällen geladener \PB-Mesonen, weshalb er manuell kalibriert werden muss.
 
-Für alle Einheiten soll im Folgenden die Konvention $\hbar = c = 1$ gelten.
+Im Folgenden soll die Konvention $\hbar = c = 1$ gelten.
+
+\newpage
+
+\section*{Danksagung}
+
+Ich danke verschiedenen Leuten.
+
+\newpage
+
 
 \section{Standardmodell der Teilchenphysik}
 \label{standard-model}
 
 Das Standardmodell der Teilchenphysik ist ein Quantenfeldtheorie, die alle bislang bekannten Elementarteilchen und ihre Interaktion über die starke, schwache und elektromagnetische Wechselwirkung beschreibt.
-Es basiert auf der Symmetrie
-\begin{eqn}
-  SU(3)_c ⊗ SU(2)_L ⊗ U(1)_Y\:,
-\end{eqn}
-wobei $SU(3)_c$ die Eichsymmetrie der starken Wechselwirkung und $SU(2)_L ⊗ U(1)_Y$ die der elektroschwachen Wechselwirkung beschreibt.
 
-\Comment{Erfolge des Standardmodells erklären}
+Die Elementarteilchen lassen sich in Quarks und Leptonen (aus denen Materie besteht) und Eichbosonen (die Kräfte zwischen den Teilchen vermitteln) unterteilen.
 
-Trotz der Erfolge des Standardmodells kann es sich dabei nicht um eine endgültige Theorie aller physikalischer Effekte handeln.
+Das Standardmodell ist ausgesprochen erfolgreich: Seine Vorhersagen decken sich mit jedem bisher durchgeführten Experiment der Hochenergiephysik.
+
+Trotz dessen kann es sich dabei nicht um eine endgültige Theorie aller physikalischen Effekte handeln.
 So gibt es noch keine allgemein akzeptierte Methode, um Gravitation in das Standardmodell mit einzubeziehen.
-Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Standardmodell erklären lassen, wie zum Beispiel das Vorhandensein und die Natur von dunkler Materie und dunkler Energie, die unerklärt hohe Materie-Antimaterie-Asymmetrie im Universum, die Neutrinomassen, sowie das Verhalten des Standardmodells bei sehr hohen Energien (das Hierarchieproblem).
+Außerdem ist eine Reihe von Phänomenen bekannt, die sich nicht durch das Standardmodell erklären lassen, wie das Vorhandensein und die Natur von dunkler Materie und dunkler Energie, die unerklärt hohe Materie-Antimaterie-Asymmetrie im Universum, die Existenz der Neutrinomassen, und andere.
+
+Eine Möglichkeit Hinweise für sogenannte ,,Neue Physik'' zu finden, ist es, hochpräzise Experimente durchzuführen, die nach Abweichungen von den Vorhersagen des Standardmodells suchen.
 
 \subsection{Quark-Sektor im Standardmodell}
 
@@ -46,9 +52,9 @@ Diese werden als \Pqu, \Pqd, \Pqc, \Pqs, \Pqt und \Pqb abgekürzt und häufig au
 \end{eqn}
 Alle 6 sogenannten Quark-Flavour besitzen unterschiedliche Massen.
 
-Die Tatsache, dass Protonen keine Elementarteilchen sind, sondern aus Quarks bestehen, wurde erstmals 1969 am Stanford Linear Accelerator (SLAC) durch Elektron-Streuexperimente (Deep Inelastic Scattering) an Protonen entdeckt.\cite{slac-quarks}
+Ein erster experimenteller Beleg für die Existenz von Quarks wurde 1969 am Stanford Linear Accelerator (SLAC) durch Elektron-Streuexperimente (Deep Inelastic Scattering) an Protonen demonstriert werden.\cite{slac-quarks}
 
-Quarks besitzen eine Ladung, wechselwirken also elektromagnetisch.
+Quarks besitzen eine elektrische Ladung, wechselwirken also elektromagnetisch.
 Up-artige Quarks (die obere Reihe in \eqref{quarks}) besitzen eine Ladung von $⅔$ der Elementarladung, down-artige Quarks (die untere Reihe) eine Ladung von $-⅓$ der Elementarladung.
 Neben jedem der Quarks existiert ein Antiquark mit gleicher Masse aber umgekehrter Ladung.
 
@@ -140,8 +146,8 @@ Lange Zeit dachte man, dass die Physik unter Anwendung von $P$ invariant bliebe.
 Ein 1956 von Lee und Yang postuliertes \cite{cp-lee-yang} und von Wu durchgeführtes \cite{wu} Experiment zeigt aber, dass dies nicht der Fall ist.
 
 Daraufhin nahm man an, dass die Kombination aus Ladungskonjugation und Paritätsumkehr, $CP$, eine universelle Symmetrie darstellen würde.
-Doch auch das konnte anhand des neutralen Kaon-Systems von Cronin und Fitch 1964 widerlegt werden\cite{kaons-cronin-fitch}.
-Die $CP$-Verletzung tritt ausschließlich in hadronischen Systemen auf.
+Doch auch das konnte anhand des neutralen Kaon-Systems von Cronin, Fitch, u.a 1964 widerlegt werden\cite{kaons-cronin-fitch}.
+$CP$-Verletzung wurde ausschließlich in hadronischen Systemen beobachtet.
 
 Sie ist im Standardmodell als komplexe Phase in der CKM-Matrix verwirklicht.
 Die Tatsache, dass dieser Mechanismus nur bei Existenz von mindestens drei Quarkfamilien funktioniert, inspirierte Kobayashi und Maskawa 1973 dazu, die Existenz der damals noch nicht entdeckten dritten Quarkfamilie (top und bottom) zu postulieren.
@@ -156,7 +162,7 @@ Die Produkte bestehen jeweils aus drei komplexen Termen:
   \Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0
 \end{eqn}
 Die 3 Terme können als Linien in der komplexen Ebene interpretiert werden, die sich zu einem Dreieck schließen.
-Nützlich ist es, jede der Seiten auf $\Vcd\Vcb^*$ zu normieren; der einzige freie Parameter ist dann die Lage der Spitze des Dreiecks (siehe Abb. \ref{unitarity-triangle}).
+Nützlich ist es, jede der Seiten auf $\Vcd\Vcb^*$ zu normieren; der einzige freie Parameter ist dann die Lage der Dreiecks-Spitze (siehe Abb. \ref{unitarity-triangle}).
 
 \begin{figure}
   \centering
@@ -179,7 +185,8 @@ Nützlich ist es, jede der Seiten auf $\Vcd\Vcb^*$ zu normieren; der einzige fre
     \node at (0.10,0.06) {$γ$};
 
   \end{tikzpicture}
-  \caption{Das Unitaritätsdreieck $\Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0$ mit Seitenlängen normiert auf $\Vcd\Vcb^*$. Das transformierte Dreieck lässt ist vollständig durch die Lage der Dreiecks-Spitze festgelegt.}
+  \caption{Das Unitaritätsdreieck $\Vud\Vub^* + \Vcd\Vcb^* + \Vtd\Vtb^* = 0$ mit Seitenlängen normiert auf $\Vcd\Vcb^*$.
+  Das transformierte Dreieck lässt ist vollständig durch die Lage der Dreiecks-Spitze festgelegt.}
   \label{unitarity-triangle}
 \end{figure}
 
@@ -197,7 +204,7 @@ Als \PB-\PaB-Oszillation bezeichnet man die Tatsache, dass neutrale \PB-Mesonen 
 Die Oszillation neutraler Mesonen war bereits von Cronin und Fitch im Kaon-System verwendet worden, um $CP$-Verletzung zu demonstrieren\cite{kaons-cronin-fitch}.
 Dass auch neutrale $B$-Mesonen eine Oszillation aufweisen, wurde 1987 von der Argus-Kollaboration am DESY gezeigt\cite{argus-bbar}.
 
-Dass eine Amplitude für den Übergang eines $\PBz$ zu seinem Antiteilchen und umgekehrt existiert, lässt sich anhand der beiden Feynman-Diagramme in Abb. \ref{bbar-oscillation} verstehen.
+Dass Amplituden für die Übergänge eines $\PBz$ zu seinem Antiteilchen und umgekehrt existieren, lässt sich anhand der beiden Feynman-Diagramme in Abb. \ref{bbar-oscillation} verstehen.
 
 \begin{figure}
   \begin{tikzpicture}[line width=1.2 pt, scale=1.1]
@@ -226,7 +233,8 @@ Dass eine Amplitude für den Übergang eines $\PBz$ zu seinem Antiteilchen und u
     \draw[fermionbar] (2,2) -- node [right] {$\Pqu,\Pqc,\Pqt$} (2,0);
   \end{tikzpicture}
   \label{bbar-oscillation}
-  \caption{Feynman-Diagramme der \PBz-\PaBz-Oszillation. In dieser Ordnung ergibs sich die Amplitude für einen Flavour-Wechsel als Summe beider Diagramme.}
+  \caption{Feynman-Diagramme der \PBz-\PaBz-Oszillation.
+  In dieser Ordnung ergibt sich die Amplitude für einen Flavour-Wechsel als Summe beider Diagramme.}
 \end{figure}
 
 Im Folgenden sollen die Übergangswahrscheinlichkeiten für $\PBz \to \PBz$ und $\PBz \to \PaBz$ bestimmt werden.
@@ -300,40 +308,40 @@ Die gesuchten Wahrscheinlichkeiten, dass ein Meson seinen Flavour geändert oder
 %  \draw[fermionbar] (0.75, 0) -- (1.500, -0.5) node [below] {\Pqc};
 %\end{tikzpicture}
 
+\Comment{Clean up this mess.}
+
 \section{Experimentelle Grundlagen}
 
 \subsection{Der LHCb-Detektor}
 
 Der Large Hadron Collider beauty Detektor (LHCb) ist eines der vier größten Experimente, die am Large Hadron Collider (LHC) in Genf durchgeführt werden.
 
-Im Gegensatz zu anderen Detektoren wie ATLAS, ALICE und CMS ($4π$-Detektoren) handelt es sich hierbei um ein einarmiges Vorwärts-Spektrometer mit einer Winkelakzeptanz von lediglich \SIrange{10}{300}{\radian}.
+Er wurde vorranging gebaut, um die Zerfälle von \PB-Mesonen auf Hinweise für neue Physik zu untersuchen.
+
+Im Gegensatz zu den anderen großen Detektoren am LHC (ATLAS, ALICE und CMS) handelt es sich hierbei nicht um einen $4π$-Detektor, sondern um ein einarmiges Vorwärts-Spektrometer mit einer Winkelakzeptanz von lediglich $10$ bis \SI{300}{\radian}.
+Er ist für eine vergleichsweise geringe Luminosität, gleichzeitig aber für eine hochpräzise Rekonstruktion ausgelegt.
 
 Die folgenden Informationen sind \cite{lhcb} entnommen.
+Ein Querschnitt des Detektors ist in \ref{lhcb} dargestellt.
 
-% \SI{4500}{\ton} Gewicht
+Der Detektor ist über die sogenannte \emph{Beampipe} an den LHC angeschlossen.
 
-% Pseudorapidität von ... bis ...
-
-% Wann gebaut?
-% Was zeichnet ihn aus? Nicht 4π, einseitig, geringere Luminosität, für hochpräzise Rekonstruktion ausgelegt
-
-% Beampipe
-
-Der \emph{Vertex Locator} (VELO) ist ein Siliziumdetektor, der aus 2 Hälften besteht und bis auf \SI{5}{\milli\metre} an den Protonenstrahl herangefahren werden kann. Er wird zur Vertex-Rekonstruktion und zur Auflösung von Impact Parametern verwendet. ist in der Lage Entfernungen von \SI{10}{\micro\metre} aufzulösen.
+Der \emph{Vertex Locator} (VELO) ist ein Siliziumdetektor, der aus 2 Hälften besteht und bis auf \SI{5}{\milli\metre} an den Protonenstrahl herangefahren werden kann. Er wird zur Vertex-Rekonstruktion und zur Auflösung der Impact Parameter verwendet. Er ist in der Lage Entfernungen von \SI{10}{\micro\metre} aufzulösen.
 
 Die beiden Ring Imaging Cherenkov (RICH) Detektoren messen mittels Cherenkov-Strahlung die Geschwindigkeit geladener Teilchen, was durch Vergleich mit Informationen aus dem Tracking eine Bestimmung der Teilchen-Massen erlaubt und damit zusammen mit der Information über die Ladung des Teilchens seine Identifizierung (PID) ermöglicht.
 
+Der konventionelle (nicht-supraleitende) Dipolmagnet verfügt über ein integriertes Magnetfeld von \SI{4}{\tesla\metre}.
+
 Die Trackerstationen T1 bis T3 ermöglichen eine Verfolgung der Teilchenbahnen.
 
-Dahinter befinden sich die elektromagnetischen und hadronischen Kalorimeter.
+Dahinter befinden sich die elektromagnetischen und hadronischen Kalorimeter, die Elektronen, Photonen und Hadronen auffangen und ihre Energie messen.
 
 Am Ende des Detektors befindet sich eine Reihe von Drahtkammern, die eine Identifikation von Muonen ermöglichen.
 
-% Trigger
-
-
 \begin{figure}
-  %\includegraphics[width=\textwidth]{figures/lhcb.pdf}
+  \includegraphics[width=\textwidth]{figures/lhcb.pdf}
+  \caption{Querschnitt des LHCb-Detektors. Die einzelnen Komponenten werden im Text erläutert.\cite{lhcb}}
+  \label{lhcb}
 \end{figure}
 
 \subsection{Flavour-Tagging}
@@ -346,7 +354,14 @@ Zu diesen Kanälen gehören $\PBz \to \PDm \Pgpp$ und $\PBz \to \PJpsi \PKst$ (u
 Die Bestimmung des Anfangszustandes, die man als \emph{Flavour-Tagging} bezeichnet, erweist sich als deutlich schwieriger.
 Das LHCb-Experiment verwendet hierzu neuronale Netze, die darauf trainiert werden unter Einbeziehung weiterer, während des Events erfolgter, Beobachtungen eine möglichst gute Abschätzung für den Typ des \PB-Mesons (den sogenannten \emph{Tag}) zu liefern.
 
-Die verwendeten Tagger lassen sich in zwei Typen unterteilen: Opposite-Side-Tagger (OST) und Same-Side-Tagger(SST).
+Die verwendeten Tagger lassen sich in zwei Typen unterteilen: Opposite-Side-Tagger (OST) und Same-Side-Tagger (SST).
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/tagging.pdf}
+  \caption{Funktionsweise der Same-Side-Tagger (oben) und der Opposite-Side-Tagger (unten). Oben lässt sich aus der Ladung eines neben dem \PB-Meson entstandenen Pions auf den Quarkinhalt des \PB schließen. Unten wird genutzt, dass das ebenfalls entstandene \Pqb-Quark ein geladenes \PBm gebildet hat, dessen Ladung sich aus den Zerfallsprodukten rekonstruieren lässt.}
+  \label{tagging}
+\end{figure}
 
 Die Opposite-Side-Tagger (OST) basieren auf der Tatsache, dass \Pqb-Quarks fast ausschließlich als \Pqb\Paqb-Paar entstehen. Bildet dann z.B. das \Pqb-Quark ein \PaB-Meson, so könnte das ebenfalls entstandene \Paqb ein geladenes Meson, nämlich ein \PBp bilden, dessen Zerfallsprodukte einen Rückschluss auf seine Ladung und damit indirekt auf den Quarkinhalt des \PaB-Mesons ermöglichen.
 So kann das geladene \PB-Meson z.B. semileptonisch ($\Pqb \to \Pqc \Plepton \APnulepton$) zerfallen. Die Ladung des Leptons entspricht dann (bei Vernachlässigung der selteneren Zerfallsreihe $\Pqb \to \Pqc \to \Pqs \APlepton \Pnulepton$) der gesuchten Mesonladung, die eine Bestimmung des \PB-Flavours erlaubt.\cite{ost}
@@ -400,51 +415,36 @@ Dieser Zusammenhang kann z.B. durch einen linearen Fit effektiv parametrisiert w
 Das so gewonnene $ω(η)$ erlaubt es, zu einem späteren Zeitpunkt $η$ zu einer korrigierten Abschätzung $η_C$ umzurechnen.
 Diesen Vorgang bezeichnet man als \emph{Tagging-Kalibration}.
 
-\Comment{Abbildung OST/SST fehlt}
-
-\Comment{Verweise auf Literatur fehlen}
-
 \section{Datensatz}
 \label{datensatz}
 
-Der verwendete Datensatz beinhaltet $\PBzero \to \PJpsi\PKst$-Ereignisse, im Zeitraum 2012 aufgenommen wurden.
+Der verwendete Datensatz enthält $\PBzero \to \PJpsi\PKst$-Ereignisse, im Zeitraum 2012 aufgenommen wurden.
 
-\Comment{Wie viele Events?}
-
-\Comment{Welche Luminosität?}
-
-2 inverse Femtobarn
-7 TeV Energie
-Bunch-Spacing: 50 ns
+Er beinhaltet ca. $5\cdot10^5$ Events, die bei einer integrierten Luminosität von $2$\:fb$^-1$, einer Schwerpunktsenergie von \SI{7}{\tera\electronvolt} und einem Bunch-Spacing von \SI{50}{\nano\second} detektiert wurden.
 
 Es wurde eine auf Boosted Decision Trees (BDT) basierte Selektion durchgeführt.
-(Benutzt für sin2β, noch nicht veröffentlicht)
-
-\Comment{Wo lässt sich genaueres nachlesen?}
+Die dabei bestimmten Cut-Parameter sind noch nicht veröffentlicht.
 
 \section{\texorpdfstring{Kalibration des $SS\pi$-Taggers für $\PBzero \to \PJpsi \PKst$}{Kalibration des SSpi-Taggers für B0 -> JpsiKst}}
 
 Das erste Ziel der vorliegenden Analyse ist es, eine Kalibration des Same-Side-Pion-Taggers auf dem in Kapitel \ref{datensatz} beschriebenen Datensatz durchzuführen.
 Das zweite Ziel ist ein Wiederholen der Analyse auf einer Version des beschriebenen Datensatzes, die mittels einer aus $\PBz \to \PDm\Pgpp$-Zerfällen gewonnenen Kalibrationsparametrisierung kalibriert wurde.
 
-\Comment{Warum gerade SS$π$? -> Wurde noch nicht richtig gemacht, aus bisherigen Studien bekannt, dass SS$π$ für 25\% der Sensitivität (εD²) in der sin(2β)-Analyse verantwortlich ist.}
+Aus einer bisherigen Analyse ist bekannt, dass der SS$π$-Tagger ca. \SI{25}{\percent} der Tagging-Power bei der Bestimmung von $\sin(2β)$ ausmacht.
 
 Zur Kalibration wird der Datensatz je nach Größe der Mistag-Vorhersage $η$ des neuronalen Netzes in fünf Kategorien aufgeteilt.
 Das mittlere $η$ wird jeweils für alle Signalereignisse pro Kategorie ermittelt.
 Die Trennung von Signal und Untergrund erfolgt hierbei über das sPlot-Verfahren\cite{splot}, wobei ausschließlich die Massenverteilung zur Unterscheidung von Signal und Untergrund verwendet wird.
 
-Aus dem Datensatz bekannt sind die Massen- und Zerfallszeit-Verteilungen der rekonstruierten \PB-Mesonen, die Tag-Entscheidung des neuronalen Netzes sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Endzustandes erlaubt (\emph{self-tagging final state}).
-
-\Comment{Zeigen: Was ist denn der Endzustand?}
+Aus dem Datensatz bekannt sind die Massen- und Zerfallszeit-Verteilungen der rekonstruierten \PB-Mesonen, die Tag-Entscheidung des neuronalen Netzes sowie die Kenntnis über die Kaon-Ladung, die eine Identifizierung des Endzustandes erlaubt (Das \PKst zerfällt in \PKp\Pgpm).
 
 Aus der Tag-Entscheidung und dem Endzustand lässt sich bestimmen, ob (bei korrektem Tag) ein Wechsel des \Pqb-Flavours stattgefunden hat.
 Mittels dieser Informationen kann ein zweidimensionaler, simultaner Extended-Maximum-Likelihood-Fit über Daten aller fünf Kategorien durchgeführt werden, wobei die Anzahl von Signal- und Untergrundereignissen sowie die Mistag-Wahrscheinlichkeit pro Kategorie individuell gefittet werden.
 Das dafür verwendete Wahrscheinlichkeitsmodell wird in Kapitel \ref{likelihood} erläutert.
 
 Interessante Parameter, die sich aus dem Fit bestimmen lassen, sind $\difference{m_{\Pqd}}$, die Mistag-Wahrscheinlichkeiten $ω_i$ und die Signal-Yields $N_{\t{sig},i}$.
-Der ermittelte geblindete Wert von $\difference{m_{\Pqd}}$ wird für die weitere Analyse nicht benötigt.
-
-\Comment{Erklärung: Was ist blinding, warum blindet man hier?}
+Bei der Analyse wird darauf geachtet, dass der ermittelte Wert für $\difference{m_{\Pqd}}$ geblindet ist, d.h. dass sein tatsächlicher Wert nicht angezeigt wird, sondern lediglich dem Programm bekannt ist.
+Damit soll eine Beeinflussung der Analyse wegen der Kenntnis des tatsächlichen Wertes vermieden werden.
 
 Aus den $ω_i$ und $N_{\t{sig},i}$ lassen sich die Dilution, die Tagging-Effizienz und damit die Tagging-Power berechnen.
 
@@ -458,10 +458,13 @@ Dies wäre ein Hinweis dafür, dass man die ermittelte Parametrisierung auch auf
 Ein mit auf $\PBz \to \PDm \Pgpp$ ermittelten Parametern kalibrierter $\PBz \to \PJpsi\PKst$-Datensatz wurde bereitgestellt.
 Die oben beschriebene Analyse wird auf dem kalibrierten Datensatz wiederholt.
 
-\Comment{Verweise auf Literatur fehlen}
-
 \subsection{Parametrisierung der Likelihood-Funktion}
 \label{likelihood}
+
+Dieses Kapitel beschreibt die Wahrscheinlichkeitsdichten, die für die durchgeführten Fits benötigt werden.
+
+Im folgenden Bezeichnet $\exp(x;q)$ eine Exponentialfunktion mit Exponent $qx$, $G(x;μ,σ)$ eine Gauss-Funktion mit Mittelwert $μ$ und Breite $σ$ und $M(t, q; τ, \difference{m_{\Pqd}}, ω)$ eine Mixing-Verteilung nach \eqref{mixing} mit der Zerfallszeitvariablen $t$, der Angabe des Mixings über $q$, der mittleren Lebensdauer $τ$, der Oszillationsfrequenz $\difference{m_{\Pqd}}$ und der Mistag-Wahrscheinlichkeit $ω$.
+Außerdem bezeichnet $R(t;s)$ ein gaussförmiges Auflösungsmodell mit Breite $s$.
 
 % Signal - Masse
 \begin{eqns}
@@ -500,11 +503,9 @@ Beim für das sPlot-Verfahren benötigten Fit wird nur der Massenanteil der Wahr
 \end{eqn}
 Es wird außerdem nur eine der beiden Untergrundkomponenten einbezogen, da die beiden Komponenten in ihrer Massenverteilung identisch sind und deswegen bei einem reinen Massenfit stark korreliert wären.
 
-\Comment{Erklärung der einzelnen Komponenten}
+Die genauen Begründungen für die einzelnen Komponenten der Wahrscheinlichkeitsdichte lassen sich in \cite{deltamd} nachlesen.
 
-\Comment{Verweis auf Paper mit Begründungen}
-
-\subsection{Implementierung und Durchführung des Fits mittels des \texttt{RooFit}-Frameworks}
+\subsection{Implementierung und Durchführung des Fits}
 
 Zur Minimierung der negativen Log-Likelihood-Funktion soll ein robuster Minimierer verwendet werden.
 Hierzu bietet sich \texttt{MINUIT}, ein innerhalb der Hochenergiephysik ausgesprochen beliebter Minimierer, an.
@@ -535,7 +536,7 @@ Das sPlot-Verfahren ist in der Bibliothek \texttt{RooStats} bereits implementier
 
 \subsection{Fitresultate}
 
-Aus einem Fit der Massendistribution und Anwenden des sPlot-Verfahrens lässt sich ein sweighted-Datensatz generieren, der ein Berechnen der $η$-Mittelwerte der  Signalereignisse  erlaubt.
+Aus einem Fit der Massendistribution und Anwenden des sPlot-Verfahrens lässt sich ein sweighted-Datensatz generieren, der ein Berechnen der $η$-Mittelwerte der Signalereignisse  erlaubt.
 
 Aus einem Fit der gesamten Wahrscheinlichkeitsdichte (Massen- und Zeitkomponente) lassen sich die tatsächlichen mittleren Mistag-Wahrscheinlichkeiten $ω$ pro Kategorie ermitteln.
 
@@ -609,7 +610,7 @@ Die Fehler von $η$ liegen in der Größenordnung $10^{-5}$ und werden im Folgen
                 \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat5.pdf}
                 \caption{Kategorie 5}
         \end{subfigure}
-        \caption{Plots der Asymmetrie-Verteilungen nach Fit des unkalibrierten Datensatzes. Unterhalb der Plots ist jeweils die Pull-Verteilung (Abweichung von der Fit-Kurve normiert auf die Fehler der Bins) dargestellt.}
+        \caption{Plots der Asymmetrie-Verteilungen nach Fit des unkalibrierten Datensatzes. Die gefittete Kurve ist rot dargestellt. Unterhalb der Plots ist jeweils die Pull-Verteilung (Abweichung von der Fit-Kurve normiert auf die Fehler der Bins) dargestellt.}
         \label{asymmetry-plots}
 \end{figure}
 
@@ -674,10 +675,19 @@ Insgesamt &&&&& 0.59 & 0.04 \\
 
 \subsection{Ermittlung der Kalibrationsparameter}
 
+Die ermittelten $ω_i$-$η_i$-Wertepaare lassen sich nun linear und quadratisch fitten.
+Hierzu wurde eine Methode innerhalb des ROOT-Frameworks\cite{root} benutzt, die intern MINUIT verwendet.
+Die Ergebnisse sind in den Abbildungen \ref{final-plot1} und \ref{final-plot2} dargestellt.
+
+Für den unkalibrierten Datensatz ist die quadratische Parametrisierung eher geeignet.
+Dies deckt sich mit den Ergebnissen des letzten Jahres, wo ebenfalls eine quadratische Parametrisierung verwendet wurde.
+
+Auf dem kalibrierten Datensatz ist deutlich, dass eine Gerade den Zusammenhang ausreichend beschreibt.
+
 \begin{figure}
   \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
-  \caption{Unkalibrierter Datensatz: Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen mittleren Mistag-Wahrscheinlichkeiten $ω$ und den Mittelwerten der vom neuronalen Netz geschätzten Mistag-Werten $η$.
-  Die Daten sind aus Tabelle \ref{fitresults1} entnommen. Eingezeichnet sind ein linearer Fit (blau) und ein quadratischer (rot) jeweils mit einem $1σ$-Konfidenzband, welches sich über Gauß'sche Fehlerfortpflanzung aus den Fehlern der gefitteten Parameter ergibt.
+  \caption{Unkalibrierter Datensatz: Resultate der linearen und quadratischen Parametrisierungen der tatsächlichen mittleren Mistag-Wahrscheinlichkeiten $ω$ und den Mittelwerten der vom neuronalen Netz geschätzten Mistag-Werte $η$.
+  Die Daten sind aus Tabelle \ref{fitresults1} entnommen. Eingezeichnet sind ein linearer Fit (blau) und ein quadratischer (rot) jeweils mit einem $1σ$-Fehler-Bereich, welcher sich über Gauß'sche Fehlerfortpflanzung aus den Fehlern der gefitteten Parameter ergibt.
 Um die Korrelation zwischen den Parametern zu verringern wurde die Parametrisierung um den Mittelpunkt der Daten aufgestellt.}
   \label{final-plot1}
 \end{figure}
@@ -702,7 +712,7 @@ Um die Korrelation zwischen den Parametern zu verringern wurde die Parametrisier
 \section{Schlussfolgerungen}
 
 Es konnte erfolgreich eine Tagging-Kalibration des SS$π$-Taggers mittels $\PBz \to \PJpsi\PKst$-Events durchgeführt werden.
-Die Ergebnisse könnten beispielsweise genutzt werden, um eine genauere Abschätzung der Mistag-Wahrscheinlichkeit auf einem Kanal wie $\PBz \to \PJpsi\pKshort$ zu erhalten.
+Die Ergebnisse könnten beispielsweise genutzt werden, um eine genauere Abschätzung der Mistag-Wahrscheinlichkeit auf einem Kanal wie $\PBz \to \PJpsi\PKshort$ zu erhalten.
 
 Es konnte gezeigt werden, dass eine auf $\PBz \to \PDm \Pgpp$ gewonnene Kalibrationsparametrisierung angewendet auf den Kanal $\PBz \to \PJpsi$ brauchbare Ergebnisse liefert.
 \Comment{Wie groß ist die Differenz zwischen $p_0$ und $\mean{eta}$?}
