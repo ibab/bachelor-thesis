@@ -266,25 +266,27 @@ mit
 Dabei ist $\difference{m_{\Pqd}}$ der Unterschied $M_H - M_L$ zwischen den Massen der beiden Eigenzuständen und $\difference{Γ_{\Pqd}}$ die Differenz ihrer Zerfallsbreiten.
 Wie auf den Seiten 8 und 9 in \ref{babar-book} begründet, lassen sich folgende Näherungen machen:
 
+\Comment{Noch nicht fertig...}
+
 % ...
-
-\begin{eqns}
-  \ket{\PBz(t)} &=& g_+(t) \ket{\PBz} + \frac{q}{p} g_-(t)\ket{\PaBz} \\
-  \ket{\PaBz(t)} &=& \frac{q}{p} g_-(t) \ket{\PBz} + g_+(t)\ket{\PaBz}
-\end{eqns}
-mit
-\begin{eqns}
-  g_+(t) &=& \E^{-\I M t} \E^{-½Γt} \cos(Δm_{\Pqd} t/2) \\
-  g_-(t) &=& \E^{-\I M t} \E^{-½Γt} \I\sin(Δm_{\Pqd} t/2)
-\end{eqns}
-
-Die gesuchten Wahrscheinlichkeiten, dass ein Meson seinen Flavour geändert oder nicht geändert hat, ergeben sich dann als die Übergangswahrscheinlichkeiten von einem Zustand zum anderen:
-\begin{eqn}
-  \braket{\PaBz(t)}{\PBz(0)}^2 = \braket{\PBz(t)}{\PaBz(0)}^2 = \frac{1}{4} (\E^{-Γ_Lt} + \E^{-Γ_Ht} + 2\E^{-\frac{Γ_L + Γ_H}{2}t} \cos(\difference{m_{\Pqd}}t)
-\end{eqn}
-\begin{eqn}
-  \braket{\PBz(t)}{\PBz(0)}^2 = \braket{\PaBz(t)}{\PaBz(0)}^2 = \frac{1}{4} (\E^{-Γ_Lt} + \E^{-Γ_Ht} - 2\E^{-\frac{Γ_L + Γ_H}{2}t} \cos(\difference{m_{\Pqd}}t)
-\end{eqn}
+%
+%\begin{eqns}
+%  \ket{\PBz(t)} &=& g_+(t) \ket{\PBz} + \frac{q}{p} g_-(t)\ket{\PaBz} \\
+%  \ket{\PaBz(t)} &=& \frac{q}{p} g_-(t) \ket{\PBz} + g_+(t)\ket{\PaBz}
+%\end{eqns}
+%mit
+%\begin{eqns}
+%  g_+(t) &=& \E^{-\I M t} \E^{-½Γt} \cos(Δm_{\Pqd} t/2) \\
+%  g_-(t) &=& \E^{-\I M t} \E^{-½Γt} \I\sin(Δm_{\Pqd} t/2)
+%\end{eqns}
+%
+%Die gesuchten Wahrscheinlichkeiten, dass ein Meson seinen Flavour geändert oder nicht geändert hat, ergeben sich dann als die Übergangswahrscheinlichkeiten von einem Zustand zum anderen:
+%\begin{eqn}
+%  \braket{\PaBz(t)}{\PBz(0)}^2 = \braket{\PBz(t)}{\PaBz(0)}^2 = \frac{1}{4} (\E^{-Γ_Lt} + \E^{-Γ_Ht} + 2\E^{-\frac{Γ_L + Γ_H}{2}t} \cos(\difference{m_{\Pqd}}t)
+%\end{eqn}
+%\begin{eqn}
+%  \braket{\PBz(t)}{\PBz(0)}^2 = \braket{\PaBz(t)}{\PaBz(0)}^2 = \frac{1}{4} (\E^{-Γ_Lt} + \E^{-Γ_Ht} - 2\E^{-\frac{Γ_L + Γ_H}{2}t} \cos(\difference{m_{\Pqd}}t)
+%\end{eqn}
 
 % Berechnung der Mixing-Asymmetrie: (A - B) / (A + B)
 % Mixing: q
@@ -308,8 +310,6 @@ Die gesuchten Wahrscheinlichkeiten, dass ein Meson seinen Flavour geändert oder
 %  \draw[fermionbar] (0.75, 0) -- (1.500, -0.5) node [below] {\Pqc};
 %\end{tikzpicture}
 
-\Comment{Clean up this mess.}
-
 \section{Experimentelle Grundlagen}
 
 \subsection{Der LHCb-Detektor}
@@ -330,7 +330,7 @@ Der \emph{Vertex Locator} (VELO) ist ein Siliziumdetektor, der aus 2 Hälften be
 
 Die beiden Ring Imaging Cherenkov (RICH) Detektoren messen mittels Cherenkov-Strahlung die Geschwindigkeit geladener Teilchen, was durch Vergleich mit Informationen aus dem Tracking eine Bestimmung der Teilchen-Massen erlaubt und damit zusammen mit der Information über die Ladung des Teilchens seine Identifizierung (PID) ermöglicht.
 
-Der konventionelle (nicht-supraleitende) Dipolmagnet verfügt über ein integriertes Magnetfeld von \SI{4}{\tesla\metre}.
+Der konventionelle (nicht supraleitende) Dipolmagnet verfügt über ein integriertes Magnetfeld von \SI{4}{\tesla\metre}.
 
 Die Trackerstationen T1 bis T3 ermöglichen eine Verfolgung der Teilchenbahnen.
 
@@ -444,7 +444,7 @@ Das dafür verwendete Wahrscheinlichkeitsmodell wird in Kapitel \ref{likelihood}
 
 Interessante Parameter, die sich aus dem Fit bestimmen lassen, sind $\difference{m_{\Pqd}}$, die Mistag-Wahrscheinlichkeiten $ω_i$ und die Signal-Yields $N_{\t{sig},i}$.
 Bei der Analyse wird darauf geachtet, dass der ermittelte Wert für $\difference{m_{\Pqd}}$ geblindet ist, d.h. dass sein tatsächlicher Wert nicht angezeigt wird, sondern lediglich dem Programm bekannt ist.
-Damit soll eine Beeinflussung der Analyse wegen der Kenntnis des tatsächlichen Wertes vermieden werden.
+Damit soll eine Beeinflussung der Analyse durch Kenntnis des tatsächlichen Wertes vermieden werden.
 
 Aus den $ω_i$ und $N_{\t{sig},i}$ lassen sich die Dilution, die Tagging-Effizienz und damit die Tagging-Power berechnen.
 
@@ -465,6 +465,7 @@ Dieses Kapitel beschreibt die Wahrscheinlichkeitsdichten, die für die durchgef�
 
 Im folgenden Bezeichnet $\exp(x;q)$ eine Exponentialfunktion mit Exponent $qx$, $G(x;μ,σ)$ eine Gauss-Funktion mit Mittelwert $μ$ und Breite $σ$ und $M(t, q; τ, \difference{m_{\Pqd}}, ω)$ eine Mixing-Verteilung nach \eqref{mixing} mit der Zerfallszeitvariablen $t$, der Angabe des Mixings über $q$, der mittleren Lebensdauer $τ$, der Oszillationsfrequenz $\difference{m_{\Pqd}}$ und der Mistag-Wahrscheinlichkeit $ω$.
 Außerdem bezeichnet $R(t;s)$ ein gaussförmiges Auflösungsmodell mit Breite $s$.
+Dieses wird mit der Zeitkomponente der Signalverteilung gefaltet.
 
 % Signal - Masse
 \begin{eqns}
@@ -547,6 +548,12 @@ Die Gesamtanzahl an Signalereignissen im Datensatz lässt sich nach Erzeugen des
 \begin{eqns}
   N_\t{sig,uncalib.} &=& 287900 \pm 600 \\
   N_\t{sig,calib.}   &=& 285000 \pm 700
+\end{eqns}
+
+Für die Mittelwerte $\langle η \rangle$ und $\langle η_C \rangle$ des unkalibrierten und des kalibrierten Datensatzes ergibt sich
+\begin{eqns}
+  \langle η \rangle &=& 0.38 \pm 0.05 \\
+  \langle η_C \rangle &=& 0.41 \pm 0.05
 \end{eqns}
 
 Aus den ermittelten Größen lässt sich nun die Tagging-Power berechnen.
@@ -681,8 +688,20 @@ Die Ergebnisse sind in den Abbildungen \ref{final-plot1} und \ref{final-plot2} d
 
 Für den unkalibrierten Datensatz ist die quadratische Parametrisierung eher geeignet.
 Dies deckt sich mit den Ergebnissen des letzten Jahres, wo ebenfalls eine quadratische Parametrisierung verwendet wurde.
+Für die Parameter ergibt sich
+\begin{eqns}
+  p_0 &=& 0.432 \pm 0.004 \\
+  p_1 &=& 0.8 \pm 0.1 \\
+  p_2 &=& -3.4 \pm 1.2
+\end{eqns}
 
 Auf dem kalibrierten Datensatz ist deutlich, dass eine Gerade den Zusammenhang ausreichend beschreibt.
+Die gefitteten Parameter sind
+\begin{eqns}
+  p_0 &=& 0.425 \pm 0.005 \\
+  p_1 &=& 0.67 \pm 0.13 \\
+  p_2 &=& -0.8 \pm 1.5 \\
+\end{eqns}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
@@ -714,12 +733,14 @@ Um die Korrelation zwischen den Parametern zu verringern wurde die Parametrisier
 Es konnte erfolgreich eine Tagging-Kalibration des SS$π$-Taggers mittels $\PBz \to \PJpsi\PKst$-Events durchgeführt werden.
 Die Ergebnisse könnten beispielsweise genutzt werden, um eine genauere Abschätzung der Mistag-Wahrscheinlichkeit auf einem Kanal wie $\PBz \to \PJpsi\PKshort$ zu erhalten.
 
-Es konnte gezeigt werden, dass eine auf $\PBz \to \PDm \Pgpp$ gewonnene Kalibrationsparametrisierung angewendet auf den Kanal $\PBz \to \PJpsi$ brauchbare Ergebnisse liefert.
-\Comment{Wie groß ist die Differenz zwischen $p_0$ und $\mean{eta}$?}
-% Parametrisierung konnte übertragen werden -> linear geworden
-% Abstand p0-<ε> kleiner geworden, ca. 1%
-% Geradensteigung passt nicht ganz so gut
-% kann noch besser gemacht werden
-% Es ergibt sich ein Fehler -> sollte man mit einbeziehen
+Es konnte gezeigt werden, dass eine auf $\PBz \to \PDm \Pgpp$ gewonnene Kalibrationsparametrisierung angewendet auf den Kanal $\PBz \to \PJpsi\PKst$ brauchbare Ergebnisse liefert.
+
+Auf dem unkalibrierten Datensatz beträgt der Unterschied zwischen $\langle η \rangle$ und $p_0$ ca \SI{10}{\percent}.
+
+Die Übertragung der auf $\PBz \to \PDm\Pgpp$ ermittelten Parametrisierung konnte erfolgreich auf den verwendeten Datensatz übertragen werden.
+So beträgt die Abweichung von $p_0$ zu $\langle η_C \rangle$ \SI{2.6}{\percent}.
+Problematisch ist zu sehen, dass die Steigung (der Parameter $p_1$) nicht mit $1$ verträglich ist.
+Insgesamt wird deutlich, dass eine Übertragung der Tagging-Kalibration mit einem systematischen Fehler verbunden ist.
+Diesen sollte man z.B. bei einer Messung der zeitabhängigen $CP$-Verletzung auf einem Kanal wie $\PBz \to \PJpsi\PKshort$ einbeziehen.
 
 % vim: set ft=tex:
