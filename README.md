@@ -1,4 +1,3 @@
-
 # Bachelor thesis
 
-Flavor-tagging calibration of $B^0 -> J/\psi K^*$
+Title: Flavour Tagging Calibration in B0 ->　J/psi Kst Events at the LHCb experiment 
