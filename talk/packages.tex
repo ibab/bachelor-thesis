@@ -1,0 +1,63 @@
+\documentclass[hyperref={unicode=true},xcolor={table},ngerman]{beamer}
+\usetheme{TU}
+\usefonttheme{professionalfonts}
+
+
+\usepackage{fixltx2e}
+\usepackage{letltxmacro}
+\usepackage{expl3}
+\usepackage{xparse}
+\usepackage{luacode}
+\usepackage{luatexbase}
+\RequireLuaModule{lualibs}
+
+\usepackage[table]{xcolor}
+\usepackage{luacolor}
+
+\usepackage{babel}
+\usepackage[backend=biber,sortlocale=de_DE.UTF-8]{biblatex}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{upref}
+\usepackage{mathtools}
+\usepackage[noss]{hepnicenames} % loads bm, before unicode-math
+%\usepackage[no-math]{fontspec} % after amssymb
+\usepackage[math-style=ISO,bold-style=ISO,sans-style=italic,nabla=upright,partial=upright,vargreek-shape=unicode,warnings-off={mathtools-colon}]{unicode-math}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{tensor}
+\usepackage{siunitx}
+
+\setmainfont[Ligatures=TeX]{Tex Gyre Adventor}
+
+\usepackage{graphicx}
+\usepackage{grffile}
+
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{rotating}
+
+\usepackage[stable,bottom,hang]{footmisc}
+\usepackage[strict,autostyle]{csquotes}
+\usepackage{hyphenat}
+\usepackage{textcmds}
+\usepackage{xspace}
+\usepackage{eurosym}
+
+\usepackage[unicode=true]{hyperref} % do not use \hypersetup{unicode=true} after loading header modules, it overwrites \t
+\usepackage{bookmark}
+\usepackage[shortcuts]{extdash} % must be after hyperref for shortcuts
+
+\usepackage{floatrow}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{circuits.logic.IEC,circuits.ee.IEC}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{trees}
+\usetikzlibrary{calc,through}
+\usetikzlibrary{decorations.pathmorphing}	% For Feynman Diagrams
+\usetikzlibrary{decorations.markings}

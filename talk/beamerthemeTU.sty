@@ -1,0 +1,84 @@
+\usepackage{xcolor}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Adventor}
+\setsansfont{TeX Gyre Adventor}
+\setmonofont{Latin Modern Mono}
+
+% Colors
+\definecolor{TUgreen}{HTML}{649600}
+\definecolor{TUgreenLighter}{HTML}{A5CB5B}
+\definecolor{TUgreenDarker}{HTML}{54711C}
+\definecolor{TUalert}{HTML}{A10000}
+\definecolor{TUalertLighter}{HTML}{D03434}
+\definecolor{TUexample}{HTML}{006496}
+\definecolor{TUexampleLighter}{HTML}{8735B5}
+\definecolor{PeP}{HTML}{565656}
+\definecolor{ltgrey}{HTML}{CCCCCC}
+
+% Titlepage
+%  Title
+\setbeamerfont{title}{size=\Large}
+\setbeamercolor{title}{fg=white, bg=TUgreen}
+%  Subtitle
+\setbeamerfont{subtitle}{size=\large}
+%  Author
+\setbeamerfont{author}{size=\large}
+%  Institute
+\setbeamerfont{institute}{series=\bfseries, size=\large}
+\setbeamercolor{institute}{fg=PeP}
+
+% Frametitle
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamercolor{frametitle}{fg=white, bg=TUgreen}
+
+% Framesubtitle
+\setbeamerfont{framesubtitle}{size=\Large}
+\setbeamercolor{framesubtitle}{bg=TUgreenDarker, fg=white}
+
+% Structure
+\setbeamerfont{structure}{size=\Large}
+\setbeamercolor{structure}{fg=TUgreen}
+
+% Blocks
+\setbeamertemplate{blocks}[square]
+\setbeamerfont{block title}{size=\Large}
+\setbeamercolor{block title}{fg=TUgreen, bg=white}
+\setbeamercolor{block title alerted}{use=alerted text, fg=TUalert, bg=white}
+\setbeamercolor{block title example}{use=example text, fg=TUexample, bg=white}
+
+% Items
+\setbeamertemplate{items}[circle]
+
+% Other
+\setbeamertemplate{navigation symbols}{} % no nav symbols
+\linespread{1.5} % improve readability
+
+% Customizations
+\defbeamertemplate*{frametitle}{TU}
+{
+    \begin{beamercolorbox}[wd=.92\paperwidth, ht=1em, dp=.4em, leftskip=.04em, left]{frametitle}
+        \hspace{.25em}\usebeamercolor{frametitle}\usebeamerfont{frametitle}\insertframetitle
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{framesubtitle}{TU}
+{
+    \begin{beamercolorbox}[wd=.92\paperwidth, ht=.7em, dp=.3em, leftskip=.04em, left]{framesubtitle}
+        \hspace{.25em}\usebeamercolor{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{TU}
+{
+    \leavevmode%
+    \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, left, leftskip=1em]{}%
+        \insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.6\paperwidth, ht=1.8em, dp=1em, center]{}%
+        \insertshortauthor\quad(Bachelorvortrag)%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}%
+        \insertpagenumber{} / \inserttotalframenumber%
+    \end{beamercolorbox}%
+}
+

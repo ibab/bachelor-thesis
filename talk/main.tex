@@ -1,0 +1,150 @@
+\input{header}
+
+\newcommand{\difference}[1]{\mathrm{\Delta} #1}
+
+\title[Flavour-Tagging-Calibration]{Flavour-Tagging-Calibration of the SS\Pgp-Tagger via \PBz\to\PJpsi\PKst decays at the LHCb experiment}
+\subtitle{Bachelor presentation}
+\author{Igor Babuschkin}
+\institute{TU Dortmund}
+
+\newcommand{\Vud}{V_{\Pqu\Pqs}}
+\newcommand{\Vus}{V_{\Pqu\Pqs}}
+\newcommand{\Vub}{V_{\Pqu\Pqb}}
+\newcommand{\Vcd}{V_{\Pqc\Pqd}}
+\newcommand{\Vcs}{V_{\Pqc\Pqs}}
+\newcommand{\Vcb}{V_{\Pqc\Pqb}}
+\newcommand{\Vtd}{V_{\Pqt\Pqd}}
+\newcommand{\Vts}{V_{\Pqt\Pqs}}
+\newcommand{\Vtb}{V_{\Pqt\Pqb}}
+
+\pgfdeclaredecoration{complete sines}{initial}
+{
+    \state{initial}[
+        width=+0pt,
+        next state=upsine,
+        persistent precomputation={\pgfmathsetmacro\matchinglength{
+            \pgfdecoratedinputsegmentlength / int(\pgfdecoratedinputsegmentlength/\pgfdecorationsegmentlength)}
+            \setlength{\pgfdecorationsegmentlength}{\matchinglength pt}
+        }] {}
+    \state{upsine}[width=\pgfdecorationsegmentlength,next state=downsine]{
+        \pgfpathsine{\pgfpoint{0.50\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.50\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+    }
+    \state{downsine}[width=\pgfdecorationsegmentlength,next state=upsine]{
+        \pgfpathsine{\pgfpoint{0.50\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.50\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+}
+    \state{final}{}
+}
+
+\tikzset{
+	% >=stealth', %%  Uncomment for more conventional arrows
+    vector/.style={decorate, decoration={complete sines,segment length=6}, draw},
+	  provector/.style={decorate, decoration={snake,amplitude=2.5pt}, draw},
+	  antivector/.style={decorate, decoration={snake,amplitude=-2.5pt}, draw},
+    fermion/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    fermionbar/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    fermionnoarrow/.style={draw=black},
+    gluon/.style={decorate, draw=black,
+        decoration={coil,amplitude=4pt, segment length=5pt}},
+    scalar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    scalarbar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    scalarnoarrow/.style={dashed,draw=black},
+    electron/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+	bigvector/.style={decorate, decoration={snake,amplitude=4pt}, draw},
+}
+\tikzstyle{block} = [draw, rectangle, 
+    minimum height=3em, minimum width=6em]
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+  \begin{itemize}
+    \item Fundamentals (weak interaction, \PBz oscillation)
+    \item LHCb detector
+    \item Experiments: $\difference{m_{\Pqd}}$ and $\sin(2β)$
+    \item Flavour Tagging
+    \item Analysis
+    \item Results
+    \item Conclusions \& Outlook
+  \end{itemize}
+
+  From now on: $\hbar = c = 1$
+
+\end{frame}
+
+\begin{frame}{CKM-Matrix}
+\begin{itemize}
+  \item Flavour eigenstates $\neq$ weak eigenstates\\
+  \item Conversion via the \textbf{C}abibbo \textbf{K}obayashi \textbf{M}askawa matrix:
+\end{itemize}
+\begin{eqn}
+  \begin{pmatrix}
+    \Pqd' \\
+    \Pqs' \\
+    \Pqb' \\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    V_{\Pqu\Pqd} & V_{\Pqu\Pqs} & V_{\Pqu\Pqb} \\
+    V_{\Pqc\Pqd} & V_{\Pqc\Pqs} & V_{\Pqc\Pqb} \\
+    V_{\Pqt\Pqd} & V_{\Pqt\Pqs} & V_{\Pqt\Pqb} \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \Pqd \\
+    \Pqs \\
+    \Pqb \\
+  \end{pmatrix}
+\end{eqn}
+\begin{itemize}
+  \item Complex phase $\Rightarrow$ \textit{CP} violation
+  \item Unitarity $\Rightarrow$ $\sum_k V_{ik} V_{jk}^* = δ_{ij}$ $\Rightarrow$ Triangles in the complex plane
+  \item Example: $\Vud^{}\Vub^* + \Vcd^{}\Vcb^* + \Vtd^{}\Vtb^* = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Combined CKMfitter results (August 2013)}
+  \centering
+  \includegraphics[width=\textwidth]{figures/rhoeta_small_global.eps}
+  % TODO cite
+\end{frame}
+
+\begin{frame}{LHCb detector}
+  \includegraphics[width=\textwidth]{figures/lhcb.pdf}
+  % less: what are the components?
+  % more: why has it made this analysis possible?
+  % pro:
+  %  great luminosity
+  % con:
+  %  small efficiency, good flavour tagging required
+\end{frame}
+
+% two interesting experiments: determine Δm_d and sin(2β)
+% we need the production state of the B⁰!
+
+\begin{frame}{Flavour Tagging}
+  % we want to infer the production state of the B meson
+  % can't 'look' at it
+  % must infer by rest of event
+  % two different types of taggers: OS, SS (diagram)
+  % problem: not absolutely accurate -> mistag probability ω
+  %  -> why? faulty reconstruction, misleading decay series
+  % ω has an effect on the asymmetry! -> lowers amplitude to (1 - 2 ω)
+\end{frame}
+
+\begin{frame}{Analysis}
+\end{frame}
+
+\begin{frame}{Results}
+\end{frame}
+
+\end{document}

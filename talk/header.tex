@@ -1,0 +1,153 @@
+\input{packages.tex}
+
+\input{modules/base.tex}
+\input{modules/comment.tex}
+\input{modules/floats.tex}
+\input{modules/math.tex}
+\input{modules/tikz.tex}
+\input{modules/units.tex}
+
+\ExplSyntaxOn
+
+%patch maybe for hepnames
+\RenewDocumentCommand \maybebm {m}
+{
+  \ensuremath{{{#1}}}
+}
+\RenewDocumentCommand \maybesf {m}
+{
+  \ensuremath{{#1}}
+}
+\RenewDocumentCommand \mayberm {m}
+{
+  \ensuremath{{\mathrm{#1}}}
+}
+\RenewDocumentCommand \maybeitrm {m}
+{
+  \ensuremath{{\mathrm{#1}}}
+}
+\RenewDocumentCommand \maybeitsubscript {m}
+{
+  \ensuremath{{#1}}
+}
+
+\setmainfont[BoldFont = {LMRoman10-Bold}, % not optimal
+             ItalicFont = {LMRoman10-Italic}, % not optimal
+             BoldItalicFont = {LMRoman10-BoldItalic}, % not optimal
+             SmallCapsFont = {Latin Modern Roman Caps},
+             SlantedFont = {Latin Modern Roman Slanted},
+             ItalicFeatures  = {
+               SmallCapsFont = {LMRomanCaps10-Oblique}
+             },
+            ]{Latin Modern Roman}
+
+\setsansfont{Latin Modern Sans}
+
+\setmonofont[SmallCapsFont = {Latin Modern Mono Caps},
+             SlantedFont = {Latin Modern Mono Slanted},
+             ItalicFeatures  = {
+               SmallCapsFont = {LMMonoCaps10-Oblique}
+             },
+            ]{Latin Modern Mono}
+
+\RenewDocumentCommand\hangfootparskip{}{0pt}
+\RenewDocumentCommand\hangfootparindent{}{15pt}
+
+\mathtoolsset{mathic}
+
+\setmathfont{Latin Modern Math}
+
+\setmathfont[range={\mathscr,\mathbfscr}]{XITS Math}
+%\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
+\setmathfont[range={\mathcal,\mathbfcal}]{Latin Modern Math}
+
+% much nicer than latin Modern or XITS
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\protected\def\mathbb#1{{\mathchar\numexpr256*\symAMSb+`#1\relax}}
+
+% define fallbacks here
+\setmathfont[range=\vDash]{XITS Math}
+\setmathfont[range=\coloneq]{XITS Math}
+\setmathfont[range=\propto]{XITS Math}
+\setmathfont[range={\lblkbrbrak,\rblkbrbrak}]{XITS Math}
+
+% make bar horizontal, use \hslash for slashed h
+\let\hbar\relax
+\DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
+
+\NewDocumentCommand \mathdefault {}
+{
+  \mathit
+}
+
+%\RenewDocumentCommand \header_math_tensor_font {}
+%{
+%  \mathit
+%}
+
+%\removenolimits{\int}
+%\removenolimits{\iint}
+%\removenolimits{\iiint}
+%\removenolimits{\iiiint}
+%\removenolimits{\oint}
+%\removenolimits{\oiint}
+%\removenolimits{\oiiint}
+%\removenolimits{\intclockwise}
+%\removenolimits{\varointclockwise}
+%\removenolimits{\ointctrclockwise}
+%\removenolimits{\sumint}
+%\removenolimits{\intbar}
+%\removenolimits{\intBar}
+%\removenolimits{\fint}
+%\removenolimits{\cirfnint}
+%\removenolimits{\awint}
+%\removenolimits{\rppolint}
+%\removenolimits{\scpolint}
+%\removenolimits{\npolint}
+%\removenolimits{\pointint}
+%\removenolimits{\sqint}
+%\removenolimits{\intlarhk}
+%\removenolimits{\intx}
+%\removenolimits{\intcap}
+%\removenolimits{\intcup}
+%\removenolimits{\upint}
+%\removenolimits{\lowint}
+
+% make delimiters always grow, never have two levels the same size
+\setlength{\delimitershortfall}{-1sp}
+
+% add more space between equations, default is 3pt
+\setlength{\IEEEnormaljot}{10pt}
+
+\sisetup
+{
+  strict,
+  locale=US,
+  per-mode=symbol-or-fraction,
+  separate-uncertainty=true,
+  add-integer-zero=true,
+  add-decimal-zero=true,
+  round-integer-to-decimal=true,
+  table-align-exponent=true,
+  table-align-uncertainty=true,
+  table-unit-alignment=center,
+  math-ohm=\mathup{\Omega},
+  text-ohm=\ensuremath{\mathup{\Omega}}
+}
+
+\hypersetup{
+  unicode=true,
+  pdfcreator={},
+  pdfproducer={},
+}
+
+\addbibresource{main.bib}
+
+\nocite{numpy, scipy, matplotlib, uncertainties, root}
+
+\NewDocumentCommand \makebibliography {}
+{
+  \printbibliography[heading=bibintoc]
+}
+
+\ExplSyntaxOff
