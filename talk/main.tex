@@ -1,13 +1,15 @@
 \input{header}
 
+\DeclareRobustCommand{\PKst}{\HepParticle{K}{}{\ast0}\xspace}
+
 \newcommand{\difference}[1]{\mathrm{\Delta} #1}
 
-\title[Flavour-Tagging-Calibration]{Flavour-Tagging-Calibration of the SS\Pgp-Tagger via \PBz\to\PJpsi\PKst decays at the LHCb experiment}
+\title[Flavour tagging calibration]{Flavour tagging calibration of the SS\Pgp-Tagger with \HepProcess{\PBz\to\PJpsi\PKst} decays at the LHCb experiment}
 \subtitle{Bachelor presentation}
 \author{Igor Babuschkin}
 \institute{TU Dortmund}
 
-\newcommand{\Vud}{V_{\Pqu\Pqs}}
+\newcommand{\Vud}{V_{\Pqu\Pqd}}
 \newcommand{\Vus}{V_{\Pqu\Pqs}}
 \newcommand{\Vub}{V_{\Pqu\Pqb}}
 \newcommand{\Vcd}{V_{\Pqc\Pqd}}
@@ -64,87 +66,423 @@
 \begin{document}
 
 \begin{frame}
-\titlepage
+  \titlepage
+  \tiny
+  \vfill
+  \begin{flushright}
+  $\hbar = c = 1$
+\end{flushright}
 \end{frame}
 
-\begin{frame}{Overview}
+%\begin{frame}{Overview}
+%  \begin{itemize}
+%  \item Fundamentals (\PBz oscillation, CKM matrix)
+%  \item Interesting measurements: $\difference{m_{\Pqd}}$ and $\sin(2β)$
+%  \item LHCb detector
+%  \item Flavour tagging
+%  \item Analysis: Flavour tagging calibration with $\PBz\to\PJpsi\PKst$
+%  \item Results
+%  \item Conclusions \& Outlook
+%  \end{itemize}
+%
+%  From now on: $\hbar = c = 1$
+%\end{frame}
+
+% Standard model -> weak interaction
+
+\begin{frame}{\PBz oscillation}
+  \hspace{-2em}
+  \begin{minipage}{0.57\paperwidth}
+  \begin{tikzpicture}[line width=1.2 pt, scale=0.7]
+    \draw[fermion] (-1,2.3) node [left] {\Pqd} -- (0,2);
+    \draw[fermion] (0,2) -- node [above] {$\Pqu,\Pqc,\Pqt$} (2, 2);
+    \draw[fermion] (2,2) -- (3,2.3) node [right] {\Pqb};
+     
+    \draw[fermionbar] (-1,-.3) node [left] {\Pqb} -- (0,0);
+    \draw[fermionbar] (0,0) -- node [above] {$\Pqu,\Pqc,\Pqt$} (2,0);
+    \draw[fermionbar] (2,0) -- (3,-.3) node [right] {\Pqd};
+    
+    \draw[vector] (0,2) -- node [left] {\PW} (0,0);
+    \draw[vector] (2,2) -- node [right] {\PW} (2,0);
+
+    \node at (-2.2, 1) {\large\PBz};
+    \node at ( 4.2, 1) {\large\PaBz};
+  \end{tikzpicture}
+  \hspace{0.3cm}
+  \begin{tikzpicture}[line width=1.2 pt, scale=0.7]
+    \draw[fermion] (-1,2.3) node [left] {\Pqd} -- (0,2);
+    \draw[vector] (0,2) -- node [above] {\PWm} (2, 2);
+    \draw[fermion] (2,2) -- (3,2.3) node [right] {\Pqb};
+     
+    \draw[fermionbar] (-1,-.3) node [left] {\Pqb} -- (0,0);
+    \draw[vector] (0,0) -- node [above] {\PWp} (2,0);
+    \draw[fermionbar] (2,0) -- (3,-.3) node [right] {\Pqd};
+    
+    \draw[fermion] (0,2) -- node [left] {$\Pqu,\Pqc,\Pqt$} (0,0);
+    \draw[fermionbar] (2,2) -- node [right] {$\Pqu,\Pqc,\Pqt$} (2,0);
+
+    \node at (-2.2, 1) {\large\PBz};
+    \node at ( 4.2, 1) {\large\PaBz};
+  \end{tikzpicture}
+  \end{minipage}
+  \hspace{-2.5em}
+  \begin{minipage}{0.38\paperwidth}
+  \vspace{2em}
+  \small
   \begin{itemize}
-    \item Fundamentals (weak interaction, \PBz oscillation)
-    \item LHCb detector
-    \item Experiments: $\difference{m_{\Pqd}}$ and $\sin(2β)$
-    \item Flavour Tagging
-    \item Analysis
-    \item Results
-    \item Conclusions \& Outlook
+    \item Confirmed 1987 (ARGUS)
+    \item Oscillation frequency: $\difference{m_{\Pqd}}$
+    \item Asymmetry: $\frac{N_\t{unmixed} - N_\t{mixed}}{N_\t{unmixed} + N_\t{mixed}}$
   \end{itemize}
-
-  From now on: $\hbar = c = 1$
-
-\end{frame}
-
-\begin{frame}{CKM-Matrix}
-\begin{itemize}
-  \item Flavour eigenstates $\neq$ weak eigenstates\\
-  \item Conversion via the \textbf{C}abibbo \textbf{K}obayashi \textbf{M}askawa matrix:
-\end{itemize}
-\begin{eqn}
-  \begin{pmatrix}
-    \Pqd' \\
-    \Pqs' \\
-    \Pqb' \\
-  \end{pmatrix}
-  =
-  \begin{pmatrix}
-    V_{\Pqu\Pqd} & V_{\Pqu\Pqs} & V_{\Pqu\Pqb} \\
-    V_{\Pqc\Pqd} & V_{\Pqc\Pqs} & V_{\Pqc\Pqb} \\
-    V_{\Pqt\Pqd} & V_{\Pqt\Pqs} & V_{\Pqt\Pqb} \\
-  \end{pmatrix}
-  \begin{pmatrix}
-    \Pqd \\
-    \Pqs \\
-    \Pqb \\
-  \end{pmatrix}
-\end{eqn}
-\begin{itemize}
-  \item Complex phase $\Rightarrow$ \textit{CP} violation
-  \item Unitarity $\Rightarrow$ $\sum_k V_{ik} V_{jk}^* = δ_{ij}$ $\Rightarrow$ Triangles in the complex plane
-  \item Example: $\Vud^{}\Vub^* + \Vcd^{}\Vcb^* + \Vtd^{}\Vtb^* = 0$
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Combined CKMfitter results (August 2013)}
   \centering
-  \includegraphics[width=\textwidth]{figures/rhoeta_small_global.eps}
-  % TODO cite
+  \includegraphics[width=0.8\textwidth]{figures/asym.pdf}
+  \end{minipage}
 \end{frame}
+
+\begin{frame}{CKM matrix}
+  \centering
+  Weak eigenstates $\neq$ mass eigenstates\\
+  \begin{eqn}
+    \begin{pmatrix}
+      \Pqd' \\
+      \Pqs' \\
+      \Pqb' \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      V_{\Pqu\Pqd} & V_{\Pqu\Pqs} & V_{\Pqu\Pqb} \\
+      V_{\Pqc\Pqd} & V_{\Pqc\Pqs} & V_{\Pqc\Pqb} \\
+      V_{\Pqt\Pqd} & V_{\Pqt\Pqs} & V_{\Pqt\Pqb} \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      \Pqd \\
+      \Pqs \\
+      \Pqb \\
+    \end{pmatrix}
+  \end{eqn}
+
+  \begin{itemize}
+  \item Conversion via \textbf{C}abibbo \textbf{K}obayashi \textbf{M}askawa matrix
+  \item Complex phase $\Rightarrow$ \textit{CP} violation
+  \item Unitarity $\Rightarrow$ $\sum_k V_{ik} V_{jk}^* = δ_{ij}$
+    $\Rightarrow$ Triangles in the complex plane
+  \item Example: $\Vud^{}\Vub^* + \Vcd^{}\Vcb^* + \Vtd^{}\Vtb^* = 0$
+  \end{itemize}
+\end{frame}
+
+%\begin{frame}{CKM triangle}
+%  \centering
+%  \begin{tikzpicture}[scale=6]
+%    \coordinate (A) at (0.225,0.345); \coordinate (B) at (1,0);
+%    \coordinate (C) at (0,0); \node [above] at (0.225,0.365)
+%    {$(\bar{ρ},\bar{η})$}; \node [below] at (0, -0.02) {$(0,0)$};
+%    \node [below] at (1, -0.02) {$(1,0)$}; \draw (A) -- node[above
+%    right] {$\abs{\frac{\Vtd \Vtb^*}{\Vcd \Vcb^*}}$} (B) --
+%    node[below] {$1$} (C) -- node[above left] {$\abs{\frac{\Vud
+%          \Vub^*}{\Vcd \Vcb^*}}$} (A);
+%    \begin{scope}
+%      \path[clip] (A) -- (B) -- (C) -- cycle; \draw (A) circle (0.17);
+%      \draw (B) circle (0.3); \draw (C) circle (0.19);
+%    \end{scope}
+%    \node at (0.240,0.260) {$α$}; \node at (0.77,0.045) {$β$}; \node
+%    at (0.10,0.06) {$γ$};
+%  \end{tikzpicture}
+%
+%  Idea: overconstrain the apex by performing experiments. \\
+%  Inconsistencies would mean New Physics!
+%\end{frame}
+
+\begin{frame}{Global CKMfitter results (August 2013)}
+  \centering
+  \hspace{-2em}
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\textwidth]{figures/rhoeta_small_global.eps}};
+    \uncover<2>{
+      \draw[red,ultra thick,rounded corners] (5,4) rectangle (6.2,4.8);
+    }
+    \uncover<3>{
+      \draw[red,ultra thick,rounded corners] (2.2,3.35) rectangle (3.1,3.9);
+    }
+  \end{tikzpicture}
+  \begin{itemize}
+    \item \cite{ckmfitter}
+  \end{itemize}
+\end{frame}
+
+%\begin{frame}{Motivation: $\difference{m_{\Pqd}}$}
+%  Idea: investigate \PBz oscillation to constrain the CKM triangle
+%  \begin{itemize}
+%  \item Determine $\difference{m_{\Pqd}}$ \\
+%    Final state of the \PBz must be known \\
+%    $\rightarrow$ Choose channel with self-tagging final state
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}{Motivation: $\sin(2β)$}
+%  Idea: investigate \PBz oscillation to constrain the CKM triangle
+%  \begin{itemize}
+%  \item Determine $\sin(2β)$ \\
+%    Asymmetry of decay products is caused by CP violation \\
+%  \end{itemize}
+%  $\Rightarrow$ We need the production state of the \PBz
+%\end{frame}
 
 \begin{frame}{LHCb detector}
-  \includegraphics[width=\textwidth]{figures/lhcb.pdf}
+  \includegraphics[width=0.9\textwidth]{figures/lhcb.pdf}
+  \begin{itemize}
+    \item \cite{lhcb}
+  \end{itemize}
   % less: what are the components?
   % more: why has it made this analysis possible?
   % pro:
-  %  great luminosity
+  % designed to detect decays of B mesons
+  % great luminosity
   % con:
-  %  small efficiency, good flavour tagging required
+  % hadronic environment -> difficult to determine initial state of B
+  % meson
 \end{frame}
 
-% two interesting experiments: determine Δm_d and sin(2β)
-% we need the production state of the B⁰!
-
-\begin{frame}{Flavour Tagging}
-  % we want to infer the production state of the B meson
-  % can't 'look' at it
-  % must infer by rest of event
-  % two different types of taggers: OS, SS (diagram)
-  % problem: not absolutely accurate -> mistag probability ω
-  %  -> why? faulty reconstruction, misleading decay series
-  % ω has an effect on the asymmetry! -> lowers amplitude to (1 - 2 ω)
+\begin{frame}{Flavour tagging}
+  \setbeamerfont*{itemize/enumerate body}{size=\footnotesize}
+  \begin{itemize}
+  \item \small We want to determine the production state of the B meson
+  \item \small Can't \enquote{look} at it, must infer by rest of event
+  \item \small Idea: Feed event data to neural nets, get tag prediction
+  \item \small Two different kinds of strategies: OS, SS
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{Analysis}
+\input{tagging}
+
+\begin{frame}{Flavour tagging}
+  \begin{itemize}
+  \item Problem: tag can't be absolutely accurate $\Rightarrow$ mistag probability $ω$
+  \item $ω$ has an effect on the asymmetry! $\rightarrow$ lowers amplitude to $D = (1 - 2 ω)$
+  \item $\Rightarrow$ $ω$ has to be extremely well known for $\sin(2β)$
+  \item Tagging algorithms (neural nets) can produce mistag estimate $η$
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{Results}
+\begin{frame}{Basic idea of tagging calibration}
+  %\item Mistag probability $ω$ must be known precisely
+  \begin{enumerate}
+    \item Choose a channel with self-tagging final state (\HepProcess{\PBz\to\PJpsi\PKst})
+  \item Determine true $ω$ by fitting the data
+  \item Find a parameterisation to transform $η$ into $ω$
+  \item Reuse that parameterisation when there is no self-tagging final state ($\PBz\to\PJpsi\PKshort$)
+  \end{enumerate}
+  % But the correct parameterisation depends on the channel.
+  % Does this produce accurate results?
 \end{frame}
+
+\begin{frame}{Evaluating tagging performance}
+  \begin{itemize}
+  \item Dilution $D = (1 - 2ω)$
+  \item Tagging efficiency $ε_\t{tag} = \frac{N_\t{sig,tagged}}{N_\t{sig}}$
+  \item Tagging power $ε_\t{eff} = ε_\t{tag} D^2$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{This analysis}
+  \centering
+  \begin{tikzpicture}[line width=1.2 pt, scale=1]
+    \draw[fermion] (0, 2) node[left] {\Pqb} -- (2, 2);
+    \draw[fermion] (2, 2) -- (4, 2) node[right] {\Paqc};
+    \draw[fermion] (2, 1) -- (4, 1.5) node[right] {\Pqc};
+    \draw[fermion] (4, 0.5) node[right] {\Paqs} -- (2, 1);
+    \draw[fermion] (0, 0) node[left] {\Pqd} -- (4, 0) node[right] {\Pqd};
+
+    \draw[vector] (1.5, 2) -- node[anchor=north east] {\PW} (2, 1) {};
+
+    \node[left] at (-0.5, 1) {\large\PBz};
+    \node[right] at (4.5, 1.8) {\large\PJpsi};
+    \node[right] at (4.5, 0.2) {\large\PKst};
+  \end{tikzpicture}
+  \begin{itemize}
+    \item Decay channel: \HepProcess{\PBz\to\PJpsi\PKst}
+  \end{itemize}
+  \begin{enumerate}
+  \item Perform flavour tagging calibration
+  \item Apply parameterisation from \HepProcess{\PBz\to\PDm\Pgpp} to \HepProcess{\PBz\to\PJpsi\PKst} \\
+        $\rightarrow$ Check by calibrating again. Is $ω\approx η$?
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Dataset}
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/lhcb.jpg}
+  \begin{itemize}
+  \item Taken at LHCb in 2012: \SI{8}{\tera\electronvolt} CMS energy,
+    \SI{2}{\per\femto\barn} luminosity
+  \item Relevant variables: mass $m$, decay time $t$, tag decision, final state
+    (from Kaon charge)
+  \item Also: Mistag prediction $η$
+  \item After stripping and offline selection (BDT): ca. \num{5e5}
+    event candidates
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Analysis - Fitting the data}
+  \centering
+  \renewcommand{\arraystretch}{0.6}
+  \begin{tabular}{c S[table-format=1.2] S[table-format=1.2]}
+    \toprule
+    category & $η_\t{min}$ & $η_\t{max}$ \\
+    \midrule
+    1 & 0.40 & 0.50 \\
+    2 & 0.35 & 0.40 \\
+    3 & 0.30 & 0.35 \\
+    4 & 0.25 & 0.30 \\
+    5 & 0.00 & 0.25 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{1em}
+  \begin{itemize}
+  \item Split dataset into five categories depending on $η$
+  \item Perform simultaneous maximum likelihood fit over all five categories
+  \item Must distinguish between signal and background components
+  \item Acceptance and resolution effects taken into account
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Analysis - Fit model}
+  Probability density function for the fit
+  \begin{itemize}
+    \item signal:
+      \begin{itemize}
+        \item mass: triple gaussian
+        \item time: exponential with acceptance and oscillation
+      \end{itemize}
+    \item background (2 components):
+      \begin{itemize}
+        \item mass: exponential
+        \item time: exponential with acceptance
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+% TODO mention blinding
+
+\begin{frame}{Analysis - Implementation}
+  \begin{itemize}
+  \item Decided to re-implement analysis $\rightarrow$ cross-check
+  \item Uses Python interface to ROOT and RooFit
+  \item $\difference{m_{\Pqd}}$ is blinded
+  %\item View of the fit model:
+  \end{itemize}
+  %\vspace{0.5em}
+  %\hspace{-2.5em}
+  %\includegraphics[width=0.98\paperwidth]{figures/model.pdf}
+\end{frame}
+
+\begin{frame}[plain]{Results (\enquote{uncalibrated}) - Category 1}
+  \centering
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Mass-Cat1.pdf}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Time-Cat1.pdf} \\
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat1.pdf}
+\end{frame}
+
+\begin{frame}[plain]{Results (\enquote{uncalibrated}) - Category 3}
+  \centering
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Mass-Cat3.pdf}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Time-Cat3.pdf} \\
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat3.pdf}
+\end{frame}
+
+\begin{frame}[plain]{Results (\enquote{uncalibrated}) - Category 5}
+  \centering
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Mass-Cat5.pdf}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Time-Cat5.pdf} \\
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp/plots/Mixing-Cat5.pdf}
+\end{frame}
+
+\begin{frame}{Results (\enquote{uncalibrated})}
+  \centering
+  \includegraphics[width=0.70\textwidth]{analysis/JpsiKst-SSp/plot.pdf}
+
+  \begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+    \item $\avg{η} = \num{0.3845 \pm 0.0002}$
+    \item $ε_\t{eff} = \SI{0.57 \pm 0.04}{\percent}$
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+      \item $p_0 = \num{0.432\pm0.004}$
+      \item $p_1 = \num{0.82\pm0.10}$
+      \item $p_2 = \num{-3.4\pm1.2}$
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[plain]{Results (\enquote{calibrated}) - Category 1}
+  \centering
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Mass-Cat1.pdf}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Time-Cat1.pdf} \\
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Mixing-Cat1.pdf}
+\end{frame}
+
+\begin{frame}[plain]{Results (\enquote{calibrated}) - Category 3}
+  \centering
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Mass-Cat3.pdf}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Time-Cat3.pdf} \\
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Mixing-Cat3.pdf}
+\end{frame}
+
+\begin{frame}[plain]{Results (\enquote{calibrated}) - Category 5}
+  \centering
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Mass-Cat5.pdf}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Time-Cat5.pdf} \\
+  %\hspace{-1.2cm}
+  \includegraphics[width=0.39\paperwidth]{analysis/JpsiKst-SSp-calibrated/plots/Mixing-Cat5.pdf}
+\end{frame}
+
+\begin{frame}{Results (\enquote{calibrated})}
+  \centering
+  \includegraphics[width=0.70\textwidth]{analysis/JpsiKst-SSp-calibrated/plot.pdf}
+  
+  \begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+    \item $\avg{η_C} = \num{0.4127 \pm 0.0002}$
+    \item $ε_\t{eff} = \SI{0.59 \pm 0.04}{\percent}$
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+      \item $p_0 = \num{0.431\pm0.003}$
+      \item $p_1 = \num{0.80\pm0.06}$
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Conclusions}
+  \begin{itemize}
+  \item Calibration successful, parameterisation could be used to improve measurement of $\sin(2β)$
+  \item Transference of SS\Pgp calibration parameterisation introduces an error, must be accounted for
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge
+  Thanks for listening!
+\end{frame}
+
+\begin{frame}[shrink=30]{Bibliography}
+  \makebibliography
+\end{frame}
+
+\input{backup}
 
 \end{document}
